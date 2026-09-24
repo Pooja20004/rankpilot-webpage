@@ -1,96 +1,98 @@
-export type TabId = 
-  | 'mocks' 
-  | 'analytics' 
-  | 'coach' 
-  | 'planner' 
-  | 'doubts' 
-  | 'reports' 
-  | 'students';
+export type MainNavTab = 
+  | 'test-series' 
+  | 'sample-report' 
+  | 'features' 
+  | 'predictor' 
+  | 'reviews';
 
-export interface TabInfo {
-  id: TabId;
-  label: string;
-  badge?: string;
-  iconName: string;
-  headline: string;
-  tagline: string;
-  description: string;
-  keyMetrics: { label: string; value: string; change?: string }[];
-}
+export type ExamType = 'JEE Main' | 'JEE Advanced' | 'BITSAT';
 
-export interface ReviewItem {
+export interface TestSeriesCard {
   id: string;
-  author: string;
-  avatar: string;
-  targetExam: string;
-  scoreOrRank: string;
-  featureTag: 'All' | 'AI Coach' | 'PYQ Mocks' | 'Deep Analytics' | 'Study Planner' | 'Doubt Solver' | 'Score Reports';
-  rating: number; // 1-5
-  date: string;
-  comment: string;
-  upvotes: number;
-  isVerified: boolean;
-}
-
-export interface MockTestPaper {
-  id: string;
-  examType: 'JEE Main' | 'JEE Advanced';
-  year: number;
-  shift: string;
-  dateLabel: string;
-  totalMarks: number;
-  durationMinutes: number;
-  totalQuestions: number;
-  avgScore: number;
-  solvedCount: number;
-}
-
-export interface MockQuestion {
-  id: string;
-  subject: 'Physics' | 'Chemistry' | 'Mathematics';
-  topic: string;
-  difficulty: 'Moderate' | 'Hard' | 'Rank Decider';
-  questionText: string;
-  latexFormula?: string;
-  options: string[];
-  correctOptionIndex: number;
-  explanation: string;
-  weightage: string;
-}
-
-export interface VideoChapter {
-  id: string;
-  tabId: TabId;
+  exam: ExamType;
   title: string;
-  subtitle: string;
-  timestamp: string;
-  durationSec: number;
-  highlights: string[];
-  narrationScript: string;
+  tagline: string;
+  pyqCountBadge: string;
+  coverage: string;
+  features: string[];
+  totalMocks: string;
+  duration: string;
+  patternNotice: string;
+  isPopular?: boolean;
 }
 
-export interface DoubtPreset {
-  id: string;
+export interface SampleQuestionAnalysis {
+  qNum: number;
   subject: 'Physics' | 'Chemistry' | 'Mathematics';
   topic: string;
-  question: string;
-  aiResponse: {
-    approach: string;
-    stepByStep: string[];
-    keyFormula: string;
-    commonPitfall: string;
-    relatedPYQ: string;
-  };
+  status: 'correct' | 'incorrect' | 'unattempted';
+  timeSpentSec: number;
+  idealTimeSec: number;
+  isSillyMistake?: boolean;
+  questionText: string;
+  formulaOrLatex?: string;
+  options: string[];
+  studentAnswer?: number;
+  correctAnswer: number;
+  explanation: string;
+  difficulty: 'Easy' | 'Moderate' | 'Tough';
 }
 
-export interface StudentProfile {
+export interface SubjectReportMetric {
+  subject: 'Physics' | 'Chemistry' | 'Mathematics';
+  score: number;
+  totalMarks: number;
+  attempted: number;
+  correct: number;
+  incorrect: number;
+  unattempted: number;
+  accuracy: number;
+  timeSpentMin: number;
+  percentile: number;
+  strongTopics: string[];
+  weakTopics: string[];
+}
+
+export interface QuizrrSampleReport {
+  testTitle: string;
+  dateAttempted: string;
+  candidateName: string;
+  totalScore: number;
+  maxScore: number;
+  percentile: number;
+  predictedAIR: number;
+  categoryRank: number;
+  totalAttempted: number;
+  totalQuestions: number;
+  overallAccuracy: number;
+  totalTimeMin: number;
+  allottedTimeMin: number;
+  negativeMarksLost: number;
+  sillyMistakesCount: number;
+  subjects: SubjectReportMetric[];
+  questions: SampleQuestionAnalysis[];
+}
+
+export interface StudyFeature {
+  id: 'concept-notes' | 'formula-sheet' | 'mindmap' | 'ai-analysis' | 'doubt-solver';
+  title: string;
+  tagline: string;
+  shortDesc: string;
+  badge: string;
+  iconName: string;
+  keyHighlights: string[];
+  sampleData: any;
+}
+
+export interface StudentReview {
   id: string;
   name: string;
-  email: string;
-  targetYear: string;
-  currentPercentile: number;
-  predictedAIR: number;
-  activeBatch: string;
-  testsCompleted: number;
-  status: 'Active Pro' | 'Trial' | 'Ranker Cohort';
+  airRank: string;
+  percentile: string;
+  examYear: string;
+  targetInstitute: string;
+  avatar: string;
+  reviewText: string;
+  verifiedBadge: boolean;
+  highlightStat: string;
 }

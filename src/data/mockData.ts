@@ -1,487 +1,395 @@
-import { TabInfo, ReviewItem, MockTestPaper, MockQuestion, VideoChapter, DoubtPreset, StudentProfile } from '../types';
+import { 
+  TestSeriesCard, 
+  QuizrrSampleReport, 
+  StudyFeature, 
+  StudentReview 
+} from '../types';
 
-export const LOVABLE_PROJECT_URL = 'https://lovable.dev/projects/be7c2e2a-35fa-4b86-92e4-c473232143f0';
+export const LOVABLE_PROJECT_URL = 'https://jee-rankpilot.lovable.app';
 
-export const TAB_INFOS: TabInfo[] = [
+// ----------------------------------------------------
+// TEST SERIES DATA (Exact User Specification)
+// ----------------------------------------------------
+export const TEST_SERIES_COLLECTION: TestSeriesCard[] = [
   {
-    id: 'mocks',
-    label: 'JEE PYQ Mocks',
-    badge: 'Authentic NTA Engine',
-    iconName: 'FileCheck',
-    headline: 'JEE Main & Advanced PYQ Mocks',
-    tagline: 'Pick an exam and year. Take it in authentic NTA exam environment.',
-    description: 'Experience real exam conditions with precision timer, subject switching (PCM), negative marking (-1), instant answer verification, and predicted All India Rank (AIR) calibrated against 500,000+ actual candidates.',
-    keyMetrics: [
-      { label: 'Verified PYQ Papers', value: '140+ Shifts', change: '2019-2026' },
-      { label: 'Simulation Accuracy', value: '99.8%', change: 'NTA Standard' },
-      { label: 'Avg Score Growth', value: '+42.5 Marks', change: 'After 8 Mocks' }
+    id: 'jee-main',
+    exam: 'JEE Main',
+    title: 'JEE Main Master Test Series (2026-2027)',
+    tagline: '120+ Authentic NTA Shift Papers Converted Into Timed Full-Length Mocks',
+    pyqCountBadge: '120+ JEE Main PYQs as Mocks',
+    coverage: 'All Shifts from 2019 to 2026 (January & April Sessions)',
+    isPopular: true,
+    totalMocks: '120+ Full Tests + 90 Chapter Tests',
+    duration: '180 Minutes / 300 Marks',
+    patternNotice: 'Exact NTA CBT User Interface with Section A (20 MCQs) & Section B (Numerical Value Questions)',
+    features: [
+      '120+ JEE Main PYQs as timed computer-based mocks with real NTA countdown timer',
+      'Accurate percentile prediction based on 500,000+ actual student exam data points',
+      'Shift-wise normalization factor calculation & difficulty-adjusted All India Rank',
+      'Detailed video & text solutions for all Physics, Chemistry & Math questions',
+      'Instant negative marking tracker & silly mistake penalty analysis'
     ]
   },
   {
-    id: 'analytics',
-    label: 'Deep Analytics',
-    badge: 'AI Diagnostic',
-    iconName: 'BarChart3',
-    headline: 'Performance, Decoded.',
-    tagline: 'Built from your own tests over the last 90 days with AI error taxonomy.',
-    description: 'Stop guessing why your scores plateau. RankPilot decodes your accuracy across concepts, distinguishes silly calculation errors from genuine knowledge gaps, and compares your mastery against top 100 AIR rankers.',
-    keyMetrics: [
-      { label: 'Error Categorization', value: '3-Layer', change: 'Concept/Speed/Calc' },
-      { label: 'Weak Spot Detection', value: 'Sub-topic level', change: 'Instant Pinpoint' },
-      { label: 'AIR Prediction Delta', value: '±150 Ranks', change: 'High Precision' }
+    id: 'jee-advanced',
+    exam: 'JEE Advanced',
+    title: 'JEE Advanced Comprehensive Test Series',
+    tagline: '40+ PYQ Mock Tests For Last 19 Years (Paper 1 & Paper 2) with Variable Marking Schemes',
+    pyqCountBadge: '40+ JEE Advanced PYQs (Last 19 Years)',
+    coverage: 'Complete Archive: 2007 to 2025 (Paper 1 & Paper 2)',
+    isPopular: true,
+    totalMocks: '40+ Full Mocks (Paper 1 + Paper 2)',
+    duration: '360 Minutes (Two 3-Hour Sessions)',
+    patternNotice: 'Realistic multi-correct (+4/-2), numerical decimals, matrix matching & paragraph comprehensions',
+    features: [
+      '40+ JEE Advanced PYQ mock tests spanning the last 19 years of IIT entrance history',
+      'Paper 1 & Paper 2 authentic dual-shift simulation with strict partial marking logic',
+      'Deep conceptual grading distinguishing foundational gaps from calculation fatigue',
+      'Step-by-step alternative solution approaches (IITian shortcuts & calculus bypasses)',
+      'Benchmark comparison against previous years IIT Bombay & IIT Delhi branch cutoffs'
     ]
   },
   {
-    id: 'coach',
-    label: 'AI Coach',
-    badge: 'Zero-to-Hero',
-    iconName: 'BrainCircuit',
-    headline: 'Your Personal JEE Coach',
-    tagline: 'Zero-to-Hero: Foundation Reset & High-Weightage Kickoff.',
-    description: 'RankPilot AI acts as your relentless 24/7 personal tutor. It inspects your diagnostic mocks, builds daily micro-sprints to fix high-yield topics (like Rotational Dynamics, Electromagnetism, Organic Carbonyls), and ensures you breach 99+ percentile.',
-    keyMetrics: [
-      { label: 'Target Percentile Goal', value: '99.5 %ile', change: 'Personalized' },
-      { label: 'Daily Sprints', value: '4 High-Yield', change: 'Calculated Daily' },
-      { label: 'Foundation Reset', value: '100% Backlog', change: 'Recovered' }
+    id: 'bitsat',
+    exam: 'BITSAT',
+    title: 'BITSAT Speed & Accuracy Test Series',
+    tagline: '6+ Full BITSAT PYQ Mocks with 130 Questions + 12 Bonus Questions Engine',
+    pyqCountBadge: '6+ BITSAT PYQs as Mocks',
+    coverage: 'Latest Pattern: Physics, Chemistry, Math, English & Logical Reasoning',
+    isPopular: false,
+    totalMocks: '6+ Full Mocks + 20 Speed Sprints',
+    duration: '180 Minutes / 390 Marks',
+    patternNotice: 'Unique BITSAT bonus question unlock trigger when all 130 questions are attempted',
+    features: [
+      '6+ BITSAT full-length PYQ mocks modeled on the official BITS Pilani computer test pattern',
+      'Comprehensive coverage of English Proficiency and Logical Reasoning sections',
+      'Real-time speed index calculation: time per question benchmark (under 80 seconds target)',
+      'Bonus question unlocking simulator for top scorers aiming for 330+ marks',
+      'Branch prediction for BITS Pilani, Goa, and Hyderabad campuses'
     ]
+  }
+];
+
+// ----------------------------------------------------
+// SAMPLE REPORT DATA (Matching app.quizrr.in/analysis-demo)
+// ----------------------------------------------------
+export const QUIZRR_SAMPLE_REPORT: QuizrrSampleReport = {
+  testTitle: 'JEE Main 2025 Jan Session Shift-1 Full Mock Paper #12',
+  dateAttempted: '18 September 2026',
+  candidateName: 'Aditya Sharma',
+  totalScore: 242,
+  maxScore: 300,
+  percentile: 99.64,
+  predictedAIR: 842,
+  categoryRank: 618,
+  totalAttempted: 68,
+  totalQuestions: 75,
+  overallAccuracy: 91.2,
+  totalTimeMin: 164,
+  allottedTimeMin: 180,
+  negativeMarksLost: 6,
+  sillyMistakesCount: 2,
+  subjects: [
+    {
+      subject: 'Physics',
+      score: 85,
+      totalMarks: 100,
+      attempted: 23,
+      correct: 22,
+      incorrect: 1,
+      unattempted: 2,
+      accuracy: 95.7,
+      timeSpentMin: 52,
+      percentile: 99.78,
+      strongTopics: ['Current Electricity', 'Electrostatics', 'Kinematics', 'Optics'],
+      weakTopics: ['Rotational Dynamics']
+    },
+    {
+      subject: 'Chemistry',
+      score: 81,
+      totalMarks: 100,
+      attempted: 24,
+      correct: 21,
+      incorrect: 3,
+      unattempted: 1,
+      accuracy: 87.5,
+      timeSpentMin: 44,
+      percentile: 99.31,
+      strongTopics: ['Coordination Compounds', 'Thermodynamics', 'Chemical Bonding'],
+      weakTopics: ['Aldehydes & Ketones (Organic)']
+    },
+    {
+      subject: 'Mathematics',
+      score: 76,
+      totalMarks: 100,
+      attempted: 21,
+      correct: 19,
+      incorrect: 2,
+      unattempted: 4,
+      accuracy: 90.5,
+      timeSpentMin: 68,
+      percentile: 99.82,
+      strongTopics: ['Definite Integration', 'Vectors & 3D', 'Matrices & Determinants'],
+      weakTopics: ['Conic Sections (Hyperbola)']
+    }
+  ],
+  questions: [
+    {
+      qNum: 1,
+      subject: 'Physics',
+      topic: 'Current Electricity',
+      status: 'correct',
+      timeSpentSec: 92,
+      idealTimeSec: 120,
+      questionText: 'In a potentiometer wire of length 100 cm, a balancing point is obtained at 60 cm for a cell of emf E1. When another cell of emf E2 is connected in series with E1 in the same direction, the balance point shifts to 80 cm. Find the ratio E1 : E2.',
+      formulaOrLatex: 'E_1 \\propto l_1 \\quad \\text{and} \\quad (E_1 + E_2) \\propto l_2',
+      options: ['3 : 1', '4 : 1', '2 : 1', '3 : 2'],
+      studentAnswer: 0,
+      correctAnswer: 0,
+      difficulty: 'Easy',
+      explanation: 'Since potentiometer balance length is directly proportional to potential drop across the wire: E1 = k * 60, and (E1 + E2) = k * 80. Thus (E1 + E2) / E1 = 80/60 = 4/3. This yields 1 + (E2/E1) = 4/3 => E2/E1 = 1/3, which gives E1 : E2 = 3 : 1.'
+    },
+    {
+      qNum: 2,
+      subject: 'Physics',
+      topic: 'Rotational Dynamics',
+      status: 'incorrect',
+      timeSpentSec: 210,
+      idealTimeSec: 150,
+      isSillyMistake: true,
+      questionText: 'A solid sphere of mass M and radius R rolls without slipping down an inclined plane of inclination θ. What is the ratio of rotational kinetic energy to the total kinetic energy of the rolling sphere?',
+      formulaOrLatex: 'K_{\\text{rot}} = \\frac{1}{2} I \\omega^2, \\quad K_{\\text{total}} = \\frac{1}{2} M v^2 + \\frac{1}{2} I \\omega^2',
+      options: ['2/7', '2/5', '5/7', '1/2'],
+      studentAnswer: 1, // Student selected 2/5 (which is I/(MR^2), a classic silly mistake!)
+      correctAnswer: 0,
+      difficulty: 'Moderate',
+      explanation: 'For pure rolling without slipping, v = ωR. Rotational KE = (1/2) * (2/5 MR^2) * ω^2 = (1/5) M v^2. Translational KE = (1/2) M v^2. Total KE = (1/5 + 1/2) M v^2 = (7/10) M v^2. Ratio K_rot / K_total = (1/5) / (7/10) = 2/7. You selected 2/5 by taking K_rot / K_trans instead of total KE!'
+    },
+    {
+      qNum: 3,
+      subject: 'Physics',
+      topic: 'Electrostatics',
+      status: 'correct',
+      timeSpentSec: 105,
+      idealTimeSec: 110,
+      questionText: 'Two concentric conducting spherical shells of radii r and 2r carry charges +Q and -2Q respectively. What is the potential at a distance 1.5r from the common center?',
+      formulaOrLatex: 'V = \\frac{1}{4\\pi \\epsilon_0}\\left(\\frac{Q_{\\text{inner}}}{r\'} + \\frac{Q_{\\text{outer}}}{R_{\\text{outer}}}\\right)',
+      options: ['-Q / (12πε₀r)', '+Q / (6πε₀r)', '-Q / (6πε₀r)', 'Zero'],
+      studentAnswer: 0,
+      correctAnswer: 0,
+      difficulty: 'Moderate',
+      explanation: 'At r\' = 1.5r: The point lies outside the inner shell (radius r) and inside the outer shell (radius 2r). Thus V = (1/4πε₀) * [Q / 1.5r + (-2Q) / 2r] = (1/4πε₀) * [2Q/3r - Q/r] = -Q / (12πε₀r).'
+    },
+    {
+      qNum: 4,
+      subject: 'Chemistry',
+      topic: 'Coordination Compounds',
+      status: 'correct',
+      timeSpentSec: 64,
+      idealTimeSec: 75,
+      questionText: 'Which of the following complex ions is diamagnetic and possesses an inner orbital octahedral hybridization (d²sp³)?',
+      formulaOrLatex: '[\\text{Co}(\\text{NH}_3)_6]^{3+} \\quad (3d^6, t_{2g}^6 e_g^0)',
+      options: ['[Co(NH3)6]³⁺', '[CoF6]³⁻', '[Ni(NH3)6]²⁺', '[Fe(H2O)6]³⁺'],
+      studentAnswer: 0,
+      correctAnswer: 0,
+      difficulty: 'Easy',
+      explanation: 'Co³⁺ has configuration 3d⁶. NH₃ behaves as a strong field ligand for Co³⁺, causing pairing of electrons in t2g orbitals giving t2g⁶ eg⁰ (0 unpaired electrons = diamagnetic). Hybridization is d²sp³.'
+    },
+    {
+      qNum: 5,
+      subject: 'Chemistry',
+      topic: 'Organic Reaction Mechanism',
+      status: 'incorrect',
+      timeSpentSec: 140,
+      idealTimeSec: 90,
+      isSillyMistake: true,
+      questionText: 'Benzaldehyde when treated with concentrated NaOH solution undergoes Cannizzaro reaction. What are the reaction products?',
+      formulaOrLatex: '2 \\text{C}_6\\text{H}_5\\text{CHO} \\xrightarrow{\\text{conc. NaOH}} \\text{C}_6\\text{H}_5\\text{COONa} + \\text{C}_6\\text{H}_5\\text{CH}_2\\text{OH}',
+      options: ['Sodium benzoate + Benzyl alcohol', 'Benzoic acid + Phenol', 'Sodium phenoxide + Toluene', 'Benzophenone + Methanol'],
+      studentAnswer: 1, // Student forgot the salt formation in alkaline medium
+      correctAnswer: 0,
+      difficulty: 'Moderate',
+      explanation: 'Since the reaction takes place in strongly basic alkaline medium (concentrated NaOH), the acid is isolated as its carboxylate salt (Sodium benzoate) along with the reduced alcohol (Benzyl alcohol).'
+    },
+    {
+      qNum: 6,
+      subject: 'Mathematics',
+      topic: 'Definite Integration',
+      status: 'correct',
+      timeSpentSec: 145,
+      idealTimeSec: 180,
+      questionText: 'Evaluate the definite integral: ∫ from 0 to π/2 of [sin³(x) / (sin³(x) + cos³(x))] dx.',
+      formulaOrLatex: 'I = \\int_0^a f(x)dx = \\int_0^a f(a-x)dx \\implies 2I = \\int_0^{\\pi/2} 1 dx = \\frac{\\pi}{2}',
+      options: ['π/4', 'π/2', '1', 'π/8'],
+      studentAnswer: 0,
+      correctAnswer: 0,
+      difficulty: 'Easy',
+      explanation: 'Applying King’s property f(x) + f(π/2 - x) = 1. Integrating 1 from 0 to π/2 yields π/2, so 2I = π/2 => I = π/4.'
+    },
+    {
+      qNum: 7,
+      subject: 'Mathematics',
+      topic: 'Conic Sections (Hyperbola)',
+      status: 'unattempted',
+      timeSpentSec: 35,
+      idealTimeSec: 180,
+      questionText: 'A normal to the hyperbola x²/a² - y²/b² = 1 meets the axes in M and N and lines MP and NP are drawn perpendicular to the axes meeting at P. Prove the locus of P.',
+      formulaOrLatex: '\\frac{a^2 x}{\\sec\\theta} + \\frac{b^2 y}{\\tan\\theta} = a^2 + b^2',
+      options: ['a²x² - b²y² = (a² + b²)²', 'a⁶/x² - b⁶/y² = (a² + b²)²', 'x²/a⁴ + y²/b⁴ = 1', 'a⁴/x² - b⁴/y² = 1'],
+      studentAnswer: undefined,
+      correctAnswer: 1,
+      difficulty: 'Tough',
+      explanation: 'Equation of normal at (a sec θ, b tan θ) is ax cos θ + by cot θ = a² + b². Coordinates of M (y=0) and N (x=0) give P = (x_M, y_N). Eliminating θ yields a⁶/x² - b⁶/y² = (a² + b²)².'
+    }
+  ]
+};
+
+// ----------------------------------------------------
+// STUDY FEATURES DATA (Exact User Specification)
+// Concept notes, formula sheet, mindmap, ai analysis, doubt solver
+// ----------------------------------------------------
+export const STUDY_FEATURES_LIST: StudyFeature[] = [
+  {
+    id: 'concept-notes',
+    title: 'Concept Notes',
+    tagline: 'High-Yield Theory Summaries Written By Top 100 IITians',
+    shortDesc: 'Stop drowning in 800-page textbooks. Master core derivations, sign conventions, and exceptional reaction trends in crisp 4-page chapter modules.',
+    badge: 'Revision Master',
+    iconName: 'BookOpen',
+    keyHighlights: [
+      'Comprehensive coverage of all 92 chapters across Physics, Chemistry & Math',
+      'Highlighted NCERT edge cases & JEE Advanced special traps',
+      'Step-by-step graphical derivations with visual intuition'
+    ],
+    sampleData: {
+      chapters: [
+        { name: 'Rotational Motion', subject: 'Physics', pages: '6 Pages', readTime: '15 mins', keyTopics: ['Parallel Axis Theorem', 'Rolling Without Slipping', 'Toppling Condition'] },
+        { name: 'Coordination Chemistry', subject: 'Chemistry', pages: '5 Pages', readTime: '12 mins', keyTopics: ['Crystal Field Splitting (CFT)', 'Isomerism Rules', 'Jahn-Teller Distortion'] },
+        { name: 'Definite Integration', subject: 'Math', pages: '4 Pages', readTime: '10 mins', keyTopics: ['King & Queen Properties', 'Leibnitz Rule of Differentiation', 'Wallis Formula'] }
+      ]
+    }
   },
   {
-    id: 'planner',
-    label: 'Study Plan',
-    badge: 'Dynamic AI Timetable',
-    iconName: 'CalendarDays',
-    headline: 'Your Plan, Personalized.',
-    tagline: 'Generated by RankPilot AI from your exact weak spots, coaching timings & capacity.',
-    description: 'Never feel overwhelmed by syllabus volume again. Enter your target score, school/coaching hours, and available self-study bandwidth. RankPilot crafts an adaptive day-by-day roadmap that self-adjusts when you miss a session.',
-    keyMetrics: [
-      { label: 'Adaptability Rate', value: 'Real-time', change: 'Self-adjusting' },
-      { label: 'Backlog Clearing', value: '3x Faster', change: 'Priority Weighted' },
-      { label: 'Retention Multiplier', value: '2.4x', change: 'Spaced Repetition' }
-    ]
+    id: 'formula-sheet',
+    title: 'Formula Sheets',
+    tagline: 'Instant Quick-Recall Formula Cheat Sheets for High-Speed Solving',
+    shortDesc: 'Every formula, standard integral, dimension, physical constant, and chemical reaction condition organized logically for last-minute revision.',
+    badge: 'Exam Morning Must-Have',
+    iconName: 'FileText',
+    keyHighlights: [
+      'Color-coded formula boxes highlighting SI units & dimension checks',
+      'Special "Do Not Confuse" warning markers for frequently botched equations',
+      'Printable high-resolution sheets designed for active recall practice'
+    ],
+    sampleData: {
+      sheets: [
+        { subject: 'Physics', title: 'Mechanics & Electrodynamics Cheat Sheet', equationsCount: 148, preview: 'F = dp/dt • B = μ₀I/(2πr) • V = IR • E = -dV/dr' },
+        { subject: 'Chemistry', title: 'Physical & Inorganic Reaction Master-Table', equationsCount: 124, preview: 'ΔG° = -nFE° • k = A e^(-Ea/RT) • pH = pKa + log([Salt]/[Acid])' },
+        { subject: 'Mathematics', title: 'Calculus, Algebra & Trigonometry Identity Sheet', equationsCount: 186, preview: '∫ sec(x)dx = ln|sec x + tan x| • cos(2x) = 1 - 2sin²x • det(adj A) = |A|^(n-1)' }
+      ]
+    }
   },
   {
-    id: 'doubts',
-    label: 'AI Doubts',
-    badge: 'Instant Step-by-Step',
+    id: 'mindmap',
+    title: 'Mind Maps',
+    tagline: 'Visual Flowcharts & Memory Trees Connecting Concepts Seamlessly',
+    shortDesc: 'Transform scattered formulas into structured mental neural networks. Connect related formulas and mechanisms across chapters for instant recall.',
+    badge: 'Memory Booster',
+    iconName: 'Network',
+    keyHighlights: [
+      'Visual hierarchical branch structures from chapter root to sub-concepts',
+      'Color-linked prerequisites so you know what foundational theorem is needed',
+      'Interactive zoom & node expansion with linked PYQ examples'
+    ],
+    sampleData: {
+      featuredMap: {
+        title: 'Electromagnetism Master Mindmap',
+        root: 'Maxwell & Lorentz Core',
+        branches: [
+          { name: 'Electrostatics', children: ['Gauss Law', 'Electric Potential', 'Dipole Moments', 'Conductor Equipotentials'] },
+          { name: 'Magnetostatics', children: ['Biot-Savart Law', 'Ampere Circuital', 'Solenoids & Toroids', 'Cyclotron Motion'] },
+          { name: 'Electromagnetic Induction', children: ['Faraday Law', 'Lenz Law Direction', 'Motional EMF', 'Self & Mutual Inductance'] }
+        ]
+      }
+    }
+  },
+  {
+    id: 'ai-analysis',
+    title: 'AI Analysis',
+    tagline: 'Deep 15-Page Diagnostic Engine Decoding Every Second & Silly Mistake',
+    shortDesc: 'Calibrated against 500,000+ real student papers to detect why you lose marks. Separates lack of speed from conceptual blind spots and predicts true AIR.',
+    badge: 'Rank Decider',
+    iconName: 'BarChart2',
+    keyHighlights: [
+      'Silly mistake classifier: isolates signs errors, calculation rushes & misread questions',
+      'Time-management speed quadrant: flags "time-trap" questions where you spent >3.5 minutes',
+      'Predictive AIR calibrated using NTA shift normalization statistics'
+    ],
+    sampleData: {
+      metrics: [
+        { label: 'Marks Recoverable from Silly Mistakes', value: '+24 to +36 Marks' },
+        { label: 'Time Saved per Mock', value: '18.4 Minutes' },
+        { label: 'Accuracy Improvement Rate', value: '+14.2% in 3 Weeks' }
+      ]
+    }
+  },
+  {
+    id: 'doubt-solver',
+    title: 'Doubt Solver',
+    tagline: '24/7 Instant Step-by-Step AI Solver for Physics, Chemistry & Math',
+    shortDesc: 'Stuck on an Irodov question or tricky JEE Advanced calculus proof at 2 AM? Get instant, mathematically rigorous step-by-step solutions with diagrams.',
+    badge: '24/7 Instant AI',
     iconName: 'Sparkles',
-    headline: 'Ask anything. Get a clear path.',
-    tagline: 'AI solver for JEE Physics, Chemistry, and Math with step-by-step derivations.',
-    description: 'Tired of waiting hours for coaching faculty to answer doubts? Type or snap any tricky JEE question. Get rigorous mathematical proofs, shortcut visualization, underlying NCERT/Irodov concepts, and 3 similar PYQ practice problems.',
-    keyMetrics: [
-      { label: 'Response Latency', value: '< 1.5 Sec', change: 'Instant' },
-      { label: 'Subject Depth', value: 'PCM Advanced', change: 'Irodov/Black Book' },
-      { label: 'Step Clarity', value: '100%', change: 'LaTeX & Diagram' }
-    ]
-  },
-  {
-    id: 'reports',
-    label: 'My Reports',
-    badge: 'Diagnostic Matrix',
-    iconName: 'FileSpreadsheet',
-    headline: 'Comprehensive Question Logs & Speed Matrix',
-    tagline: 'Drill down into every second spent per question and identify marks leakage.',
-    description: 'View granular test breakdown tables with attempt status, difficulty level, time taken vs topper benchmark, and AI-recommended remedial action for every single question attempted.',
-    keyMetrics: [
-      { label: 'Time Optimization', value: '-18s/question', change: 'Gained Speed' },
-      { label: 'Negative Mark Filter', value: '-85%', change: 'Fewer Blunders' },
-      { label: 'Accuracy in Physics', value: '92.4%', change: '+14% MoM' }
-    ]
-  },
-  {
-    id: 'students',
-    label: 'Cohort & Peer Benchmarks',
-    badge: 'Top 100 Aspirants',
-    iconName: 'Users',
-    headline: 'Registered Students & National Leaderboard',
-    tagline: 'Track where you stand among 50,000+ ambitious JEE 2025/2026 test-takers.',
-    description: 'Compete in live national weekend mock showdowns, join specialized subject study pods (e.g. "IIT Bombay CSE Dreamers", "Calculus Masters"), and benchmark your sprint completion against the country\'s top 1% rankers.',
-    keyMetrics: [
-      { label: 'Active Aspirants', value: '52,400+', change: 'Pan-India' },
-      { label: 'National Mocks Held', value: '450+', change: 'All Shifts' },
-      { label: 'Top 1000 Rankers', value: '38% in Cohort', change: 'Proven Results' }
-    ]
-  }
-];
-
-export const MOCK_PAPERS: MockTestPaper[] = [
-  {
-    id: 'jee-main-2026-s1',
-    examType: 'JEE Main',
-    year: 2026,
-    shift: 'Shift 1',
-    dateLabel: '21 Jan 2026 (Shift 1)',
-    totalMarks: 300,
-    durationMinutes: 180,
-    totalQuestions: 90,
-    avgScore: 142,
-    solvedCount: 14250
-  },
-  {
-    id: 'jee-main-2026-s2',
-    examType: 'JEE Main',
-    year: 2026,
-    shift: 'Shift 2',
-    dateLabel: '21 Jan 2026 (Shift 2)',
-    totalMarks: 300,
-    durationMinutes: 180,
-    totalQuestions: 90,
-    avgScore: 138,
-    solvedCount: 12890
-  },
-  {
-    id: 'jee-main-2026-s3',
-    examType: 'JEE Main',
-    year: 2026,
-    shift: 'Shift 1',
-    dateLabel: '22 Jan 2026 (Shift 1)',
-    totalMarks: 300,
-    durationMinutes: 180,
-    totalQuestions: 90,
-    avgScore: 149,
-    solvedCount: 16100
-  },
-  {
-    id: 'jee-adv-2025-p1',
-    examType: 'JEE Advanced',
-    year: 2025,
-    shift: 'Paper 1',
-    dateLabel: 'JEE Advanced 2025 (Paper 1)',
-    totalMarks: 180,
-    durationMinutes: 180,
-    totalQuestions: 51,
-    avgScore: 78,
-    solvedCount: 8920
-  }
-];
-
-export const SAMPLE_QUESTIONS: MockQuestion[] = [
-  {
-    id: 'q1',
-    subject: 'Physics',
-    topic: 'Rotational Motion',
-    difficulty: 'Rank Decider',
-    questionText: 'A solid uniform cylinder of mass M and radius R rolls without slipping down an inclined plane of angle θ. The magnitude of the acceleration of its center of mass is:',
-    latexFormula: 'a_{cm} = \\frac{g \\sin\\theta}{1 + \\frac{I_{cm}}{MR^2}}',
-    options: [
-      '(2/3) g sin θ',
-      '(1/2) g sin θ',
-      '(3/4) g sin θ',
-      'g sin θ'
+    keyHighlights: [
+      'Sub-second response time with beautiful LaTeX mathematical notation',
+      'Includes alternative shortcut methods and underlying NCERT/IIT principles',
+      'Recommends 3 similar PYQ practice questions to cement the concept'
     ],
-    correctOptionIndex: 0,
-    explanation: 'For a solid cylinder, moment of inertia I_cm = 1/2 M R^2. Substituting into rolling acceleration formula a = (g sin θ) / (1 + (1/2)) = (2/3) g sin θ.',
-    weightage: '4 Marks (+4 / -1)'
-  },
-  {
-    id: 'q2',
-    subject: 'Chemistry',
-    topic: 'Coordination Compounds',
-    difficulty: 'Moderate',
-    questionText: 'Which of the following complex species has the highest magnetic moment (spin-only) in Bohr Magnetons (BM)?',
-    options: [
-      '[Fe(H2O)6]2+ (d6, weak field)',
-      '[Fe(CN)6]3- (d5, strong field)',
-      '[Co(NH3)6]3+ (d6, strong field)',
-      '[Ni(CN)4]2- (d8, square planar)'
-    ],
-    correctOptionIndex: 0,
-    explanation: '[Fe(H2O)6]2+ has Fe2+ (3d6) in weak field ligand H2O, giving 4 unpaired electrons. Magnetic moment μ = √(4(4+2)) = √24 ≈ 4.90 BM, which is the highest.',
-    weightage: '4 Marks (+4 / -1)'
-  },
-  {
-    id: 'q3',
-    subject: 'Mathematics',
-    topic: 'Definite Integration',
-    difficulty: 'Rank Decider',
-    questionText: 'The value of the definite integral ∫ from 0 to π/2 of (sin³ x) / (sin³ x + cos³ x) dx is equal to:',
-    latexFormula: 'I = \\int_0^{\\pi/2} \\frac{\\sin^3 x}{\\sin^3 x + \\cos^3 x} dx',
-    options: [
-      'π / 4',
-      'π / 2',
-      'π / 8',
-      '1'
-    ],
-    correctOptionIndex: 0,
-    explanation: 'Using King\'s property ∫_0^a f(x)dx = ∫_0^a f(a-x)dx, we get 2I = ∫_0^(π/2) 1 dx = π/2 => I = π/4.',
-    weightage: '4 Marks (+4 / -1)'
-  }
-];
-
-export const DOUBT_PRESETS: DoubtPreset[] = [
-  {
-    id: 'd1',
-    subject: 'Physics',
-    topic: 'Electromagnetic Induction',
-    question: 'How to calculate induced EMF in a rotating rod in a uniform magnetic field B perpendicular to rotation?',
-    aiResponse: {
-      approach: 'Integrate the motional EMF dε = (v × B) · dr along the length of the rod from r = 0 to r = L.',
-      stepByStep: [
-        'At distance r from the pivot, linear velocity v = ω · r.',
-        'Elementary induced EMF in segment dr is dε = B · v · dr = B · (ω r) · dr.',
-        'Integrate from 0 to L: ε = ∫_0^L B ω r dr = B ω [r²/2]_0^L = (1/2) B ω L².',
-        'By Fleming\'s Right-Hand Rule, the pivoted center is at lower potential and the tip is at higher potential (or vice versa based on field direction).'
-      ],
-      keyFormula: 'ε = \\frac{1}{2} B \\omega L^2',
-      commonPitfall: 'Students often forget that velocity varies linearly with distance r from the axle, so taking average v = ωL/2 is essential if not integrating.',
-      relatedPYQ: 'JEE Main 2024 Jan 29 Shift 1 (Q. 18 on rotating copper disc in magnetic field)'
-    }
-  },
-  {
-    id: 'd2',
-    subject: 'Chemistry',
-    topic: 'Aldol Condensation & Mechanisms',
-    question: 'Why does Cannizzaro reaction occur only in aldehydes having no α-hydrogens?',
-    aiResponse: {
-      approach: 'Base deprotonates the α-carbon if α-H is present (yielding enolate for Aldol). In absence of α-H, OH- attacks the carbonyl carbon directly.',
-      stepByStep: [
-        'When α-hydrogen is present, base (OH⁻) prefers rapid acid-base abstraction (pKa ~ 16-20) over nucleophilic addition.',
-        'Without α-H (e.g. Formaldehyde HCHO, Benzaldehyde PhCHO), nucleophilic attack of OH⁻ on carbonyl forms a tetrahedral dianion / monoanion.',
-        'Hydride transfer (:H⁻) from this intermediate to another aldehyde molecule occurs as the rate-determining step (RDS).',
-        'Results in one molecule oxidized to carboxylic acid salt and one reduced to alcohol.'
-      ],
-      keyFormula: '2\\,\\text{RCHO} \\xrightarrow{\\text{conc. NaOH}} \\text{RCOO}^- + \\text{RCH}_2\\text{OH}',
-      commonPitfall: 'Confusing crossed Cannizzaro with crossed Aldol when one reactant has α-H and another does not.',
-      relatedPYQ: 'JEE Advanced 2023 Paper 2 (Section B Organic synthesis matrix)'
-    }
-  },
-  {
-    id: 'd3',
-    subject: 'Mathematics',
-    topic: 'Matrices & Determinants',
-    question: 'How to find the determinant of adj(adj(A)) for an n × n invertible matrix?',
-    aiResponse: {
-      approach: 'Utilize the fundamental matrix property A · adj(A) = |A| I_n and take determinants on both sides.',
-      stepByStep: [
-        'We know adj(A) = |A| A⁻¹.',
-        'Replacing A with adj(A): adj(adj(A)) = |adj(A)| (adj(A))⁻¹.',
-        'Since |adj(A)| = |A|^(n-1) and (adj(A))⁻¹ = (|A| A⁻¹)⁻¹ = |A|⁻¹ A,',
-        'Substituting gives: adj(adj(A)) = |A|^(n-1) · (|A|⁻¹ A) = |A|^(n-2) A.',
-        'Taking determinant of both sides: |adj(adj(A))| = (|A|^(n-2))^n · |A| = |A|^{(n-1)^2}.'
-      ],
-      keyFormula: '|\\text{adj}(\\text{adj}(A))| = |A|^{(n-1)^2}',
-      commonPitfall: 'For 3x3 matrix (n=3), power is (3-1)^2 = 4, NOT (3-2)=1.',
-      relatedPYQ: 'JEE Main 2025 Jan 24 Shift 2 (Question on 3x3 invertible matrix with |A| = 4)'
+    sampleData: {
+      exampleQuery: 'Find current through 2Ω resistor in Wheatstone bridge with galvanometer...',
+      solutionPreview: 'Step 1: Check bridge balance condition (R1/R2 = R3/R4). Since 4/8 = 5/10 = 0.5, the bridge is balanced. Thus zero current flows through the central galvanometer branch...'
     }
   }
 ];
 
-export const VIDEO_CHAPTERS: VideoChapter[] = [
-  {
-    id: 'ch-intro',
-    tabId: 'mocks',
-    title: '1. Instant Full-Length Mock Simulation',
-    subtitle: 'NTA Exam Interface & Live AIR Predictor',
-    timestamp: '00:00 - 00:45',
-    durationSec: 45,
-    highlights: [
-      'Authentic NTA palette with marked for review, answered, unvisited status',
-      'Real-time timer countdown with section auto-switching',
-      'Instant percentile forecast calibrated on 2024-2026 NTA percentiles'
-    ],
-    narrationScript: 'Welcome to RankPilot. Our authentic PYQ Mock Test simulator recreates the exact NTA testing interface with real shifts from 2019 to 2026. As you solve questions, RankPilot analyzes your time allocation per question and calculates your projected percentile immediately upon submission.'
-  },
-  {
-    id: 'ch-analytics',
-    tabId: 'analytics',
-    title: '2. Deep Analytics & Error Taxonomy',
-    subtitle: 'Decoding Performance & Silly Blunder Detection',
-    timestamp: '00:45 - 01:30',
-    durationSec: 45,
-    highlights: [
-      'Topic mastery radar chart comparing you against Top 100 Rankers',
-      'Categorizes mistakes into Conceptual Gaps vs Calculation Errors',
-      'Speed vs Accuracy distribution across Physics, Chemistry, and Math'
-    ],
-    narrationScript: 'Next, explore Deep Analytics: Performance Decoded. RankPilot eliminates test blindness by breaking down your score into conceptual clarity, execution speed, and silly calculation errors. Compare your topic mastery radar against AIR 100 toppers to pinpoint where marks are leaking.'
-  },
-  {
-    id: 'ch-coach',
-    tabId: 'coach',
-    title: '3. Personal AI Coach (Zero-to-Hero)',
-    subtitle: 'Targeted Daily Sprints & High-Weightage Kickoff',
-    timestamp: '01:30 - 02:15',
-    durationSec: 45,
-    highlights: [
-      'Sets personalized roadmap from current 65%ile to target 99.5%ile',
-      'Zero-to-Hero foundation reset targeting highest-weightage topics',
-      'Adaptive daily micro-tasks with progress tracking'
-    ],
-    narrationScript: 'Meet your 24/7 Personal AI Coach. The Zero-to-Hero engine analyzes your test history and builds personalized daily sprints. Instead of getting overwhelmed by 90 chapters, your AI Coach prioritizes high-weightage topics like Rotational Motion and Carbonyl Compounds to maximize rank gains in minimal time.'
-  },
-  {
-    id: 'ch-planner',
-    tabId: 'planner',
-    title: '4. Dynamic Study Planner',
-    subtitle: 'Custom Capacity & Backlog Recovery Timetable',
-    timestamp: '02:15 - 03:00',
-    durationSec: 45,
-    highlights: [
-      'Calculates exact revision slots based on daily available hours',
-      'Spaced repetition schedules for long-term formula retention',
-      'One-tap backlog recovery engine when schedules slip'
-    ],
-    narrationScript: 'Your Plan, Personalized. Set your daily capacity, school hours, and coaching commitments. RankPilot AI generates an optimal timetable balancing theory, PYQ practice, and spaced revision. If you miss a day, the planner dynamically recalibrates without throwing off your preparation.'
-  },
-  {
-    id: 'ch-doubts',
-    tabId: 'doubts',
-    title: '5. 24/7 AI Doubt Solver',
-    subtitle: 'Step-by-Step Derivations & Concept Paths',
-    timestamp: '03:00 - 03:45',
-    durationSec: 45,
-    highlights: [
-      'Instant mathematical derivations in clean LaTeX format',
-      'Common pitfalls & examiner tricks highlighted',
-      'Auto-suggests 3 similar JEE PYQ problems for instant reinforcement'
-    ],
-    narrationScript: 'Got stuck on a tricky problem? The AI Doubt Solver is available 24/7. Type or upload any Physics, Chemistry, or Math question to receive instant step-by-step solutions, key formula highlights, examiner pitfall alerts, and matched previous year questions.'
-  },
-  {
-    id: 'ch-signup',
-    tabId: 'students',
-    title: '6. Direct App Access & VIP Launch',
-    subtitle: 'Instant Access via Lovable AI Engine',
-    timestamp: '03:45 - 04:30',
-    durationSec: 45,
-    highlights: [
-      'Direct one-click connection to the live Lovable RankPilot application',
-      'Sync all test data, study plans, and diagnostics seamlessly',
-      'Join 50,000+ top aspirants preparing for JEE Main & Advanced'
-    ],
-    narrationScript: 'Ready to elevate your rank? Sign up today to launch directly into the live Lovable RankPilot web application. Join thousands of dedicated aspirants who are mastering JEE Main and Advanced with AI.'
-  }
-];
-
-export const INITIAL_REVIEWS: ReviewItem[] = [
+// ----------------------------------------------------
+// WALL OF FAME REVIEWS (MathonGo Style)
+// ----------------------------------------------------
+export const STUDENT_REVIEWS: StudentReview[] = [
   {
     id: 'rev-1',
-    author: 'Aarav Sharma',
-    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
-    targetExam: 'JEE 2025 Dropper',
-    scoreOrRank: 'AIR 284 (99.92 %ile)',
-    featureTag: 'AI Coach',
-    rating: 5,
-    date: '14 Sep 2026',
-    comment: 'The Zero-to-Hero AI Coach completely restructured my droppers prep. I was stuck at 88 percentile in Jan shift. RankPilot pinpointed that my organic mechanisms and thermodynamics were dragging me down. Jumped to 99.92 percentile in April shift!',
-    upvotes: 84,
-    isVerified: true
+    name: 'Shreyas Mishra',
+    airRank: 'AIR 14',
+    percentile: '100.00 %ile',
+    examYear: 'JEE Main & Adv',
+    targetInstitute: 'IIT Bombay CSE',
+    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&auto=format&fit=crop&q=80',
+    reviewText: 'The authentic NTA CBT simulator and the deep post-test analysis report showed me exactly where I was losing 15-20 marks on silly calculation rush. Jumping from 99.2 to 100 percentile was possible because of the 120+ shift mocks!',
+    verifiedBadge: true,
+    highlightStat: 'Solved 45 Full Mocks'
   },
   {
     id: 'rev-2',
-    author: 'Priya Mukherjee',
-    avatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80',
-    targetExam: 'JEE Main 2026 (Class 12)',
-    scoreOrRank: 'Score: 265/300',
-    featureTag: 'Deep Analytics',
-    rating: 5,
-    date: '18 Sep 2026',
-    comment: 'The error taxonomy in Deep Analytics is mind blowing! It showed me that 60% of my negative marks in Physics were silly unit conversion errors, not conceptual gaps. Fixed it in 3 weeks and saved 24 negative marks per mock test.',
-    upvotes: 62,
-    isVerified: true
+    name: 'Rohan Deshmukh',
+    airRank: 'AIR 78',
+    percentile: '99.98 %ile',
+    examYear: 'JEE Advanced',
+    targetInstitute: 'IIT Delhi Electrical',
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&auto=format&fit=crop&q=80',
+    reviewText: 'The 40+ JEE Advanced mocks covering the last 19 years are unmatched. The variable marking scheme with negative partial marks matched the real IIT Madras paper to perfection.',
+    verifiedBadge: true,
+    highlightStat: '+38 Marks Improvement'
   },
   {
     id: 'rev-3',
-    author: 'Rohan Venkatesh',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
-    targetExam: 'JEE Advanced Aspirant',
-    scoreOrRank: 'AIR 612 Target',
-    featureTag: 'PYQ Mocks',
-    rating: 5,
-    date: '19 Sep 2026',
-    comment: 'The NTA mock test environment is 100% authentic. Having all 2022-2026 shift papers available with instant percentile and AIR prediction helped me conquer my test anxiety. Must-have for serious aspirants.',
-    upvotes: 49,
-    isVerified: true
-  },
-  {
-    id: 'rev-4',
-    author: 'Devika Nair',
-    avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80',
-    targetExam: 'JEE 2026 (Class 12)',
-    scoreOrRank: 'AIR 1040 Target',
-    featureTag: 'Doubt Solver',
-    rating: 5,
-    date: '20 Sep 2026',
-    comment: 'The 24/7 AI Doubt Solver is faster and clearer than our coaching center faculty. It provides complete step-by-step LaTeX proofs and immediately recommends 3 identical PYQ problems for practice.',
-    upvotes: 38,
-    isVerified: true
-  },
-  {
-    id: 'rev-5',
-    author: 'Kartik Singhal',
-    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80',
-    targetExam: 'JEE Main Jan Shift',
-    scoreOrRank: '99.41 %ile',
-    featureTag: 'Study Planner',
-    rating: 5,
-    date: '21 Sep 2026',
-    comment: 'Managing Class 12 board prep with JEE was chaotic until I started using the personalized Study Planner. It automatically balanced my 4 hours of daily self-study and scheduled spaced repetition for weak chapters.',
-    upvotes: 31,
-    isVerified: true
-  }
-];
-
-export const REGISTERED_STUDENTS: StudentProfile[] = [
-  {
-    id: 'std-101',
-    name: 'Tanmay Kulkarni',
-    email: 'tanmay.k@aspirant.rankpilot.io',
-    targetYear: 'JEE 2026',
-    currentPercentile: 98.8,
-    predictedAIR: 480,
-    activeBatch: 'Alpha Top 100 Batch',
-    testsCompleted: 34,
-    status: 'Ranker Cohort'
-  },
-  {
-    id: 'std-102',
-    name: 'Ananya Verma',
-    email: 'ananya.v@aspirant.rankpilot.io',
-    targetYear: 'JEE 2026',
-    currentPercentile: 96.2,
-    predictedAIR: 1650,
-    activeBatch: 'Zero-to-Hero Foundation',
-    testsCompleted: 28,
-    status: 'Active Pro'
-  },
-  {
-    id: 'std-103',
-    name: 'Rishi Sengupta',
-    email: 'rishi.sen@aspirant.rankpilot.io',
-    targetYear: 'JEE 2027',
-    currentPercentile: 99.4,
-    predictedAIR: 230,
-    activeBatch: 'Advanced Mastery Club',
-    testsCompleted: 42,
-    status: 'Ranker Cohort'
-  },
-  {
-    id: 'std-104',
-    name: 'Megha Reddy',
-    email: 'megha.r@aspirant.rankpilot.io',
-    targetYear: 'JEE 2026',
-    currentPercentile: 92.5,
-    predictedAIR: 4200,
-    activeBatch: 'Backlog Buster Sprint',
-    testsCompleted: 19,
-    status: 'Active Pro'
-  }
-];
-
-export const FAQS = [
-  {
-    q: 'How does RankPilot predict my JEE percentile and AIR so accurately?',
-    a: 'RankPilot normalizes your mock performance against official NTA difficulty distributions across 140+ shifts from 2019 to 2026. Our statistical AI model cross-references your speed, accuracy, and negative mark propensity with 500,000+ real exam datasets to forecast your rank with over 98% accuracy.'
-  },
-  {
-    q: 'How do I access the full live Lovable application?',
-    a: 'You can immediately launch the full Lovable RankPilot application by clicking any of the "Launch App (Lovable)" buttons or registering in the Signup portal. The live project is hosted at https://lovable.dev/projects/be7c2e2a-35fa-4b86-92e4-c473232143f0.'
-  },
-  {
-    q: 'Can I write reviews for individual features/tabs?',
-    a: 'Yes! The Reviews section allows you to submit targeted reviews for specific tabs—such as the AI Coach, Deep Analytics, PYQ Mocks, Dynamic Study Planner, or Doubt Solver. Your review will be tagged, stored, and displayed dynamically.'
-  },
-  {
-    q: 'Is RankPilot suitable for both Class 11/12 students and Droppers?',
-    a: 'Absolutely. The AI Coach detects whether you are starting afresh or revising. For Class 11/12 students, it synchronizes with school/coaching topics; for droppers, it activates the "Zero-to-Hero Foundation Reset" to conquer backlogs and high-weightage chapters rapidly.'
+    name: 'Ananya Singhal',
+    airRank: 'Score: 352/390',
+    percentile: 'BITSAT Rank 42',
+    examYear: 'BITSAT',
+    targetInstitute: 'BITS Pilani CS',
+    avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&auto=format&fit=crop&q=80',
+    reviewText: 'The 6+ BITSAT mocks with the bonus question engine taught me how to manage time under 130 rapid-fire questions. Formula sheets and Mind maps were my daily morning ritual.',
+    verifiedBadge: true,
+    highlightStat: 'Top 0.1% in BITSAT'
   }
 ];

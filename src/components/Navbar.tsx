@@ -2,25 +2,27 @@ import React, { useState, useEffect } from 'react';
 import { 
   Rocket, 
   Sparkles, 
-  PlayCircle, 
-  MessageSquareQuote, 
-  Compass, 
-  ExternalLink, 
+  FileCheck2, 
+  BarChart3, 
+  BookOpen, 
+  Award, 
+  Calculator, 
+  ArrowRight, 
   Menu, 
-  X, 
-  Award,
-  ChevronRight
+  X,
+  ExternalLink,
+  ChevronDown
 } from 'lucide-react';
 import { LOVABLE_PROJECT_URL } from '../data/mockData';
 
 interface NavbarProps {
-  onOpenLaunchModal: () => void;
-  onSelectTab: (tabId: string) => void;
+  onSelectTab?: (tabId: string) => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenLaunchModal, onSelectTab }) => {
+export const Navbar: React.FC<NavbarProps> = ({ onSelectTab }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [testSeriesDropdown, setTestSeriesDropdown] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,6 +34,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenLaunchModal, onSelectTab }
 
   const scrollToSection = (id: string) => {
     setMobileMenuOpen(false);
+    setTestSeriesDropdown(false);
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -39,168 +42,229 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenLaunchModal, onSelectTab }
   };
 
   return (
-    <>
+    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-200">
+      {/* MathonGo-style Top Announcement Strip (HelloBar) */}
+      <div className="bg-gradient-to-r from-blue-700 via-indigo-700 to-blue-800 text-white text-xs sm:text-sm py-2 px-4 shadow-sm relative overflow-hidden">
+        <div className="absolute inset-0 bg-white/10 opacity-20 pointer-events-none" />
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-3">
+          <div className="flex items-center gap-2 truncate">
+            <span className="bg-rose-500 text-white font-bold text-[10px] uppercase px-2 py-0.5 rounded tracking-wide animate-pulse">
+              Live Now
+            </span>
+            <span className="font-semibold truncate">
+              JEE Main 2026/2027 Test Series & 120+ Authentic Shift Mocks are Active!
+            </span>
+          </div>
+          <div className="flex items-center gap-3 shrink-0">
+            <span className="hidden md:inline text-blue-100 text-xs font-medium">
+              ⭐ Rated 4.9/5 by 150,000+ JEE & BITSAT Aspirants
+            </span>
+            <a 
+              href={LOVABLE_PROJECT_URL} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="bg-white text-blue-700 hover:bg-blue-50 font-bold px-3 py-1 rounded text-xs transition-colors flex items-center gap-1 shadow-sm"
+            >
+              <span>Enroll Free</span>
+              <ArrowRight className="w-3 h-3" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Bright White Navigation Bar */}
       <nav 
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`transition-all duration-300 ${
           scrolled 
-            ? 'bg-slate-950/85 backdrop-blur-xl border-b border-sky-500/20 py-3 shadow-2xl shadow-sky-950/50' 
-            : 'bg-transparent py-5'
+            ? 'bg-white/95 backdrop-blur-md border-b border-slate-200 py-3 shadow-md' 
+            : 'bg-white border-b border-slate-100 py-4 shadow-sm'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          {/* Brand Logo */}
-          <a 
-            href="#hero" 
-            onClick={(e) => { e.preventDefault(); scrollToSection('hero'); }}
-            className="flex items-center gap-3 group cursor-pointer"
-          >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-500 via-blue-600 to-indigo-600 flex items-center justify-center shadow-lg shadow-sky-500/30 group-hover:scale-105 group-hover:shadow-sky-400/50 transition-all duration-300">
-              <Rocket className="w-5 h-5 text-white" />
-            </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="text-2xl font-black tracking-tight text-white font-display">
-                  Rank<span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-400">Pilot</span>
-                </span>
-                <span className="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/30 flex items-center gap-1">
-                  <Sparkles className="w-2.5 h-2.5" /> AI 2.0
+          
+          {/* Brand Logo & Tag */}
+          <div className="flex items-center gap-3">
+            <a 
+              href="#hero" 
+              onClick={(e) => { e.preventDefault(); scrollToSection('hero'); }}
+              className="flex items-center gap-2.5 group cursor-pointer"
+            >
+              <div className="w-10 h-10 rounded-xl bg-blue-700 flex items-center justify-center text-white shadow-md shadow-blue-500/20 group-hover:bg-blue-800 transition-colors">
+                <Rocket className="w-5 h-5" />
+              </div>
+              <div className="flex flex-col">
+                <div className="flex items-center gap-1.5">
+                  <span className="text-2xl font-black tracking-tight text-slate-900">
+                    Rank<span className="text-blue-700">Pilot</span>
+                  </span>
+                  <span className="px-1.5 py-0.5 rounded text-[10px] font-extrabold uppercase tracking-wide bg-blue-100 text-blue-700 border border-blue-200">
+                    AI
+                  </span>
+                </div>
+                <span className="text-[11px] font-semibold text-slate-500 tracking-tight">
+                  JEE Main • Advanced • BITSAT
                 </span>
               </div>
-              <p className="text-[11px] text-slate-400 font-medium">JEE Main & Advanced AI Co-Pilot</p>
-            </div>
-          </a>
-
-          {/* Desktop Navigation Links */}
-          <div className="hidden lg:flex items-center gap-1 bg-slate-900/60 p-1.5 rounded-full border border-slate-800/80 backdrop-blur-md">
-            <button 
-              onClick={() => scrollToSection('about')}
-              className="px-4 py-1.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-full transition-all flex items-center gap-1.5"
-            >
-              <Compass className="w-4 h-4 text-sky-400" />
-              About
-            </button>
-
-            <button 
-              onClick={() => scrollToSection('tabs-hub')}
-              className="px-4 py-1.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-full transition-all flex items-center gap-1.5"
-            >
-              <Sparkles className="w-4 h-4 text-cyan-400" />
-              Feature Tabs
-            </button>
-
-            <button 
-              onClick={() => scrollToSection('ai-video')}
-              className="px-4 py-1.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-full transition-all flex items-center gap-1.5"
-            >
-              <PlayCircle className="w-4 h-4 text-purple-400" />
-              AI Video Guide
-            </button>
-
-            <button 
-              onClick={() => scrollToSection('reviews')}
-              className="px-4 py-1.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-full transition-all flex items-center gap-1.5"
-            >
-              <MessageSquareQuote className="w-4 h-4 text-amber-400" />
-              Reviews
-            </button>
-
-            <button 
-              onClick={() => scrollToSection('predictor')}
-              className="px-4 py-1.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-full transition-all flex items-center gap-1.5"
-            >
-              <Award className="w-4 h-4 text-emerald-400" />
-              AIR Predictor
-            </button>
-          </div>
-
-          {/* Action CTAs */}
-          <div className="hidden sm:flex items-center gap-3">
-            <button 
-              onClick={onOpenLaunchModal}
-              className="px-4 py-2 text-xs font-semibold text-slate-300 hover:text-white bg-slate-900/80 hover:bg-slate-800/90 rounded-xl border border-slate-700/60 transition-all duration-200"
-            >
-              VIP Demo Access
-            </button>
-
-            <a 
-              href={LOVABLE_PROJECT_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative inline-flex items-center gap-2 px-5 py-2.5 text-xs font-bold text-white rounded-xl bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 hover:from-sky-400 hover:to-indigo-500 shadow-lg shadow-sky-500/25 hover:shadow-sky-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
-            >
-              <span>Launch App</span>
-              <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-              <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-cyan-400 to-indigo-500 opacity-0 group-hover:opacity-30 blur transition duration-300" />
             </a>
           </div>
 
-          {/* Mobile Hamburger Button */}
-          <button 
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 rounded-xl bg-slate-900/80 text-slate-300 hover:text-white border border-slate-800"
-            aria-label="Toggle menu"
-          >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
-        </div>
+          {/* Center Navigation Links (Replacing old features tab with Test Series, Sample Report, Features) */}
+          <div className="hidden lg:flex items-center gap-1">
+            {/* Test Series Tab */}
+            <div className="relative">
+              <button 
+                onClick={() => scrollToSection('test-series')}
+                className="px-3.5 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5"
+              >
+                <FileCheck2 className="w-4 h-4 text-blue-600" />
+                <span>Test Series</span>
+                <span className="bg-amber-100 text-amber-800 text-[10px] font-extrabold px-1.5 py-0.2 rounded-full border border-amber-200">
+                  120+ Mocks
+                </span>
+              </button>
+            </div>
 
-        {/* Mobile Dropdown Menu */}
-        {mobileMenuOpen && (
-          <div className="lg:hidden mt-3 px-4 pt-2 pb-6 bg-slate-950/95 backdrop-blur-2xl border-b border-slate-800/80 space-y-2 animate-in fade-in slide-in-from-top-4 duration-200">
+            {/* Sample Report Tab (Quizrr style) */}
             <button 
-              onClick={() => scrollToSection('about')}
-              className="w-full text-left px-4 py-2.5 rounded-xl text-slate-300 hover:bg-slate-900 flex items-center justify-between text-sm"
+              onClick={() => scrollToSection('sample-report')}
+              className="px-3.5 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5"
             >
-              <span className="flex items-center gap-2.5"><Compass className="w-4 h-4 text-sky-400" /> About RankPilot</span>
-              <ChevronRight className="w-4 h-4 text-slate-600" />
+              <BarChart3 className="w-4 h-4 text-emerald-600" />
+              <span>Sample Report</span>
+              <span className="bg-emerald-100 text-emerald-800 text-[10px] font-extrabold px-1.5 py-0.2 rounded-full border border-emerald-200">
+                Demo
+              </span>
             </button>
 
+            {/* Features Tab (Concept notes, formula sheet, mindmap, AI analysis, doubt solver) */}
             <button 
-              onClick={() => scrollToSection('tabs-hub')}
-              className="w-full text-left px-4 py-2.5 rounded-xl text-slate-300 hover:bg-slate-900 flex items-center justify-between text-sm"
+              onClick={() => scrollToSection('features')}
+              className="px-3.5 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5"
             >
-              <span className="flex items-center gap-2.5"><Sparkles className="w-4 h-4 text-cyan-400" /> All Feature Tabs</span>
-              <ChevronRight className="w-4 h-4 text-slate-600" />
+              <BookOpen className="w-4 h-4 text-indigo-600" />
+              <span>Features & Resources</span>
             </button>
 
+            {/* Percentile Predictor */}
             <button 
-              onClick={() => scrollToSection('ai-video')}
-              className="w-full text-left px-4 py-2.5 rounded-xl text-slate-300 hover:bg-slate-900 flex items-center justify-between text-sm"
+              onClick={() => scrollToSection('predictor')}
+              className="px-3.5 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5"
             >
-              <span className="flex items-center gap-2.5"><PlayCircle className="w-4 h-4 text-purple-400" /> Interactive AI Video</span>
-              <ChevronRight className="w-4 h-4 text-slate-600" />
+              <Calculator className="w-4 h-4 text-sky-600" />
+              <span>AIR Predictor</span>
             </button>
 
+            {/* Results & Reviews */}
             <button 
               onClick={() => scrollToSection('reviews')}
-              className="w-full text-left px-4 py-2.5 rounded-xl text-slate-300 hover:bg-slate-900 flex items-center justify-between text-sm"
+              className="px-3.5 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5"
             >
-              <span className="flex items-center gap-2.5"><MessageSquareQuote className="w-4 h-4 text-amber-400" /> Student Reviews</span>
-              <ChevronRight className="w-4 h-4 text-slate-600" />
+              <Award className="w-4 h-4 text-amber-500" />
+              <span>Toppers & Results</span>
+            </button>
+          </div>
+
+          {/* Right Action CTAs: Sign In & Sign Up for Free (Redirecting to Lovable App) */}
+          <div className="hidden sm:flex items-center gap-3">
+            <a 
+              href={LOVABLE_PROJECT_URL}
+              className="px-4 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 hover:bg-slate-100 rounded-lg transition-colors flex items-center gap-1"
+            >
+              Sign In
+            </a>
+            
+            <a 
+              href={LOVABLE_PROJECT_URL}
+              className="px-5 py-2.5 text-sm font-bold text-white bg-blue-700 hover:bg-blue-800 rounded-lg shadow-md shadow-blue-700/20 hover:shadow-lg transition-all flex items-center gap-1.5"
+            >
+              <span>Sign Up for Free</span>
+              <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
+
+          {/* Mobile menu toggle */}
+          <div className="lg:hidden flex items-center gap-2">
+            <a 
+              href={LOVABLE_PROJECT_URL}
+              className="px-3 py-1.5 text-xs font-bold text-white bg-blue-700 rounded-md"
+            >
+              Sign Up
+            </a>
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-2 text-slate-700 hover:text-blue-700 rounded-md hover:bg-slate-100"
+              aria-label="Toggle navigation menu"
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Navigation Dropdown */}
+        {mobileMenuOpen && (
+          <div className="lg:hidden bg-white border-t border-slate-200 px-4 pt-3 pb-6 space-y-2 shadow-xl animate-in slide-in-from-top duration-200">
+            <button 
+              onClick={() => scrollToSection('test-series')}
+              className="w-full text-left px-3 py-2.5 rounded-lg text-sm font-bold text-slate-800 hover:bg-slate-50 flex items-center justify-between"
+            >
+              <div className="flex items-center gap-2">
+                <FileCheck2 className="w-4 h-4 text-blue-700" />
+                <span>Test Series (120+ Mocks)</span>
+              </div>
+              <span className="text-[10px] bg-blue-100 text-blue-700 font-bold px-2 py-0.5 rounded">
+                JEE & BITSAT
+              </span>
+            </button>
+
+            <button 
+              onClick={() => scrollToSection('sample-report')}
+              className="w-full text-left px-3 py-2.5 rounded-lg text-sm font-bold text-slate-800 hover:bg-slate-50 flex items-center gap-2"
+            >
+              <BarChart3 className="w-4 h-4 text-emerald-600" />
+              <span>Sample Report Demo (Quizrr Style)</span>
+            </button>
+
+            <button 
+              onClick={() => scrollToSection('features')}
+              className="w-full text-left px-3 py-2.5 rounded-lg text-sm font-bold text-slate-800 hover:bg-slate-50 flex items-center gap-2"
+            >
+              <BookOpen className="w-4 h-4 text-indigo-600" />
+              <span>Features: Concept Notes, Formulas, Doubts</span>
             </button>
 
             <button 
               onClick={() => scrollToSection('predictor')}
-              className="w-full text-left px-4 py-2.5 rounded-xl text-slate-300 hover:bg-slate-900 flex items-center justify-between text-sm"
+              className="w-full text-left px-3 py-2.5 rounded-lg text-sm font-bold text-slate-800 hover:bg-slate-50 flex items-center gap-2"
             >
-              <span className="flex items-center gap-2.5"><Award className="w-4 h-4 text-emerald-400" /> Percentile & AIR Predictor</span>
-              <ChevronRight className="w-4 h-4 text-slate-600" />
+              <Calculator className="w-4 h-4 text-sky-600" />
+              <span>Percentile & AIR Predictor</span>
             </button>
 
-            <div className="pt-4 border-t border-slate-800/80 flex flex-col gap-2">
+            <button 
+              onClick={() => scrollToSection('reviews')}
+              className="w-full text-left px-3 py-2.5 rounded-lg text-sm font-bold text-slate-800 hover:bg-slate-50 flex items-center gap-2"
+            >
+              <Award className="w-4 h-4 text-amber-500" />
+              <span>Toppers & Results</span>
+            </button>
+
+            <div className="pt-3 border-t border-slate-100 grid grid-cols-2 gap-2">
               <a 
                 href={LOVABLE_PROJECT_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full py-3 rounded-xl bg-gradient-to-r from-sky-500 to-indigo-600 text-white font-bold text-center text-sm flex items-center justify-center gap-2 shadow-lg shadow-sky-500/25"
+                className="w-full text-center py-2.5 text-sm font-bold text-slate-800 border border-slate-300 rounded-lg hover:bg-slate-50"
               >
-                <span>Launch App (Lovable Project)</span>
-                <ExternalLink className="w-4 h-4" />
+                Sign In
+              </a>
+              <a 
+                href={LOVABLE_PROJECT_URL}
+                className="w-full text-center py-2.5 text-sm font-bold text-white bg-blue-700 rounded-lg hover:bg-blue-800"
+              >
+                Sign Up for Free
               </a>
             </div>
           </div>
         )}
       </nav>
-    </>
+    </header>
   );
 };
