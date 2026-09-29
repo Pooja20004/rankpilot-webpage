@@ -11,7 +11,8 @@ import {
   Menu, 
   X,
   ExternalLink,
-  ChevronDown
+  ChevronDown,
+  Info
 } from 'lucide-react';
 import { LOVABLE_PROJECT_URL } from '../data/mockData';
 
@@ -22,7 +23,6 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ onSelectTab }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [testSeriesDropdown, setTestSeriesDropdown] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,7 +34,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectTab }) => {
 
   const scrollToSection = (id: string) => {
     setMobileMenuOpen(false);
-    setTestSeriesDropdown(false);
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -43,7 +42,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectTab }) => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-200">
-      {/* MathonGo-style Top Announcement Strip (HelloBar) */}
+      {/* Top Announcement Strip */}
       <div className="bg-gradient-to-r from-blue-700 via-indigo-700 to-blue-800 text-white text-xs sm:text-sm py-2 px-4 shadow-sm relative overflow-hidden">
         <div className="absolute inset-0 bg-white/10 opacity-20 pointer-events-none" />
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-3">
@@ -72,17 +71,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectTab }) => {
         </div>
       </div>
 
-      {/* Main Bright White Navigation Bar */}
+      {/* Main Navigation Bar */}
       <nav 
         className={`transition-all duration-300 ${
           scrolled 
-            ? 'bg-white/95 backdrop-blur-md border-b border-slate-200 py-3 shadow-md' 
-            : 'bg-white border-b border-slate-100 py-4 shadow-sm'
+            ? 'bg-white/95 backdrop-blur-md border-b border-slate-200 py-2.5 shadow-md' 
+            : 'bg-white border-b border-slate-100 py-3 shadow-sm'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           
-          {/* Brand Logo & Tag */}
+          {/* Brand Logo & Requested Green Tag */}
           <div className="flex items-center gap-3">
             <a 
               href="#hero" 
@@ -94,77 +93,91 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectTab }) => {
               </div>
               <div className="flex flex-col">
                 <div className="flex items-center gap-1.5">
-                  <span className="text-2xl font-black tracking-tight text-slate-900">
+                  <span className="text-2xl font-black tracking-tight text-slate-900 leading-none">
                     Rank<span className="text-blue-700">Pilot</span>
                   </span>
                   <span className="px-1.5 py-0.5 rounded text-[10px] font-extrabold uppercase tracking-wide bg-blue-100 text-blue-700 border border-blue-200">
                     AI
                   </span>
                 </div>
-                <span className="text-[11px] font-semibold text-slate-500 tracking-tight">
-                  JEE Main • Advanced • BITSAT
-                </span>
+                {/* User Requested: "Ai- powered jee mastery" in small green tag under logo rankpilot */}
+                <div className="mt-1 flex items-center">
+                  <span className="inline-flex items-center px-1.5 py-0.5 rounded-full text-[10px] font-extrabold bg-emerald-100 text-emerald-800 border border-emerald-300 tracking-tight leading-tight">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1 animate-pulse" />
+                    AI-powered JEE Mastery
+                  </span>
+                </div>
               </div>
             </a>
           </div>
 
-          {/* Center Navigation Links (Replacing old features tab with Test Series, Sample Report, Features) */}
+          {/* Center Navigation Links */}
           <div className="hidden lg:flex items-center gap-1">
-            {/* Test Series Tab */}
-            <div className="relative">
-              <button 
-                onClick={() => scrollToSection('test-series')}
-                className="px-3.5 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5"
-              >
-                <FileCheck2 className="w-4 h-4 text-blue-600" />
-                <span>Test Series</span>
-                <span className="bg-amber-100 text-amber-800 text-[10px] font-extrabold px-1.5 py-0.2 rounded-full border border-amber-200">
-                  120+ Mocks
-                </span>
-              </button>
-            </div>
+            {/* About App Tab (Placed before Test Series) */}
+            <button 
+              onClick={() => scrollToSection('about')}
+              className="px-3 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5"
+            >
+              <Info className="w-4 h-4 text-purple-600" />
+              <span>About Platform</span>
+              <span className="bg-purple-100 text-purple-800 text-[10px] font-extrabold px-1.5 py-0.2 rounded-full border border-purple-200">
+                All-in-One
+              </span>
+            </button>
 
-            {/* Sample Report Tab (Quizrr style) */}
+            {/* Test Series Tab */}
+            <button 
+              onClick={() => scrollToSection('test-series')}
+              className="px-3 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5"
+            >
+              <FileCheck2 className="w-4 h-4 text-blue-600" />
+              <span>Test Series</span>
+              <span className="bg-amber-100 text-amber-800 text-[10px] font-extrabold px-1.5 py-0.2 rounded-full border border-amber-200">
+                120+ Mocks
+              </span>
+            </button>
+
+            {/* Sample Report Tab */}
             <button 
               onClick={() => scrollToSection('sample-report')}
-              className="px-3.5 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5"
+              className="px-3 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5"
             >
               <BarChart3 className="w-4 h-4 text-emerald-600" />
               <span>Sample Report</span>
               <span className="bg-emerald-100 text-emerald-800 text-[10px] font-extrabold px-1.5 py-0.2 rounded-full border border-emerald-200">
-                Demo
+                Live Preview
               </span>
             </button>
 
-            {/* Features Tab (Concept notes, formula sheet, mindmap, AI analysis, doubt solver) */}
+            {/* Features Tab */}
             <button 
               onClick={() => scrollToSection('features')}
-              className="px-3.5 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5"
+              className="px-3 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5"
             >
               <BookOpen className="w-4 h-4 text-indigo-600" />
-              <span>Features & Resources</span>
+              <span>Study Resources</span>
             </button>
 
-            {/* Percentile Predictor */}
+            {/* AIR Predictor */}
             <button 
               onClick={() => scrollToSection('predictor')}
-              className="px-3.5 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5"
+              className="px-3 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5"
             >
               <Calculator className="w-4 h-4 text-sky-600" />
               <span>AIR Predictor</span>
             </button>
 
-            {/* Results & Reviews */}
+            {/* Toppers & Results */}
             <button 
               onClick={() => scrollToSection('reviews')}
-              className="px-3.5 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5"
+              className="px-3 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5"
             >
               <Award className="w-4 h-4 text-amber-500" />
-              <span>Toppers & Results</span>
+              <span>Toppers</span>
             </button>
           </div>
 
-          {/* Right Action CTAs: Sign In & Sign Up for Free (Redirecting to Lovable App) */}
+          {/* Right Action CTAs: Sign In & Sign Up for Free */}
           <div className="hidden sm:flex items-center gap-3">
             <a 
               href={LOVABLE_PROJECT_URL}
@@ -204,6 +217,19 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectTab }) => {
         {mobileMenuOpen && (
           <div className="lg:hidden bg-white border-t border-slate-200 px-4 pt-3 pb-6 space-y-2 shadow-xl animate-in slide-in-from-top duration-200">
             <button 
+              onClick={() => scrollToSection('about')}
+              className="w-full text-left px-3 py-2.5 rounded-lg text-sm font-bold text-slate-800 hover:bg-slate-50 flex items-center justify-between"
+            >
+              <div className="flex items-center gap-2">
+                <Info className="w-4 h-4 text-purple-600" />
+                <span>About Platform & App Features</span>
+              </div>
+              <span className="text-[10px] bg-purple-100 text-purple-800 font-bold px-2 py-0.5 rounded">
+                All Included
+              </span>
+            </button>
+
+            <button 
               onClick={() => scrollToSection('test-series')}
               className="w-full text-left px-3 py-2.5 rounded-lg text-sm font-bold text-slate-800 hover:bg-slate-50 flex items-center justify-between"
             >
@@ -221,7 +247,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectTab }) => {
               className="w-full text-left px-3 py-2.5 rounded-lg text-sm font-bold text-slate-800 hover:bg-slate-50 flex items-center gap-2"
             >
               <BarChart3 className="w-4 h-4 text-emerald-600" />
-              <span>Sample Report Demo (Quizrr Style)</span>
+              <span>RankPilot Mock Test Report</span>
             </button>
 
             <button 
@@ -229,7 +255,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectTab }) => {
               className="w-full text-left px-3 py-2.5 rounded-lg text-sm font-bold text-slate-800 hover:bg-slate-50 flex items-center gap-2"
             >
               <BookOpen className="w-4 h-4 text-indigo-600" />
-              <span>Features: Concept Notes, Formulas, Doubts</span>
+              <span>Concept Notes, Formulas & Multilingual Doubts</span>
             </button>
 
             <button 

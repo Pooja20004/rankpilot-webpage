@@ -198,7 +198,7 @@ export const TestSeriesSection: React.FC = () => {
                   href="#sample-report"
                   className="px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm border border-white/20 transition-all flex items-center gap-2"
                 >
-                  <span>See Sample 15-Page Report</span>
+                  <span>View Mock Test Report</span>
                   <ChevronRight className="w-4 h-4" />
                 </a>
               </div>

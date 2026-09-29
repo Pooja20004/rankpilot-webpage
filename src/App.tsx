@@ -1,12 +1,12 @@
 import React from 'react';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
+import { AboutSection } from './components/AboutSection';
 import { TestSeriesSection } from './components/TestSeriesSection';
 import { SampleReportSection } from './components/SampleReportSection';
 import { StudyFeaturesSection } from './components/StudyFeaturesSection';
 import { RankPredictor } from './components/RankPredictor';
 import { ReviewsSection } from './components/ReviewsSection';
-import { AboutSection } from './components/AboutSection';
 import { SignupSection } from './components/SignupSection';
 import { FaqSection } from './components/FaqSection';
 import { Footer } from './components/Footer';
@@ -28,27 +28,28 @@ export function App() {
       <main className="flex-1">
         {/* Hero Section with Bright Slogans, Keywords & Students beside IIT campus */}
         <HeroSection 
+          onExploreAbout={() => scrollToSection('about')}
           onExploreTestSeries={() => scrollToSection('test-series')}
           onExploreReport={() => scrollToSection('sample-report')}
         />
 
-        {/* 1. Test Series Tab Section: 120+ JEE Main, 40+ Advanced (19 yrs), 6+ BITSAT */}
+        {/* 1. About Section: Placed BEFORE Test Series, highlighting all 8 platform pillars */}
+        <AboutSection />
+
+        {/* 2. Test Series Section: 120+ JEE Main, 40+ Advanced (19 yrs), 10+ BITSAT */}
         <TestSeriesSection />
 
-        {/* 2. Sample Report Tab Section (Quizrr Style Demo from app.quizrr.in/analysis-demo) */}
+        {/* 3. Sample Report Section: Official RankPilot Mock Test Report & 5-Test Consolidated Analytics */}
         <SampleReportSection />
 
-        {/* 3. Features Tab Section: Concept notes, formula sheet, mindmap, ai analysis, doubt solver */}
+        {/* 4. Study Features Section: Concept notes, formula sheet, mindmap, ai analysis, multilingual doubt solver */}
         <StudyFeaturesSection />
 
-        {/* 4. Live Marks vs Percentile & AIR Predictor Widget */}
+        {/* 5. Live Marks vs Percentile & AIR Predictor Widget */}
         <RankPredictor />
 
-        {/* 5. Verified Toppers & Results (MathonGo Wall of Fame) */}
+        {/* 6. Verified Toppers & Results */}
         <ReviewsSection />
-
-        {/* 6. AI Diagnostic Architecture & Comparison */}
-        <AboutSection />
 
         {/* 7. Direct Lovable Launch & Free Signup Portal */}
         <SignupSection />

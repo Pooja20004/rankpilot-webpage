@@ -12,24 +12,28 @@ import {
   GraduationCap,
   ExternalLink,
   ChevronRight,
-  TrendingUp
+  TrendingUp,
+  Info,
+  BookOpen
 } from 'lucide-react';
 import { LOVABLE_PROJECT_URL } from '../data/mockData';
 
 interface HeroSectionProps {
+  onExploreAbout?: () => void;
   onExploreTestSeries?: () => void;
   onExploreReport?: () => void;
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ 
+  onExploreAbout,
   onExploreTestSeries, 
   onExploreReport 
 }) => {
   return (
-    <section id="hero" className="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-b from-blue-50/60 via-white to-slate-50/50 overflow-hidden">
+    <section id="hero" className="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-b from-blue-50/70 via-white to-slate-50/60 overflow-hidden">
       
       {/* Background Accent Gradients & Geometric Grid */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-b from-blue-100/40 via-sky-50/20 to-transparent blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-b from-blue-100/50 via-sky-50/30 to-transparent blur-3xl pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] opacity-60 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -43,21 +47,21 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           </div>
         </div>
 
-        {/* Hero Grid: Left Content (Slogans, Keywords, CTAs) + Right Visual (IIT Campus Students) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        {/* Hero Grid: Left Content (Slogans, Keywords, CTAs) + Right Bold Visual */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           {/* Left Column: Slogans & Keywords */}
-          <div className="lg:col-span-7 text-center lg:text-left space-y-6">
+          <div className="lg:col-span-6 text-center lg:text-left space-y-6">
             
             {/* Primary Slogan 1: "Your Success Starts Here" */}
             <div className="inline-block">
-              <span className="text-sm sm:text-base font-extrabold uppercase tracking-widest text-blue-700 bg-blue-100/80 px-3.5 py-1 rounded-md border border-blue-200/80">
+              <span className="text-sm sm:text-base font-black uppercase tracking-widest text-blue-700 bg-blue-100/90 px-4 py-1.5 rounded-lg border border-blue-300 shadow-sm">
                 ✨ Your Success Starts Here
               </span>
             </div>
 
             {/* Primary Slogan 2 & SEO Keywords */}
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.15]">
+            <h1 className="text-3xl sm:text-5xl lg:text-[3.4rem] font-black text-slate-900 tracking-tight leading-[1.12]">
               India’s Number One Trustable Platform for{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-indigo-600 to-blue-800">
                 JEE Mains, JEE Advanced & BITSAT
@@ -67,7 +71,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             {/* Keyword Rich Sub-description */}
             <p className="text-base sm:text-lg text-slate-600 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0">
               Prepare with India’s most authentic <strong className="text-slate-900 font-bold">NTA CBT Test Series</strong>. 
-              Master <span className="font-semibold text-blue-700">120+ JEE Mains PYQ Mocks</span>, <span className="font-semibold text-indigo-700">40+ JEE Advanced PYQ Tests (last 19 years)</span>, and <span className="font-semibold text-emerald-700">6+ BITSAT Mocks</span> with predictive AIR analytics and instant 24/7 AI doubt resolution.
+              Master <span className="font-semibold text-blue-700">120+ JEE Mains PYQ Mocks</span>, <span className="font-semibold text-indigo-700">40+ JEE Advanced PYQ Tests (last 19 years)</span>, and <span className="font-semibold text-emerald-700">10+ BITSAT Mocks</span> with predictive AIR analytics, multilingual doubts, and consolidated 5-test performance tracking.
             </p>
 
             {/* Two Action Buttons Directly Below the Slogan (Both Redirecting to the Project Link) */}
@@ -91,19 +95,23 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               </a>
             </div>
 
-            {/* Fast Navigation Quick Links */}
+            {/* Fast Navigation Quick Links (Quizrr references completely removed) */}
             <div className="pt-3 flex flex-wrap items-center justify-center lg:justify-start gap-4 text-xs font-semibold text-slate-500">
-              <span>Quick Access:</span>
+              <span className="font-bold text-slate-700">Quick Access:</span>
+              <a href="#about" className="text-purple-700 hover:underline flex items-center gap-1 font-bold">
+                <Info className="w-3.5 h-3.5" /> What’s Included in App
+              </a>
+              <span className="text-slate-300">•</span>
               <a href="#test-series" className="text-blue-700 hover:underline flex items-center gap-1">
-                <FileCheck2 className="w-3.5 h-3.5" /> 120+ Mocks Included
+                <FileCheck2 className="w-3.5 h-3.5" /> 120+ Mocks
               </a>
               <span className="text-slate-300">•</span>
               <a href="#sample-report" className="text-emerald-700 hover:underline flex items-center gap-1">
-                <TrendingUp className="w-3.5 h-3.5" /> Sample Quizrr Report
+                <TrendingUp className="w-3.5 h-3.5" /> Sample Test Report
               </a>
               <span className="text-slate-300">•</span>
               <a href="#features" className="text-indigo-700 hover:underline flex items-center gap-1">
-                <Sparkles className="w-3.5 h-3.5" /> Concept Notes & Formulas
+                <BookOpen className="w-3.5 h-3.5" /> Concept Notes & Multilingual Doubts
               </a>
             </div>
 
@@ -118,61 +126,62 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 <div className="text-xs sm:text-sm font-semibold text-slate-500">JEE Advanced PYQs</div>
               </div>
               <div className="text-center lg:text-left">
-                <div className="text-2xl sm:text-3xl font-black text-emerald-600">99.8%</div>
-                <div className="text-xs sm:text-sm font-semibold text-slate-500">NTA Simulation Accuracy</div>
+                <div className="text-2xl sm:text-3xl font-black text-emerald-600">10+</div>
+                <div className="text-xs sm:text-sm font-semibold text-slate-500">BITSAT Mocks</div>
               </div>
             </div>
 
           </div>
 
-          {/* Right Column: Hero Visual with Students beside IIT Campus */}
-          <div className="lg:col-span-5 relative">
-            <div className="relative mx-auto max-w-md lg:max-w-none">
+          {/* Right Column: Hero Visual with Students beside IIT Campus (Increased Boldly in Size) */}
+          <div className="lg:col-span-6 relative">
+            <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
               
-              {/* Main Image Frame with Students beside IIT Campus */}
-              <div className="relative rounded-2xl overflow-hidden border-4 border-white shadow-2xl shadow-slate-300/60 bg-white">
+              {/* Main Image Frame (Boldly Enlarged, Prominent Shadows & Borders) */}
+              <div className="relative rounded-3xl overflow-hidden border-4 border-white shadow-2xl shadow-blue-900/15 bg-white ring-1 ring-slate-200/80">
                 <img 
                   src="/iit_students_hero.jpg" 
                   alt="Proud Indian Engineering Students beside IIT Delhi Campus" 
-                  className="w-full h-[420px] object-cover object-center transform hover:scale-105 transition-transform duration-700"
+                  className="w-full h-[480px] sm:h-[540px] lg:h-[580px] object-cover object-top transform hover:scale-105 transition-transform duration-700"
                 />
                 
-                {/* Floating Overlay Badge: IIT Dream Tag */}
-                <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-slate-200/80 shadow-md flex items-center gap-2">
-                  <GraduationCap className="w-4 h-4 text-blue-700" />
-                  <span className="text-xs font-black text-slate-900">IIT Bombay & Delhi Aspirants</span>
+                {/* Floating Top Badge: IIT Dream Tag */}
+                <div className="absolute top-5 left-5 bg-white/95 backdrop-blur-md px-4 py-2 rounded-full border border-slate-200/90 shadow-lg flex items-center gap-2">
+                  <GraduationCap className="w-5 h-5 text-blue-700" />
+                  <span className="text-xs sm:text-sm font-black text-slate-900">IIT Bombay & Delhi Aspirants</span>
                 </div>
 
                 {/* Floating Bottom Card: Real Student Success */}
-                <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md rounded-xl p-3.5 border border-slate-200 shadow-lg flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 font-extrabold text-sm">
+                <div className="absolute bottom-5 left-5 right-5 bg-white/95 backdrop-blur-md rounded-2xl p-4 border border-slate-200/90 shadow-xl flex items-center justify-between">
+                  <div className="flex items-center gap-3.5">
+                    <div className="w-12 h-12 rounded-xl bg-emerald-100 flex items-center justify-center text-emerald-800 font-black text-base shadow-sm">
                       99+
                     </div>
                     <div>
-                      <div className="text-xs font-bold text-slate-900">1,400+ Students with 99+ %ile</div>
-                      <div className="text-[11px] text-slate-500 font-medium">RankPilot Test Series 2024-2025</div>
+                      <div className="text-sm font-black text-slate-900">1,400+ Students with 99+ %ile</div>
+                      <div className="text-xs text-slate-500 font-semibold">RankPilot AI Preparation 2024-2026</div>
                     </div>
                   </div>
-                  <div className="flex text-amber-400 text-xs">
-                    {'★★★★★'}
+                  <div className="hidden sm:flex flex-col items-end">
+                    <span className="text-amber-500 font-black text-sm">★★★★★</span>
+                    <span className="text-[10px] font-bold text-slate-400">Verified Results</span>
                   </div>
                 </div>
               </div>
 
               {/* Floating Decorative Badges around image */}
-              <div className="hidden sm:flex absolute -top-5 -right-5 bg-blue-700 text-white p-3 rounded-xl shadow-xl flex-col items-center justify-center border-2 border-white">
-                <span className="text-xs font-bold uppercase tracking-wider text-blue-200">All In One</span>
+              <div className="hidden sm:flex absolute -top-4 -right-4 bg-blue-700 text-white p-3.5 rounded-2xl shadow-xl flex-col items-center justify-center border-2 border-white">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-blue-200">All In One</span>
                 <span className="text-sm font-black">JEE & BITSAT</span>
               </div>
 
-              <div className="hidden sm:flex absolute -bottom-5 -left-5 bg-white p-3 rounded-xl shadow-xl border border-slate-200 items-center gap-2.5">
-                <div className="w-8 h-8 rounded-lg bg-emerald-500 text-white flex items-center justify-center">
-                  <ShieldCheck className="w-5 h-5" />
+              <div className="hidden sm:flex absolute -bottom-4 -left-4 bg-white p-3.5 rounded-2xl shadow-xl border border-slate-200 items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-emerald-500 text-white flex items-center justify-center">
+                  <ShieldCheck className="w-6 h-6" />
                 </div>
                 <div>
-                  <div className="text-xs font-black text-slate-900">100% NTA Pattern</div>
-                  <div className="text-[10px] text-slate-500 font-semibold">Latest Numerical Scheme</div>
+                  <div className="text-xs font-black text-slate-900">100% NTA CBT Pattern</div>
+                  <div className="text-[11px] text-slate-500 font-semibold">Latest Numerical Scheme</div>
                 </div>
               </div>
 

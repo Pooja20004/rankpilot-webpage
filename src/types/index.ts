@@ -1,4 +1,5 @@
 export type MainNavTab = 
+  | 'about'
   | 'test-series' 
   | 'sample-report' 
   | 'features' 
@@ -53,7 +54,7 @@ export interface SubjectReportMetric {
   weakTopics: string[];
 }
 
-export interface QuizrrSampleReport {
+export interface RankPilotSampleReport {
   testTitle: string;
   dateAttempted: string;
   candidateName: string;
@@ -67,10 +68,16 @@ export interface QuizrrSampleReport {
   overallAccuracy: number;
   totalTimeMin: number;
   allottedTimeMin: number;
-  negativeMarksLost: number;
-  sillyMistakesCount: number;
   subjects: SubjectReportMetric[];
   questions: SampleQuestionAnalysis[];
+  lastFiveTestsSummary?: {
+    testNames: string[];
+    scores: number[];
+    accuracies: number[];
+    weakAreasIdentified: string[];
+    strongAreasIdentified: string[];
+    scoreGrowth: string;
+  };
 }
 
 export interface StudyFeature {
@@ -95,4 +102,15 @@ export interface StudentReview {
   reviewText: string;
   verifiedBadge: boolean;
   highlightStat: string;
+}
+
+export interface AppHighlight {
+  id: string;
+  title: string;
+  badge: string;
+  subtitle: string;
+  description: string;
+  icon: string;
+  gradient: string;
+  keyPoints: string[];
 }

@@ -13,15 +13,15 @@ const FAQS = [
   },
   {
     q: 'Are BITSAT mock tests included with the 130-question and bonus question format?',
-    a: 'Yes! The 6+ BITSAT mocks simulate the 130-question test across Physics, Chemistry, Math, English Proficiency, and Logical Reasoning, and include the official 12 bonus question unlocking engine when all 130 questions are attempted.'
+    a: 'Yes! The 10+ BITSAT mocks simulate the 130-question test across Physics, Chemistry, Math, English Proficiency, and Logical Reasoning, and include the official 12 bonus question unlocking engine when all 130 questions are attempted.'
   },
   {
-    q: 'What makes the Sample Report (Quizrr standard) so powerful?',
-    a: 'Unlike generic test series that just give a score, our 15-page diagnostic analysis separates silly calculation mistakes from conceptual blind spots, calculates time spent per question, flags painful time-wasting questions, and predicts your All India Rank (AIR).'
+    q: 'How do the individual and 5-test consolidated reports help me?',
+    a: 'Unlike generic test series that just give a single score, RankPilot generates an instant diagnostic breakdown after every mock test plus a consolidated report for your last five tests to spot recurring error patterns, track accuracy improvements, and eliminate marks leakage.'
   },
   {
     q: 'What study resources are included in the Features tab?',
-    a: 'You get 5 core smart tools: (1) High-yield Concept Notes covering all 92 chapters, (2) Formula Cheat Sheets with standard integrals and equations, (3) Visual Mind Maps for rapid chapter recall, (4) AI Analysis for personalized diagnostic tracking, and (5) 24/7 AI Doubt Solver with step-by-step derivations.'
+    a: 'You get 5 core smart tools: (1) High-yield Concept Notes covering all 92 chapters, (2) Formula Cheat Sheets with standard integrals and equations, (3) Visual Mind Maps for rapid chapter recall, (4) AI Analysis for personalized diagnostic tracking, and (5) Multilingual 24/7 AI Doubt Solver in Tamil, English, Hindi, Telugu, and Kannada.'
   },
   {
     q: 'Where do the "Sign Up for Free" and "Sign In" buttons lead?',
@@ -49,7 +49,7 @@ export const FaqSection: React.FC = () => {
             Everything You Need To Know
           </h2>
           <p className="text-slate-600 text-sm sm:text-base font-medium">
-            Answers to common questions about RankPilot's Test Series, 15-page Quizrr reports, and study resources.
+            Answers to common questions about RankPilot's Test Series, individual & 5-test consolidated reports, and study resources.
           </p>
         </div>
 

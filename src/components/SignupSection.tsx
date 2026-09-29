@@ -46,7 +46,7 @@ export const SignupSection: React.FC = () => {
               Launch RankPilot & Secure Your Top Rank
             </h2>
             <p className="text-slate-600 text-sm sm:text-base font-medium">
-              Join 150,000+ ambitious JEE and BITSAT aspirants. Access 120+ shift mocks, 15-page diagnostic reports, formula sheets, and 24/7 AI doubt clarity.
+              Join 150,000+ ambitious JEE and BITSAT aspirants. Access 120+ shift mocks, individual & 5-test consolidated reports, formula sheets, and multilingual AI doubt clarity.
             </p>
           </div>
 
@@ -85,7 +85,7 @@ export const SignupSection: React.FC = () => {
                     </div>
                     <div className="flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                      <span>6+ BITSAT Mocks + Bonus Engine</span>
+                      <span>10+ BITSAT Mocks + Bonus Engine</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-emerald-600" />

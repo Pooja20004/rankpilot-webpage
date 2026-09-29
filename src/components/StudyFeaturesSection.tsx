@@ -229,7 +229,7 @@ export const StudyFeaturesSection: React.FC = () => {
                 <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-sm space-y-4">
                   <div className="flex items-center justify-between pb-3 border-b border-slate-100">
                     <span className="text-xs font-black text-slate-900 uppercase">Diagnostic Performance Engine</span>
-                    <span className="text-[11px] font-bold text-blue-700">15-Page Deep Dive</span>
+                    <span className="text-[11px] font-bold text-blue-700">Deep Diagnostic Analytics</span>
                   </div>
                   <div className="space-y-3">
                     {activeFeature.sampleData.metrics.map((m: any, i: number) => (
