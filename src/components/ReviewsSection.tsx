@@ -39,7 +39,7 @@ export const ReviewsSection: React.FC = () => {
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight">
-            Loved By 150,000+ JEE & BITSAT Rankers
+            Loved by JEE and BITSAT Rankers
           </h2>
 
           <p className="text-base text-slate-600 font-medium">
@@ -47,14 +47,8 @@ export const ReviewsSection: React.FC = () => {
           </p>
         </div>
 
-        {/* 3 Prominent Stat Badges */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
-          <div className="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm text-center space-y-1">
-            <div className="text-3xl sm:text-4xl font-black text-blue-700">1,400+</div>
-            <div className="text-xs sm:text-sm font-bold text-slate-800">Scored 99+ Percentile in 2024-2025</div>
-            <div className="text-[11px] text-slate-500 font-medium">Verified JEE Main & Adv Candidates</div>
-          </div>
-
+        {/* 2 Prominent Stat Badges */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 max-w-2xl mx-auto gap-6 mb-12">
           <div className="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm text-center space-y-1">
             <div className="text-3xl sm:text-4xl font-black text-emerald-600">+38 Marks</div>
             <div className="text-xs sm:text-sm font-bold text-slate-800">Average Score Growth</div>

@@ -8,9 +8,10 @@ import {
   BookOpen, 
   ArrowUp,
   FileCheck2,
-  BarChart3
+  BarChart3,
+  Mail
 } from 'lucide-react';
-import { LOVABLE_PROJECT_URL } from '../data/mockData';
+import { LOVABLE_PROJECT_URL, CONTACT_EMAIL } from '../data/mockData';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -98,6 +99,29 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
+        </div>
+
+        {/* Contact Support Banner Bar */}
+        <div className="p-6 sm:p-7 rounded-2xl bg-slate-800/90 border border-slate-700/80 flex flex-col md:flex-row items-center justify-between gap-5">
+          <div className="flex items-center gap-3.5 text-left">
+            <div className="w-11 h-11 rounded-xl bg-blue-600/20 text-blue-400 border border-blue-500/30 flex items-center justify-center shrink-0">
+              <Mail className="w-5 h-5" />
+            </div>
+            <div>
+              <div className="text-white font-black text-sm">Official Inquiries & Support Desk</div>
+              <div className="text-slate-400 text-xs mt-0.5">
+                Have questions regarding test series, score analytics, or institution access? Reach our direct team:
+              </div>
+            </div>
+          </div>
+
+          <a 
+            href={`mailto:${CONTACT_EMAIL}`}
+            className="px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-black text-xs sm:text-sm transition-all flex items-center gap-2 shadow-lg shadow-blue-600/25 shrink-0"
+          >
+            <Mail className="w-4 h-4" />
+            <span>{CONTACT_EMAIL}</span>
+          </a>
         </div>
 
         {/* Bottom Strip */}

@@ -7,15 +7,16 @@ import {
 } from '../types';
 
 export const LOVABLE_PROJECT_URL = 'https://jee-rankpilot.lovable.app';
+export const CONTACT_EMAIL = 'cognisecsolutions@gmail.com';
 
 // ----------------------------------------------------
-// TEST SERIES DATA (Exact User Specification)
+// TEST SERIES DATA (User Specified Edits)
 // ----------------------------------------------------
 export const TEST_SERIES_COLLECTION: TestSeriesCard[] = [
   {
     id: 'jee-main',
     exam: 'JEE Main',
-    title: 'JEE Main Master Test Series (2026-2027)',
+    title: 'JEE Main Master Test Series',
     tagline: '120+ Authentic NTA Shift Papers Converted Into Timed Full-Length Mocks',
     pyqCountBadge: '120+ JEE Main PYQs as Mocks',
     coverage: 'All Shifts from 2019 to 2026 (January & April Sessions)',
@@ -25,9 +26,8 @@ export const TEST_SERIES_COLLECTION: TestSeriesCard[] = [
     patternNotice: 'Exact NTA CBT User Interface with Section A (20 MCQs) & Section B (Numerical Value Questions)',
     features: [
       '120+ JEE Main PYQs as timed computer-based mocks with real NTA countdown timer',
-      'Accurate percentile prediction based on 500,000+ actual student exam data points',
-      'Shift-wise normalization factor calculation & difficulty-adjusted All India Rank',
-      'Detailed video & text solutions for all Physics, Chemistry & Math questions',
+      'Full coverage of Section A (20 MCQs) & Section B (Numerical Value Questions)',
+      'Detailed text solutions for all physics ,chemistry and math questions',
       'Instant negative marking tracker & silly mistake penalty analysis'
     ]
   },
@@ -46,7 +46,7 @@ export const TEST_SERIES_COLLECTION: TestSeriesCard[] = [
       '40+ JEE Advanced PYQ mock tests spanning the last 19 years of IIT entrance history',
       'Paper 1 & Paper 2 authentic dual-shift simulation with strict partial marking logic',
       'Deep conceptual grading distinguishing foundational gaps from calculation fatigue',
-      'Step-by-step alternative solution approaches (IITian shortcuts & calculus bypasses)',
+      'Detailed text solutions for all physics ,chemistry and math questions',
       'Benchmark comparison against previous years IIT Bombay & IIT Delhi branch cutoffs'
     ]
   },
@@ -66,7 +66,7 @@ export const TEST_SERIES_COLLECTION: TestSeriesCard[] = [
       'Comprehensive coverage of English Proficiency and Logical Reasoning sections',
       'Real-time speed index calculation: time per question benchmark (under 80 seconds target)',
       'Bonus question unlocking simulator for top scorers aiming for 330+ marks',
-      'Branch prediction for BITS Pilani, Goa, and Hyderabad campuses'
+      'Detailed text solutions for all physics ,chemistry and math questions'
     ]
   }
 ];
@@ -147,37 +147,6 @@ export const RANKPILOT_SAMPLE_REPORT: RankPilotSampleReport = {
       correctAnswer: 0,
       difficulty: 'Easy',
       explanation: 'Since potentiometer balance length is directly proportional to potential drop across the wire: E1 = k * 60, and (E1 + E2) = k * 80. Thus (E1 + E2) / E1 = 80/60 = 4/3 => 1 + (E2/E1) = 4/3 => E2/E1 = 1/3 => E1 : E2 = 3 : 1.'
-    },
-    {
-      qNum: 2,
-      subject: 'Mathematics',
-      topic: 'Complex Numbers',
-      status: 'incorrect',
-      timeSpentSec: 45,
-      idealTimeSec: 150,
-      isSillyMistake: true,
-      questionText: 'Let z be a complex number such that |z - 2| + |z + 2| = 6. What is the maximum value of |z|?',
-      formulaOrLatex: '\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1 \\quad \\text{with } 2a = 6, 2ae = 4',
-      options: ['3', '√5', '2', '4'],
-      studentAnswer: 1,
-      correctAnswer: 0,
-      difficulty: 'Moderate',
-      explanation: 'The locus of z is an ellipse with foci at (±2, 0) and major axis 2a = 6 => a = 3, b = √(a² - c²) = √(9 - 4) = √5. The maximum distance of a point on the ellipse from the origin is the semi-major axis a = 3.'
-    },
-    {
-      qNum: 3,
-      subject: 'Chemistry',
-      topic: 'Coordination Compounds',
-      status: 'correct',
-      timeSpentSec: 20,
-      idealTimeSec: 60,
-      questionText: 'Which of the following complex ions is diamagnetic and possesses an inner orbital octahedral hybridization (d²sp³)?',
-      formulaOrLatex: '[\\text{Co}(\\text{NH}_3)_6]^{3+} \\quad (3d^6, t_{2g}^6 e_g^0)',
-      options: ['[Co(NH3)6]³⁺', '[CoF6]³⁻', '[Ni(NH3)6]²⁺', '[Fe(H2O)6]³⁺'],
-      studentAnswer: 0,
-      correctAnswer: 0,
-      difficulty: 'Easy',
-      explanation: 'Co³⁺ has configuration 3d⁶. NH₃ behaves as a strong field ligand for Co³⁺, causing pairing of electrons in t2g orbitals giving t2g⁶ eg⁰ (0 unpaired electrons = diamagnetic). Hybridization is d²sp³.'
     }
   ],
   lastFiveTestsSummary: {
@@ -199,13 +168,13 @@ export const APP_FEATURE_HIGHLIGHTS: AppHighlight[] = [
     title: '120+ JEE Mains Mocks',
     badge: 'NTA CBT Environment',
     subtitle: 'Every shift from 2019 to 2026 converted to real mocks',
-    description: 'Experience real exam hall conditions with timer, Section A (MCQ) & Section B (Numerical Value Questions), negative marking, and difficulty-normalized percentile calculation.',
+    description: 'Experience real exam hall conditions with timer, Section A (MCQ) & Section B (Numerical Value Questions), negative marking, and detailed text solutions for all physics, chemistry and math questions.',
     icon: 'FileCheck2',
     gradient: 'from-blue-600 to-indigo-600',
     keyPoints: [
       '120+ Full-length shift papers with official answer keys',
       'Realistic computer test interface with question palette',
-      'Instant percentile calibrated against 500,000+ candidates'
+      'Detailed text solutions for all physics, chemistry and math questions'
     ]
   },
   {
@@ -219,7 +188,7 @@ export const APP_FEATURE_HIGHLIGHTS: AppHighlight[] = [
     keyPoints: [
       '19 consecutive years of Paper 1 and Paper 2 solved tests',
       'Strict multi-correct partial and negative marking logic',
-      'Benchmark comparison against previous IIT Bombay/Delhi cutoffs'
+      'Detailed text solutions for all physics, chemistry and math questions'
     ]
   },
   {
@@ -233,7 +202,7 @@ export const APP_FEATURE_HIGHLIGHTS: AppHighlight[] = [
     keyPoints: [
       '10+ Full-length speed mocks matching BITS Pilani pattern',
       '12 Bonus questions trigger when all 130 questions are attempted',
-      'Speed index: time-per-question tracker under 80 seconds target'
+      'Detailed text solutions for all physics, chemistry and math questions'
     ]
   },
   {
@@ -297,13 +266,13 @@ export const APP_FEATURE_HIGHLIGHTS: AppHighlight[] = [
     title: 'All-India Leaderboard & 24/7 Helpdesk',
     badge: 'Community & Support',
     subtitle: 'Benchmark against top rankers with dedicated mentor support',
-    description: 'Compete on the live national leaderboard alongside 150,000+ serious aspirants and access our dedicated helpdesk whenever you need guidance or technical help.',
+    description: 'Compete on the live national leaderboard alongside serious aspirants and access our dedicated helpdesk whenever you need guidance or technical help.',
     icon: 'Users',
     gradient: 'from-emerald-700 to-blue-700',
     keyPoints: [
       'Live All-India percentile leaderboards updated after every mock',
       'Subject pods with top 1% peer rankers',
-      '24/7 dedicated helpdesk for student queries and test guidance'
+      'Dedicated helpdesk at cognisecsolutions@gmail.com for student queries'
     ]
   }
 ];
@@ -325,11 +294,9 @@ export const STUDY_FEATURES_LIST: StudyFeature[] = [
       'Step-by-step graphical derivations with visual intuition'
     ],
     sampleData: {
-      chapters: [
-        { name: 'Rotational Motion', subject: 'Physics', pages: '6 Pages', readTime: '15 mins', keyTopics: ['Parallel Axis Theorem', 'Rolling Without Slipping', 'Toppling Condition'] },
-        { name: 'Coordination Chemistry', subject: 'Chemistry', pages: '5 Pages', readTime: '12 mins', keyTopics: ['Crystal Field Splitting (CFT)', 'Isomerism Rules', 'Jahn-Teller Distortion'] },
-        { name: 'Definite Integration', subject: 'Math', pages: '4 Pages', readTime: '10 mins', keyTopics: ['King & Queen Properties', 'Leibnitz Rule of Differentiation', 'Wallis Formula'] }
-      ]
+      imagePreview: '/concept_notes_preview.png',
+      chapter: 'Wave Optics (Physics · Class 12)',
+      concepts: ['Huygens Principle (Section 10.2)', 'Coherent and Incoherent Addition', 'Young’s Double Slit Experiment', 'Diffraction', 'Polarization']
     }
   },
   {
@@ -380,13 +347,13 @@ export const STUDY_FEATURES_LIST: StudyFeature[] = [
     id: 'ai-analysis',
     title: 'AI Analysis',
     tagline: 'Deep Diagnostic Engine Decoding Every Second & Silly Mistake',
-    shortDesc: 'Calibrated against 500,000+ real student papers to detect why you lose marks. Separates lack of speed from conceptual blind spots and predicts true AIR.',
+    shortDesc: 'Detects why you lose marks by separating lack of speed from conceptual blind spots, predicting your true AIR.',
     badge: 'Rank Decider',
     iconName: 'BarChart2',
     keyHighlights: [
       'Silly mistake classifier: isolates sign errors, calculation rushes & misread questions',
       'Time-management speed quadrant: flags "time-trap" questions where you spent >3.5 minutes',
-      'Predictive AIR calibrated using NTA shift normalization statistics'
+      'Predictive AIR calibrated using official NTA exam patterns'
     ],
     sampleData: {
       metrics: [

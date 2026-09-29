@@ -40,7 +40,7 @@ export const TestSeriesSection: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-14">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-bold uppercase tracking-wider">
             <Flame className="w-4 h-4 text-blue-600" />
-            <span>National Test Series 2026 - 2027</span>
+            <span>National Test Series</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight">
@@ -56,7 +56,7 @@ export const TestSeriesSection: React.FC = () => {
           </div>
 
           <p className="text-base text-slate-600 font-medium">
-            Practice in the exact NTA computer-based exam environment with authentic previous years' questions, detailed video/text analysis, and predictive All India Ranks.
+            Practice in the exact NTA computer-based exam environment with authentic previous years' questions, detailed text solutions for all physics ,chemistry and math questions, and predictive All India Ranks.
           </p>
         </div>
 
@@ -79,7 +79,7 @@ export const TestSeriesSection: React.FC = () => {
           </div>
         </div>
 
-        {/* 3 Core Cards (JEE Main 120+, JEE Adv 40+ 19 yrs, BITSAT 6+) */}
+        {/* 3 Core Cards (JEE Main 120+, JEE Adv 40+ 19 yrs, BITSAT 10+) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {filteredSeries.map((item) => (
             <div 
