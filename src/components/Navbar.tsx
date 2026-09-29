@@ -56,7 +56,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectTab }) => {
           </div>
           <div className="flex items-center gap-3 shrink-0">
             <span className="hidden md:inline text-blue-100 text-xs font-medium">
-              ⭐ Rated 4.9/5 by 150,000+ JEE & BITSAT Aspirants
+              ⭐ Rated 4.9/5 by JEE & BITSAT Aspirants
             </span>
             <a 
               href={LOVABLE_PROJECT_URL} 

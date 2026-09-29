@@ -51,7 +51,7 @@ export const SignupSection: React.FC = () => {
               Launch RankPilot & Secure Your Top Rank
             </h2>
             <p className="text-slate-600 text-sm sm:text-base font-medium">
-              Join 150,000+ ambitious JEE and BITSAT aspirants. Access 120+ shift mocks, individual & 5-test consolidated reports, formula sheets, and multilingual AI doubt clarity.
+              Join with aspirants. Access 120+ shift mocks, individual & 5-test consolidated reports, formula sheets, and multilingual AI doubt clarity.
             </p>
           </div>
 

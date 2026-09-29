@@ -232,7 +232,7 @@ export const AboutSection: React.FC = () => {
               </div>
               <h3 className="text-xl font-black text-slate-900 mb-2">Leaderboard & Helpdesk</h3>
               <p className="text-xs text-slate-600 leading-relaxed font-medium mb-4">
-                Compete on the live national percentile leaderboard alongside 150,000+ aspirants, and get round-the-clock guidance from our dedicated academic helpdesk.
+                Compete on the live national percentile leaderboard alongside aspirants, and get round-the-clock guidance from our dedicated academic helpdesk.
               </p>
             </div>
             <div className="pt-3 border-t border-slate-100 text-xs font-bold text-emerald-700 flex items-center justify-between">
