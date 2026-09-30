@@ -78,11 +78,11 @@ export const AboutSection: React.FC = () => {
               </div>
               <h3 className="text-xl font-black text-slate-900 mb-2">120+ JEE Mains Mocks</h3>
               <p className="text-xs text-slate-600 leading-relaxed font-medium mb-4">
-                All official shifts from 2019 to 2026 converted into timed computer-based mocks with real Section A & Section B numerical schemes and normalized percentiles.
+                All official shifts from 2021 to 2026 converted into timed computer-based mocks with real Section A & Section B numerical schemes and normalized percentiles.
               </p>
             </div>
             <div className="pt-3 border-t border-slate-100 text-xs font-bold text-blue-700 flex items-center justify-between">
-              <span>Full Shifts (2019-2026)</span>
+              <span>Full Shifts (2021-2026)</span>
               <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
             </div>
           </div>
@@ -413,7 +413,7 @@ export const AboutSection: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm space-y-3 hover:border-blue-300 transition-all">
               <span className="px-3 py-1 rounded bg-blue-100 text-blue-800 text-xs font-black">JEE Main</span>
-              <h4 className="text-lg font-black text-slate-900">120+ PYQ Full Mocks</h4>
+              <h4 className="text-lg font-black text-slate-900">120+ PYQs as Mocks</h4>
               <p className="text-xs text-slate-600 leading-relaxed">
                 Complete coverage of January and April session shift papers with Section A MCQs and Section B numericals under authentic NTA CBT screen timings.
               </p>
@@ -421,7 +421,7 @@ export const AboutSection: React.FC = () => {
 
             <div className="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm space-y-3 hover:border-indigo-300 transition-all">
               <span className="px-3 py-1 rounded bg-indigo-100 text-indigo-800 text-xs font-black">JEE Advanced</span>
-              <h4 className="text-lg font-black text-slate-900">40+ Full Mocks (19 Years)</h4>
+              <h4 className="text-lg font-black text-slate-900">40+ PYQs as Mocks (19 Years)</h4>
               <p className="text-xs text-slate-600 leading-relaxed">
                 19-year archive (2007-2025) of Paper 1 and Paper 2 with partial marking, integer, paragraph, and matrix match schemes.
               </p>
@@ -429,7 +429,7 @@ export const AboutSection: React.FC = () => {
 
             <div className="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm space-y-3 hover:border-emerald-300 transition-all">
               <span className="px-3 py-1 rounded bg-emerald-100 text-emerald-800 text-xs font-black">BITSAT</span>
-              <h4 className="text-lg font-black text-slate-900">10+ Mocks + 12 Bonus Engine</h4>
+              <h4 className="text-lg font-black text-slate-900">10+ PYQs as Mocks + 12 Bonus Engine</h4>
               <p className="text-xs text-slate-600 leading-relaxed">
                 Full 130-question speed and accuracy format including English Proficiency and Logical Reasoning with real-time bonus question unlocking.
               </p>

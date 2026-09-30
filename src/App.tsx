@@ -3,6 +3,7 @@ import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { AboutSection } from './components/AboutSection';
 import { TestSeriesSection } from './components/TestSeriesSection';
+import { LearnSection } from './components/LearnSection';
 import { SampleReportSection } from './components/SampleReportSection';
 import { StudyFeaturesSection } from './components/StudyFeaturesSection';
 import { RankPredictor } from './components/RankPredictor';
@@ -36,8 +37,11 @@ export function App() {
         {/* 1. About Section: Placed BEFORE Test Series, highlighting all 8 platform pillars */}
         <AboutSection />
 
-        {/* 2. Test Series Section: 120+ JEE Main, 40+ Advanced (19 yrs), 10+ BITSAT */}
+        {/* 2. Test Series Section: 120+ JEE Main, 40+ Advanced (19 yrs), 10+ BITSAT & Pricing Plans */}
         <TestSeriesSection />
+
+        {/* 2.5. RankPilot Learn: 11th Foundation & 12th Booster Academic Programs */}
+        <LearnSection />
 
         {/* 3. Sample Report Section: Official RankPilot Mock Test Report & 5-Test Consolidated Analytics */}
         <SampleReportSection />

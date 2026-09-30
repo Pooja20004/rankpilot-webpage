@@ -115,7 +115,7 @@ export const RankPredictor: React.FC = () => {
             <div className="p-6 rounded-xl bg-white border border-slate-200 shadow-sm space-y-1">
               <span className="text-xs font-bold text-blue-700 uppercase tracking-wider">Estimated Percentile</span>
               <div className="text-3xl sm:text-4xl font-black text-slate-900 font-mono">{mainStats.percentile} %ile</div>
-              <p className="text-[11px] text-slate-500 font-medium">Normalised across 2019-2026 NTA shift papers</p>
+              <p className="text-[11px] text-slate-500 font-medium">Normalised across 2021-2026 NTA shift papers</p>
             </div>
 
             <div className="p-6 rounded-xl bg-white border border-slate-200 shadow-sm space-y-1">

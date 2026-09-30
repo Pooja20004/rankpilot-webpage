@@ -12,7 +12,8 @@ import {
   X,
   ExternalLink,
   ChevronDown,
-  Info
+  Info,
+  GraduationCap
 } from 'lucide-react';
 import { LOVABLE_PROJECT_URL } from '../data/mockData';
 
@@ -158,6 +159,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectTab }) => {
               <span>Study Resources</span>
             </button>
 
+            {/* RankPilot Learn Tab */}
+            <button 
+              onClick={() => scrollToSection('learn')}
+              className="px-3 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5"
+            >
+              <GraduationCap className="w-4 h-4 text-purple-600" />
+              <span>Learn</span>
+              <span className="bg-purple-100 text-purple-800 text-[10px] font-extrabold px-1.5 py-0.2 rounded-full border border-purple-200">
+                11th & 12th
+              </span>
+            </button>
+
             {/* AIR Predictor */}
             <button 
               onClick={() => scrollToSection('predictor')}
@@ -167,13 +180,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectTab }) => {
               <span>AIR Predictor</span>
             </button>
 
-            {/* Toppers & Results */}
+            {/* Reviews Tab */}
             <button 
               onClick={() => scrollToSection('reviews')}
               className="px-3 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5"
             >
               <Award className="w-4 h-4 text-amber-500" />
-              <span>Toppers</span>
+              <span>Reviews</span>
             </button>
           </div>
 
@@ -259,6 +272,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectTab }) => {
             </button>
 
             <button 
+              onClick={() => scrollToSection('learn')}
+              className="w-full text-left px-3 py-2.5 rounded-lg text-sm font-bold text-slate-800 hover:bg-slate-50 flex items-center gap-2"
+            >
+              <GraduationCap className="w-4 h-4 text-purple-600" />
+              <span>RankPilot Learn (11th & 12th)</span>
+            </button>
+
+            <button 
               onClick={() => scrollToSection('predictor')}
               className="w-full text-left px-3 py-2.5 rounded-lg text-sm font-bold text-slate-800 hover:bg-slate-50 flex items-center gap-2"
             >
@@ -271,7 +292,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectTab }) => {
               className="w-full text-left px-3 py-2.5 rounded-lg text-sm font-bold text-slate-800 hover:bg-slate-50 flex items-center gap-2"
             >
               <Award className="w-4 h-4 text-amber-500" />
-              <span>Toppers & Results</span>
+              <span>Reviews</span>
             </button>
 
             <div className="pt-3 border-t border-slate-100 grid grid-cols-2 gap-2">

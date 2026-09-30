@@ -42,7 +42,7 @@ export const Footer: React.FC = () => {
             </div>
             
             <p className="text-xs text-slate-300 leading-relaxed max-w-sm font-normal">
-              India’s number one trustable platform for JEE Mains, JEE Advanced & BITSAT preparation. Providing 120+ authentic shift mocks, 40+ Advanced papers (19 years), 10+ BITSAT mocks, individual & 5-test consolidated reports, and 24/7 multilingual AI doubt clarity.
+              India’s number one trustable platform for JEE Mains, JEE Advanced & BITSAT preparation. Providing 120+ authentic shift mocks, 40+ Advanced papers (19 years), 10+ BITSAT mocks, individual & 5-test consolidated reports, and 24/7 multilingual AI doubt solver.
             </p>
 
             <div className="pt-2 flex flex-wrap gap-3">
@@ -94,7 +94,7 @@ export const Footer: React.FC = () => {
               <li><a href="#about" className="hover:text-white transition-colors">What's Included in App</a></li>
               <li><a href="#sample-report" className="hover:text-white transition-colors">Sample Mock Test Report</a></li>
               <li><a href="#predictor" className="hover:text-white transition-colors">Live Marks vs Percentile</a></li>
-              <li><a href="#reviews" className="hover:text-white transition-colors">Toppers Wall of Fame</a></li>
+              <li><a href="#reviews" className="hover:text-white transition-colors">Reviews</a></li>
               <li><a href="#faqs" className="hover:text-white transition-colors">Frequently Asked Questions</a></li>
             </ul>
           </div>
