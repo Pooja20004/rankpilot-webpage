@@ -123,7 +123,7 @@ export const ReviewsSection: React.FC = () => {
             href={LOVABLE_PROJECT_URL}
             className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-extrabold text-sm shadow-md transition-all"
           >
-            <span>Join with Aspirants On RankPilot</span>
+            <span>Join with Aspirants On JEE Ranker</span>
             <ExternalLink className="w-4 h-4" />
           </a>
         </div>

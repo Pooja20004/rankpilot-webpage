@@ -76,12 +76,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
             {/* Two Action Buttons Directly Below the Slogan (Both Redirecting to the Project Link) */}
             <div className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-              {/* Button 1: Sign Up for Free */}
+              {/* Button 1: Sign Up for Free Trial */}
               <a 
                 href={LOVABLE_PROJECT_URL}
                 className="w-full sm:w-auto px-8 py-4 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-extrabold text-base shadow-lg shadow-blue-700/25 hover:shadow-xl hover:shadow-blue-700/35 hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-2.5 group"
               >
-                <span>Sign Up for Free</span>
+                <span>Sign Up for Free Trial</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
 
@@ -159,7 +159,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                     </div>
                     <div>
                       <div className="text-sm font-black text-slate-900">1,400+ Students with 99+ %ile</div>
-                      <div className="text-xs text-slate-500 font-semibold">RankPilot AI Preparation 2024-2026</div>
+                      <div className="text-xs text-slate-500 font-semibold">JEE Ranker AI Preparation 2024-2026</div>
                     </div>
                   </div>
                   <div className="hidden sm:flex flex-col items-end">

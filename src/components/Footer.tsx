@@ -26,19 +26,16 @@ export const Footer: React.FC = () => {
           
           {/* Brand Col */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-md">
-                <Rocket className="w-4 h-4" />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-xl font-black text-white leading-none">
-                  Rank<span className="text-blue-500">Pilot</span>
-                </span>
-                <span className="mt-1 inline-flex items-center px-1.5 py-0.5 rounded-full text-[9px] font-bold bg-emerald-950 text-emerald-300 border border-emerald-800 w-fit">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-1 animate-pulse" />
-                  AI-powered JEE Mastery
-                </span>
-              </div>
+            <div className="flex flex-col items-start gap-2">
+              <img 
+                src="/jee_ranker_logo_cropped.png" 
+                alt="JEE Ranker" 
+                className="h-10 w-auto object-contain bg-white p-1 rounded-xl shadow-sm" 
+              />
+              <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-950 text-emerald-300 border border-emerald-800 w-fit">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-1 animate-pulse" />
+                Ai- powered jee mastery
+              </span>
             </div>
             
             <p className="text-xs text-slate-300 leading-relaxed max-w-sm font-normal">
@@ -50,7 +47,7 @@ export const Footer: React.FC = () => {
                 href={LOVABLE_PROJECT_URL}
                 className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs transition-colors"
               >
-                <span>Sign Up for Free</span>
+                <span>Sign Up for Free Trial</span>
                 <ExternalLink className="w-3.5 h-3.5" />
               </a>
 
@@ -127,7 +124,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Strip */}
         <div className="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="text-slate-400 text-xs">
-            © {new Date().getFullYear()} RankPilot AI. Built for JEE Main, JEE Advanced & BITSAT aspirants.
+            © {new Date().getFullYear()} JEE Ranker AI. Built for JEE Main, JEE Advanced & BITSAT aspirants.
           </div>
 
           <div className="flex items-center gap-6">

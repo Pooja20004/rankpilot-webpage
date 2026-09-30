@@ -17,7 +17,7 @@ const FAQS = [
   },
   {
     q: 'How do the individual and 5-test consolidated reports help me?',
-    a: 'Unlike generic test series that just give a single score, RankPilot generates an instant diagnostic breakdown after every mock test plus a consolidated report for your last five tests to spot recurring error patterns, track accuracy improvements, and eliminate marks leakage.'
+    a: 'Unlike generic test series that just give a single score, JEE Ranker generates an instant diagnostic breakdown after every mock test plus a consolidated report for your last five tests to spot recurring error patterns, track accuracy improvements, and eliminate marks leakage.'
   },
   {
     q: 'What study resources are included in the Features tab?',
@@ -45,7 +45,7 @@ export const FaqSection: React.FC = () => {
             Everything You Need To Know
           </h2>
           <p className="text-slate-600 text-sm sm:text-base font-medium">
-            Answers to common questions about RankPilot's Test Series, individual & 5-test consolidated reports, and study resources.
+            Answers to common questions about JEE Ranker's Test Series, individual & 5-test consolidated reports, and study resources.
           </p>
         </div>
 

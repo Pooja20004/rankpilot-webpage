@@ -53,7 +53,7 @@ export const RankPredictor: React.FC = () => {
     } else {
       return [
         { name: 'Tier 2 NITs & Top State Universities', branch: 'Core Engineering Branches', badge: 'Tier 2' },
-        { name: 'RankPilot AI Recommendation', branch: 'Attempt 8 more shift mocks to cross 99 %ile', badge: 'Action Needed' }
+        { name: 'JEE Ranker AI Recommendation', branch: 'Attempt 8 more shift mocks to cross 99 %ile', badge: 'Action Needed' }
       ];
     }
   };
@@ -158,7 +158,7 @@ export const RankPredictor: React.FC = () => {
               href={LOVABLE_PROJECT_URL}
               className="w-full sm:w-auto px-6 py-3 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-md transition-all"
             >
-              <span>Take Full Mock on RankPilot</span>
+              <span>Take Full Mock on JEE Ranker</span>
               <ExternalLink className="w-3.5 h-3.5" />
             </a>
           </div>

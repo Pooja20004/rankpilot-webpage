@@ -528,7 +528,7 @@ export const LearnSection: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/20 border border-purple-400/30 text-purple-300 text-xs font-bold uppercase tracking-wider">
             <GraduationCap className="w-4 h-4 text-purple-400" />
-            <span>RankPilot Learn Ecosystem</span>
+            <span>JEE Ranker Learn Ecosystem</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
@@ -796,7 +796,7 @@ export const LearnSection: React.FC = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-extrabold text-sm shadow-xl shadow-blue-600/30 transition-all group"
             >
-              <span>Enroll in RankPilot Learn Today</span>
+              <span>Enroll in JEE Ranker Learn Today</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>

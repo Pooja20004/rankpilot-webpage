@@ -47,11 +47,11 @@ export const AboutSection: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-14">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-100 text-blue-800 border border-blue-200 text-xs font-black uppercase tracking-wider shadow-sm">
             <Sparkles className="w-4 h-4 text-blue-700" />
-            <span>Everything Inside RankPilot Platform</span>
+            <span>Everything Inside JEE Ranker Platform</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">
-            What Makes RankPilot The Ultimate <br />
+            What Makes JEE Ranker The Ultimate <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-indigo-700 to-blue-800">
               AI-Powered JEE & BITSAT Co-Pilot?
             </span>
@@ -257,7 +257,7 @@ export const AboutSection: React.FC = () => {
                 Learn Concepts & Clear Doubts in Your Preferred Language
               </h3>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                RankPilot's AI Doubt Solver understands and explains intricate IIT-JEE physics derivations, organic reaction mechanisms, and calculus tricks in 5 regional languages.
+                JEE Ranker's AI Doubt Solver understands and explains intricate IIT-JEE physics derivations, organic reaction mechanisms, and calculus tricks in 5 regional languages.
               </p>
 
               {/* Language Selector Buttons */}
@@ -333,7 +333,7 @@ export const AboutSection: React.FC = () => {
                 href={LOVABLE_PROJECT_URL}
                 className="w-full py-3 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-extrabold text-xs sm:text-sm text-center shadow-lg transition-all flex items-center justify-center gap-2"
               >
-                <span>View Full Platform On RankPilot</span>
+                <span>View Full Platform On JEE Ranker</span>
                 <ExternalLink className="w-3.5 h-3.5" />
               </a>
             </div>
@@ -342,17 +342,17 @@ export const AboutSection: React.FC = () => {
 
         </div>
 
-        {/* Traditional Coaching vs RankPilot AI Comparison Table */}
+        {/* Traditional Coaching vs JEE Ranker AI Comparison Table */}
         <div className="mb-14">
           <div className="text-center max-w-2xl mx-auto mb-8">
             <span className="px-3.5 py-1 rounded-full text-xs font-black uppercase tracking-wider bg-slate-100 text-slate-700 border border-slate-200">
               Direct Comparison
             </span>
             <h3 className="text-2xl sm:text-3xl font-black text-slate-900 mt-2">
-              Traditional Coaching vs RankPilot AI
+              Traditional Coaching vs JEE Ranker AI
             </h3>
             <p className="text-xs sm:text-sm text-slate-500 mt-1">
-              Why thousands of JEE and BITSAT aspirants switch to RankPilot’s personalized digital ecosystem.
+              Why thousands of JEE and BITSAT aspirants switch to JEE Ranker’s personalized digital ecosystem.
             </p>
           </div>
 
@@ -362,7 +362,7 @@ export const AboutSection: React.FC = () => {
                 <tr className="border-b border-slate-200 bg-slate-100 text-slate-900 text-xs sm:text-sm font-extrabold">
                   <th className="p-4 sm:p-5">Preparation Aspect</th>
                   <th className="p-4 sm:p-5 text-rose-700">Generic Coaching / Books</th>
-                  <th className="p-4 sm:p-5 text-blue-700 bg-blue-50/70">RankPilot AI EdTech Platform</th>
+                  <th className="p-4 sm:p-5 text-blue-700 bg-blue-50/70">JEE Ranker AI EdTech Platform</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100 text-xs sm:text-sm font-medium text-slate-700">

@@ -40,10 +40,10 @@ export function App() {
         {/* 2. Test Series Section: 120+ JEE Main, 40+ Advanced (19 yrs), 10+ BITSAT & Pricing Plans */}
         <TestSeriesSection />
 
-        {/* 2.5. RankPilot Learn: 11th Foundation & 12th Booster Academic Programs */}
+        {/* 2.5. JEE Ranker Learn: 11th Foundation & 12th Booster Academic Programs */}
         <LearnSection />
 
-        {/* 3. Sample Report Section: Official RankPilot Mock Test Report & 5-Test Consolidated Analytics */}
+        {/* 3. Sample Report Section: Official JEE Ranker Mock Test Report & 5-Test Consolidated Analytics */}
         <SampleReportSection />
 
         {/* 4. Study Features Section: Concept notes, formula sheet, mindmap, ai analysis, multilingual doubt solver */}

@@ -163,7 +163,7 @@ export const StudyFeaturesSection: React.FC = () => {
                   <div className="rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50">
                     <img 
                       src="/concept_notes_preview.png" 
-                      alt="RankPilot Concept Notes Sample - Wave Optics, Huygens' Principle & Formulas" 
+                      alt="JEE Ranker Concept Notes Sample - Wave Optics, Huygens' Principle & Formulas" 
                       className="w-full object-contain rounded-lg hover:scale-[1.02] transition-transform duration-300"
                     />
                   </div>

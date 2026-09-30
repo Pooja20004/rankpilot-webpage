@@ -77,7 +77,7 @@ export const TEST_SERIES_COLLECTION: TestSeriesCard[] = [
 export const RANKPILOT_SAMPLE_REPORT: RankPilotSampleReport = {
   testTitle: 'JEE Advanced 2026 — Paper 2',
   dateAttempted: '28/09/2026, 15:08:14',
-  candidateName: 'RankPilot Admin',
+  candidateName: 'JEE Ranker Admin',
   totalScore: 176,
   maxScore: 180,
   percentile: 99.98,
@@ -252,7 +252,7 @@ export const APP_FEATURE_HIGHLIGHTS: AppHighlight[] = [
     title: 'AI Adaptive Study Plans',
     badge: 'Personalized Timetable',
     subtitle: 'Dynamically self-adjusts to your daily progress',
-    description: 'No more rigid schedules. RankPilot AI builds an adaptive daily sprint roadmap around your school, coaching hours, and weak chapters, automatically recalibrating when you miss a session.',
+    description: 'No more rigid schedules. JEE Ranker AI builds an adaptive daily sprint roadmap around your school, coaching hours, and weak chapters, automatically recalibrating when you miss a session.',
     icon: 'Calendar',
     gradient: 'from-blue-700 to-sky-600',
     keyPoints: [

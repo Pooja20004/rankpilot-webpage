@@ -87,27 +87,22 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectTab }) => {
             <a 
               href="#hero" 
               onClick={(e) => { e.preventDefault(); scrollToSection('hero'); }}
-              className="flex items-center gap-2.5 group cursor-pointer"
+              className="flex flex-col items-start text-left focus:outline-none group cursor-pointer"
             >
-              <div className="w-10 h-10 rounded-xl bg-blue-700 flex items-center justify-center text-white shadow-md shadow-blue-500/20 group-hover:bg-blue-800 transition-colors">
-                <Rocket className="w-5 h-5" />
+              <div className="flex items-center gap-2">
+                <img 
+                  src="/jee_ranker_logo_cropped.png" 
+                  alt="JEE Ranker" 
+                  className="h-9 sm:h-11 w-auto object-contain rounded-lg"
+                />
               </div>
-              <div className="flex flex-col">
-                <div className="flex items-center gap-1.5">
-                  <span className="text-2xl font-black tracking-tight text-slate-900 leading-none">
-                    Rank<span className="text-blue-700">Pilot</span>
-                  </span>
-                  <span className="px-1.5 py-0.5 rounded text-[10px] font-extrabold uppercase tracking-wide bg-blue-100 text-blue-700 border border-blue-200">
-                    AI
-                  </span>
-                </div>
-                {/* User Requested: "Ai- powered jee mastery" in small green tag under logo rankpilot */}
-                <div className="mt-1 flex items-center">
-                  <span className="inline-flex items-center px-1.5 py-0.5 rounded-full text-[10px] font-extrabold bg-emerald-100 text-emerald-800 border border-emerald-300 tracking-tight leading-tight">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1 animate-pulse" />
-                    AI-powered JEE Mastery
-                  </span>
-                </div>
+
+              {/* User Requested: "Ai- powered jee mastery" in small green tag under logo */}
+              <div className="mt-1 flex items-center">
+                <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-emerald-100 text-emerald-800 border border-emerald-300 tracking-tight leading-tight shadow-xs">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1 animate-pulse" />
+                  Ai- powered jee mastery
+                </span>
               </div>
             </a>
           </div>
@@ -159,7 +154,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectTab }) => {
               <span>Study Resources</span>
             </button>
 
-            {/* RankPilot Learn Tab */}
+            {/* JEE Ranker Learn Tab */}
             <button 
               onClick={() => scrollToSection('learn')}
               className="px-3 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5"
@@ -203,7 +198,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectTab }) => {
               href={LOVABLE_PROJECT_URL}
               className="px-5 py-2.5 text-sm font-bold text-white bg-blue-700 hover:bg-blue-800 rounded-lg shadow-md shadow-blue-700/20 hover:shadow-lg transition-all flex items-center gap-1.5"
             >
-              <span>Sign Up for Free</span>
+              <span>Sign Up for Free Trial</span>
               <ArrowRight className="w-4 h-4" />
             </a>
           </div>
@@ -260,7 +255,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectTab }) => {
               className="w-full text-left px-3 py-2.5 rounded-lg text-sm font-bold text-slate-800 hover:bg-slate-50 flex items-center gap-2"
             >
               <BarChart3 className="w-4 h-4 text-emerald-600" />
-              <span>RankPilot Mock Test Report</span>
+              <span>JEE Ranker Mock Test Report</span>
             </button>
 
             <button 
@@ -276,7 +271,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectTab }) => {
               className="w-full text-left px-3 py-2.5 rounded-lg text-sm font-bold text-slate-800 hover:bg-slate-50 flex items-center gap-2"
             >
               <GraduationCap className="w-4 h-4 text-purple-600" />
-              <span>RankPilot Learn (11th & 12th)</span>
+              <span>JEE Ranker Learn (11th & 12th)</span>
             </button>
 
             <button 
@@ -306,7 +301,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectTab }) => {
                 href={LOVABLE_PROJECT_URL}
                 className="w-full text-center py-2.5 text-sm font-bold text-white bg-blue-700 rounded-lg hover:bg-blue-800"
               >
-                Sign Up for Free
+                Sign Up for Free Trial
               </a>
             </div>
           </div>

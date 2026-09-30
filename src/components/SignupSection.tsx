@@ -48,7 +48,7 @@ export const SignupSection: React.FC = () => {
               <Sparkles className="w-3.5 h-3.5" /> Direct Access Portal
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight">
-              Launch RankPilot & Secure Your Top Rank
+              Launch JEE Ranker & Secure Your Top Rank
             </h2>
             <p className="text-slate-600 text-sm sm:text-base font-medium">
               Join with aspirants. Access 120+ shift mocks, individual & 5-test consolidated reports, formula sheets, and multilingual AI doubt solver.
@@ -76,7 +76,7 @@ export const SignupSection: React.FC = () => {
                   </h3>
 
                   <p className="text-xs text-slate-600 leading-relaxed font-medium">
-                    Access the complete full-stack RankPilot application deployed directly at <strong className="text-blue-700 font-bold">jee-rankpilot.lovable.app</strong>.
+                    Access the complete full-stack JEE Ranker application deployed directly at <strong className="text-blue-700 font-bold">jee-rankpilot.lovable.app</strong>.
                   </p>
 
                   <div className="space-y-2 text-xs text-slate-700 font-semibold">
@@ -104,7 +104,7 @@ export const SignupSection: React.FC = () => {
                     href={LOVABLE_PROJECT_URL}
                     className="w-full py-3.5 px-6 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-extrabold text-sm text-center shadow-lg shadow-blue-700/25 transition-all flex items-center justify-center gap-2"
                   >
-                    <span>Sign Up for Free</span>
+                    <span>Sign Up for Free Trial</span>
                     <ArrowRight className="w-4 h-4" />
                   </a>
 
