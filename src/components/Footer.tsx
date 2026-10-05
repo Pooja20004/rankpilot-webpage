@@ -26,15 +26,15 @@ export const Footer: React.FC = () => {
           
           {/* Brand Col */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="flex flex-col items-start gap-2">
+            <div className="flex flex-col items-start gap-1.5">
               <img 
                 src="/jee_ranker_logo_cropped.png" 
                 alt="JEE Ranker" 
-                className="h-10 w-auto object-contain bg-white p-1 rounded-xl shadow-sm" 
+                className="h-12 sm:h-14 w-auto object-contain bg-white p-1.5 rounded-xl shadow-md" 
               />
-              <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-950 text-emerald-300 border border-emerald-800 w-fit">
+              <span className="inline-flex items-center px-1.5 py-0.5 rounded-full text-[8px] sm:text-[9px] font-bold bg-emerald-950 text-emerald-300 border border-emerald-800 tracking-wider uppercase w-fit">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-1 animate-pulse" />
-                Ai- powered jee mastery
+                ai powered jee mastery
               </span>
             </div>
             

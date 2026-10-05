@@ -133,16 +133,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
           </div>
 
-          {/* Right Column: Hero Visual with Students beside IIT Campus (Increased Boldly in Size) */}
+          {/* Right Column: Hero Visual with Students beside IIT Campus (Significantly Enlarged) */}
           <div className="lg:col-span-6 relative">
-            <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
+            <div className="relative mx-auto w-full max-w-xl lg:max-w-none">
               
-              {/* Main Image Frame (Boldly Enlarged, Prominent Shadows & Borders) */}
-              <div className="relative rounded-3xl overflow-hidden border-4 border-white shadow-2xl shadow-blue-900/15 bg-white ring-1 ring-slate-200/80">
+              {/* Main Image Frame (Prominently Enlarged, Deep Shadows & Crisp Borders) */}
+              <div className="relative rounded-3xl overflow-hidden border-4 border-white shadow-2xl shadow-blue-900/20 bg-white ring-1 ring-slate-200">
                 <img 
                   src="/iit_students_hero.jpg" 
                   alt="Proud Indian Engineering Students beside IIT Delhi Campus" 
-                  className="w-full h-[480px] sm:h-[540px] lg:h-[580px] object-cover object-top transform hover:scale-105 transition-transform duration-700"
+                  className="w-full h-[520px] sm:h-[600px] lg:h-[660px] object-cover object-top transform hover:scale-[1.02] transition-transform duration-700"
                 />
                 
                 {/* Floating Top Badge: IIT Dream Tag */}
@@ -169,12 +169,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 </div>
               </div>
 
-              {/* Floating Decorative Badges around image */}
-              <div className="hidden sm:flex absolute -top-4 -right-4 bg-blue-700 text-white p-3.5 rounded-2xl shadow-xl flex-col items-center justify-center border-2 border-white">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-blue-200">All In One</span>
-                <span className="text-sm font-black">JEE & BITSAT</span>
-              </div>
-
+              {/* Floating Verified Badge */}
               <div className="hidden sm:flex absolute -bottom-4 -left-4 bg-white p-3.5 rounded-2xl shadow-xl border border-slate-200 items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-emerald-500 text-white flex items-center justify-center">
                   <ShieldCheck className="w-6 h-6" />

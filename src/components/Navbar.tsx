@@ -93,62 +93,53 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectTab }) => {
                 <img 
                   src="/jee_ranker_logo_cropped.png" 
                   alt="JEE Ranker" 
-                  className="h-9 sm:h-11 w-auto object-contain rounded-lg"
+                  className="h-12 sm:h-14 md:h-16 w-auto object-contain drop-shadow-sm transition-transform duration-200 group-hover:scale-[1.02]"
                 />
               </div>
 
-              {/* User Requested: "Ai- powered jee mastery" in small green tag under logo */}
-              <div className="mt-1 flex items-center">
-                <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-emerald-100 text-emerald-800 border border-emerald-300 tracking-tight leading-tight shadow-xs">
+              {/* User Requested: "Ai- powered jee mastery" smaller */}
+              <div className="mt-0.5 flex items-center">
+                <span className="inline-flex items-center px-1.5 py-0.5 rounded-full text-[8px] sm:text-[9px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 tracking-wider uppercase shadow-xs">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1 animate-pulse" />
-                  Ai- powered jee mastery
+                  ai powered jee mastery
                 </span>
               </div>
             </a>
           </div>
 
-          {/* Center Navigation Links */}
-          <div className="hidden lg:flex items-center gap-1">
-            {/* About App Tab (Placed before Test Series) */}
+          {/* Center Navigation Links - Clean without colored badges */}
+          <div className="hidden lg:flex items-center gap-1.5">
+            {/* About App Tab */}
             <button 
               onClick={() => scrollToSection('about')}
-              className="px-3 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5"
+              className="px-3.5 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5"
             >
               <Info className="w-4 h-4 text-purple-600" />
               <span>About Platform</span>
-              <span className="bg-purple-100 text-purple-800 text-[10px] font-extrabold px-1.5 py-0.2 rounded-full border border-purple-200">
-                All-in-One
-              </span>
             </button>
 
             {/* Test Series Tab */}
             <button 
               onClick={() => scrollToSection('test-series')}
-              className="px-3 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5"
+              className="px-3.5 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5"
             >
               <FileCheck2 className="w-4 h-4 text-blue-600" />
               <span>Test Series</span>
-              <span className="bg-amber-100 text-amber-800 text-[10px] font-extrabold px-1.5 py-0.2 rounded-full border border-amber-200">
-                120+ Mocks
-              </span>
             </button>
 
             {/* Sample Report Tab */}
             <button 
               onClick={() => scrollToSection('sample-report')}
-              className="px-3 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5"
+              className="px-3.5 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5"
             >
               <BarChart3 className="w-4 h-4 text-emerald-600" />
               <span>Sample Report</span>
-              <span className="bg-emerald-100 text-emerald-800 text-[10px] font-extrabold px-1.5 py-0.2 rounded-full border border-emerald-200">
-                Live Preview
-              </span>
             </button>
 
             {/* Features Tab */}
             <button 
               onClick={() => scrollToSection('features')}
-              className="px-3 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5"
+              className="px-3.5 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5"
             >
               <BookOpen className="w-4 h-4 text-indigo-600" />
               <span>Study Resources</span>
@@ -157,19 +148,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectTab }) => {
             {/* JEE Ranker Learn Tab */}
             <button 
               onClick={() => scrollToSection('learn')}
-              className="px-3 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5"
+              className="px-3.5 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5"
             >
               <GraduationCap className="w-4 h-4 text-purple-600" />
               <span>Learn</span>
-              <span className="bg-purple-100 text-purple-800 text-[10px] font-extrabold px-1.5 py-0.2 rounded-full border border-purple-200">
-                11th & 12th
-              </span>
             </button>
 
             {/* AIR Predictor */}
             <button 
               onClick={() => scrollToSection('predictor')}
-              className="px-3 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5"
+              className="px-3.5 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5"
             >
               <Calculator className="w-4 h-4 text-sky-600" />
               <span>AIR Predictor</span>
@@ -178,7 +166,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectTab }) => {
             {/* Reviews Tab */}
             <button 
               onClick={() => scrollToSection('reviews')}
-              className="px-3 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5"
+              className="px-3.5 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5"
             >
               <Award className="w-4 h-4 text-amber-500" />
               <span>Reviews</span>
@@ -226,28 +214,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectTab }) => {
           <div className="lg:hidden bg-white border-t border-slate-200 px-4 pt-3 pb-6 space-y-2 shadow-xl animate-in slide-in-from-top duration-200">
             <button 
               onClick={() => scrollToSection('about')}
-              className="w-full text-left px-3 py-2.5 rounded-lg text-sm font-bold text-slate-800 hover:bg-slate-50 flex items-center justify-between"
+              className="w-full text-left px-3 py-2.5 rounded-lg text-sm font-bold text-slate-800 hover:bg-slate-50 flex items-center gap-2"
             >
-              <div className="flex items-center gap-2">
-                <Info className="w-4 h-4 text-purple-600" />
-                <span>About Platform & App Features</span>
-              </div>
-              <span className="text-[10px] bg-purple-100 text-purple-800 font-bold px-2 py-0.5 rounded">
-                All Included
-              </span>
+              <Info className="w-4 h-4 text-purple-600" />
+              <span>About Platform & App Features</span>
             </button>
 
             <button 
               onClick={() => scrollToSection('test-series')}
-              className="w-full text-left px-3 py-2.5 rounded-lg text-sm font-bold text-slate-800 hover:bg-slate-50 flex items-center justify-between"
+              className="w-full text-left px-3 py-2.5 rounded-lg text-sm font-bold text-slate-800 hover:bg-slate-50 flex items-center gap-2"
             >
-              <div className="flex items-center gap-2">
-                <FileCheck2 className="w-4 h-4 text-blue-700" />
-                <span>Test Series (120+ Mocks)</span>
-              </div>
-              <span className="text-[10px] bg-blue-100 text-blue-700 font-bold px-2 py-0.5 rounded">
-                JEE & BITSAT
-              </span>
+              <FileCheck2 className="w-4 h-4 text-blue-700" />
+              <span>Test Series (120+ Mocks)</span>
             </button>
 
             <button 

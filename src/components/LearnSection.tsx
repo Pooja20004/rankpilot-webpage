@@ -559,9 +559,6 @@ export const LearnSection: React.FC = () => {
             >
               <BrainCircuit className="w-4 h-4" />
               <span>11th Foundation Program (JEE 2027)</span>
-              <span className="text-[10px] uppercase font-extrabold bg-blue-900/80 px-2 py-0.5 rounded text-blue-200 border border-blue-400/30">
-                2-Year
-              </span>
             </button>
 
             <button
@@ -577,9 +574,6 @@ export const LearnSection: React.FC = () => {
             >
               <Sparkles className="w-4 h-4" />
               <span>12th Booster Program (JEE 2026 / Dropper)</span>
-              <span className="text-[10px] uppercase font-extrabold bg-purple-900/80 px-2 py-0.5 rounded text-purple-200 border border-purple-400/30">
-                1-Year
-              </span>
             </button>
           </div>
         </div>

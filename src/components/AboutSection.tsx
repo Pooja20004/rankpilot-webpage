@@ -62,18 +62,15 @@ export const AboutSection: React.FC = () => {
           </p>
         </div>
 
-        {/* 8 Core Feature Highlights Grid (User Requested Specifications) */}
+        {/* 8 Core Feature Highlights Grid (Clean without badge clutter) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           
           {/* Card 1: 120+ JEE Main Mocks */}
           <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-xl hover:border-blue-400 hover:-translate-y-1 transition-all flex flex-col justify-between group">
             <div>
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center mb-4">
                 <span className="p-3 rounded-xl bg-blue-50 text-blue-700 group-hover:bg-blue-700 group-hover:text-white transition-colors shadow-sm">
                   <FileCheck2 className="w-6 h-6" />
-                </span>
-                <span className="text-[10px] font-black uppercase px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 border border-blue-200">
-                  NTA CBT Simulation
                 </span>
               </div>
               <h3 className="text-xl font-black text-slate-900 mb-2">120+ JEE Mains Mocks</h3>
@@ -90,12 +87,9 @@ export const AboutSection: React.FC = () => {
           {/* Card 2: 40+ JEE Advanced (19 Years PYQs) */}
           <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-xl hover:border-indigo-400 hover:-translate-y-1 transition-all flex flex-col justify-between group">
             <div>
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center mb-4">
                 <span className="p-3 rounded-xl bg-indigo-50 text-indigo-700 group-hover:bg-indigo-700 group-hover:text-white transition-colors shadow-sm">
                   <Award className="w-6 h-6" />
-                </span>
-                <span className="text-[10px] font-black uppercase px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-800 border border-indigo-200">
-                  19 Years Archive
                 </span>
               </div>
               <h3 className="text-xl font-black text-slate-900 mb-2">40+ JEE Advanced Mocks</h3>
@@ -112,12 +106,9 @@ export const AboutSection: React.FC = () => {
           {/* Card 3: 10+ BITSAT Mocks */}
           <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-xl hover:border-emerald-400 hover:-translate-y-1 transition-all flex flex-col justify-between group">
             <div>
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center mb-4">
                 <span className="p-3 rounded-xl bg-emerald-50 text-emerald-700 group-hover:bg-emerald-700 group-hover:text-white transition-colors shadow-sm">
                   <Zap className="w-6 h-6" />
-                </span>
-                <span className="text-[10px] font-black uppercase px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-200">
-                  Bonus Question Engine
                 </span>
               </div>
               <h3 className="text-xl font-black text-slate-900 mb-2">10+ BITSAT Mocks</h3>
@@ -134,12 +125,9 @@ export const AboutSection: React.FC = () => {
           {/* Card 4: 100+ Chapter-wise Tests with Different Timings */}
           <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-xl hover:border-cyan-400 hover:-translate-y-1 transition-all flex flex-col justify-between group">
             <div>
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center mb-4">
                 <span className="p-3 rounded-xl bg-cyan-50 text-cyan-700 group-hover:bg-cyan-700 group-hover:text-white transition-colors shadow-sm">
                   <Layers className="w-6 h-6" />
-                </span>
-                <span className="text-[10px] font-black uppercase px-2 py-0.5 rounded-full bg-cyan-100 text-cyan-800 border border-cyan-200">
-                  15m / 30m / 60m Modes
                 </span>
               </div>
               <h3 className="text-xl font-black text-slate-900 mb-2">100+ Chapter-Wise Tests</h3>
@@ -156,12 +144,9 @@ export const AboutSection: React.FC = () => {
           {/* Card 5: Multilingual AI Doubt Solver */}
           <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-xl hover:border-amber-400 hover:-translate-y-1 transition-all flex flex-col justify-between group">
             <div>
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center mb-4">
                 <span className="p-3 rounded-xl bg-amber-50 text-amber-700 group-hover:bg-amber-700 group-hover:text-white transition-colors shadow-sm">
                   <Languages className="w-6 h-6" />
-                </span>
-                <span className="text-[10px] font-black uppercase px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 border border-amber-200">
-                  5 Indian Languages
                 </span>
               </div>
               <h3 className="text-xl font-black text-slate-900 mb-2">Multilingual Doubt Solver</h3>
@@ -178,12 +163,9 @@ export const AboutSection: React.FC = () => {
           {/* Card 6: Individual & 5-Test Consolidated Reports */}
           <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-xl hover:border-purple-400 hover:-translate-y-1 transition-all flex flex-col justify-between group">
             <div>
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center mb-4">
                 <span className="p-3 rounded-xl bg-purple-50 text-purple-700 group-hover:bg-purple-700 group-hover:text-white transition-colors shadow-sm">
                   <BarChart3 className="w-6 h-6" />
-                </span>
-                <span className="text-[10px] font-black uppercase px-2 py-0.5 rounded-full bg-purple-100 text-purple-800 border border-purple-200">
-                  Dual-Tier Diagnostics
                 </span>
               </div>
               <h3 className="text-xl font-black text-slate-900 mb-2">Individual & 5-Test Reports</h3>
@@ -200,12 +182,9 @@ export const AboutSection: React.FC = () => {
           {/* Card 7: AI Adaptive Study Plans */}
           <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-xl hover:border-rose-400 hover:-translate-y-1 transition-all flex flex-col justify-between group">
             <div>
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center mb-4">
                 <span className="p-3 rounded-xl bg-rose-50 text-rose-700 group-hover:bg-rose-700 group-hover:text-white transition-colors shadow-sm">
                   <Calendar className="w-6 h-6" />
-                </span>
-                <span className="text-[10px] font-black uppercase px-2 py-0.5 rounded-full bg-rose-100 text-rose-800 border border-rose-200">
-                  Self-Adjusting
                 </span>
               </div>
               <h3 className="text-xl font-black text-slate-900 mb-2">AI Adaptive Study Plans</h3>
@@ -222,12 +201,9 @@ export const AboutSection: React.FC = () => {
           {/* Card 8: Leaderboard & 24/7 Helpdesk */}
           <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-xl hover:border-emerald-500 hover:-translate-y-1 transition-all flex flex-col justify-between group">
             <div>
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center mb-4">
                 <span className="p-3 rounded-xl bg-emerald-50 text-emerald-700 group-hover:bg-emerald-700 group-hover:text-white transition-colors shadow-sm">
                   <Users className="w-6 h-6" />
-                </span>
-                <span className="text-[10px] font-black uppercase px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-200">
-                  Community & Support
                 </span>
               </div>
               <h3 className="text-xl font-black text-slate-900 mb-2">Leaderboard & Helpdesk</h3>
