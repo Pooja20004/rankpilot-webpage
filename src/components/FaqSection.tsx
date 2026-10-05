@@ -25,7 +25,7 @@ const FAQS = [
   },
   {
     q: 'Are BITSAT mock tests included with the 130-question and bonus question format?',
-    a: 'Yes! The 10+ BITSAT mocks simulate the 130-question test across Physics, Chemistry, Math, English Proficiency, and Logical Reasoning, and include the official 12 bonus question unlocking engine when all 130 questions are attempted.'
+    a: 'Yes! The 10+ BITSAT mocks include the 130-question test across Physics, Chemistry, Math, English Proficiency, and Logical Reasoning, and include the official 12 bonus question unlocking engine when all 130 questions are attempted.'
   },
   {
     q: 'How do the individual and 5-test consolidated reports help me?',

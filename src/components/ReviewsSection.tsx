@@ -39,7 +39,7 @@ export const ReviewsSection: React.FC = () => {
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight">
-            Loved by JEE and BITSAT Rankers
+            Loved by JEE and BITSAT Aspirants
           </h2>
 
           <p className="text-base text-slate-600 font-medium">
