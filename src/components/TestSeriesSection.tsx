@@ -546,7 +546,7 @@ export const TestSeriesSection: React.FC = () => {
                   </div>
                   <div className="flex items-start gap-2.5 text-xs text-slate-700">
                     <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                    <span>All India Rank Predictor, National Leaderboard & Priority Helpdesk</span>
+                    <span>National Percentile Benchmark, Leaderboard & Priority Helpdesk</span>
                   </div>
                 </div>
               </div>

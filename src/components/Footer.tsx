@@ -90,7 +90,6 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2">
               <li><a href="#about" className="hover:text-white transition-colors">What's Included in App</a></li>
               <li><a href="#sample-report" className="hover:text-white transition-colors">Sample Mock Test Report</a></li>
-              <li><a href="#predictor" className="hover:text-white transition-colors">Live Marks vs Percentile</a></li>
               <li><a href="#reviews" className="hover:text-white transition-colors">Reviews</a></li>
               <li><a href="#faqs" className="hover:text-white transition-colors">Frequently Asked Questions</a></li>
             </ul>

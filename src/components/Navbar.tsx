@@ -6,7 +6,6 @@ import {
   BarChart3, 
   BookOpen, 
   Award, 
-  Calculator, 
   ArrowRight, 
   Menu, 
   X,
@@ -154,15 +153,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectTab }) => {
               <span>Learn</span>
             </button>
 
-            {/* AIR Predictor */}
-            <button 
-              onClick={() => scrollToSection('predictor')}
-              className="px-3.5 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5"
-            >
-              <Calculator className="w-4 h-4 text-sky-600" />
-              <span>AIR Predictor</span>
-            </button>
-
             {/* Reviews Tab */}
             <button 
               onClick={() => scrollToSection('reviews')}
@@ -250,14 +240,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectTab }) => {
             >
               <GraduationCap className="w-4 h-4 text-purple-600" />
               <span>JEE Ranker Learn (11th & 12th)</span>
-            </button>
-
-            <button 
-              onClick={() => scrollToSection('predictor')}
-              className="w-full text-left px-3 py-2.5 rounded-lg text-sm font-bold text-slate-800 hover:bg-slate-50 flex items-center gap-2"
-            >
-              <Calculator className="w-4 h-4 text-sky-600" />
-              <span>Percentile & AIR Predictor</span>
             </button>
 
             <button 

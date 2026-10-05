@@ -6,7 +6,6 @@ import { TestSeriesSection } from './components/TestSeriesSection';
 import { LearnSection } from './components/LearnSection';
 import { SampleReportSection } from './components/SampleReportSection';
 import { StudyFeaturesSection } from './components/StudyFeaturesSection';
-import { RankPredictor } from './components/RankPredictor';
 import { ReviewsSection } from './components/ReviewsSection';
 import { SignupSection } from './components/SignupSection';
 import { FaqSection } from './components/FaqSection';
@@ -49,10 +48,7 @@ export function App() {
         {/* 4. Study Features Section: Concept notes, formula sheet, mindmap, ai analysis, multilingual doubt solver */}
         <StudyFeaturesSection />
 
-        {/* 5. Live Marks vs Percentile & AIR Predictor Widget */}
-        <RankPredictor />
-
-        {/* 6. Verified Toppers & Results */}
+        {/* 5. Verified Toppers & Results */}
         <ReviewsSection />
 
         {/* 7. Direct Lovable Launch & Free Signup Portal */}

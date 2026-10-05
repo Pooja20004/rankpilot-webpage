@@ -3,7 +3,6 @@ export type MainNavTab =
   | 'test-series' 
   | 'sample-report' 
   | 'features' 
-  | 'predictor' 
   | 'reviews';
 
 export type ExamType = 'JEE Main' | 'JEE Advanced' | 'BITSAT';
