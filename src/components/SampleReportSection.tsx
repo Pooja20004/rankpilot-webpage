@@ -12,7 +12,9 @@ import {
   Sparkles,
   FileCheck2,
   ZoomIn,
-  AlertTriangle
+  AlertTriangle,
+  Flame,
+  BrainCircuit
 } from 'lucide-react';
 import { RANKPILOT_SAMPLE_REPORT, LOVABLE_PROJECT_URL } from '../data/mockData';
 
@@ -24,9 +26,8 @@ export const SampleReportSection: React.FC = () => {
   const [isImage1Zoomed, setIsImage1Zoomed] = useState(false);
   const [isImage2Zoomed, setIsImage2Zoomed] = useState(false);
 
-  // Consolidated 5-Test Zoom states
-  const [isConsolidatedImg1Zoomed, setIsConsolidatedImg1Zoomed] = useState(false);
-  const [isConsolidatedImg2Zoomed, setIsConsolidatedImg2Zoomed] = useState(false);
+  // Consolidated Focus Chapters Zoom state
+  const [isFocusChaptersZoomed, setIsFocusChaptersZoomed] = useState(false);
 
   return (
     <section id="sample-report" className="py-20 bg-slate-50 border-b border-slate-200 relative">
@@ -45,7 +46,7 @@ export const SampleReportSection: React.FC = () => {
           </h2>
 
           <p className="text-base text-slate-600 font-medium">
-            After every mock test, JEE Ranker instantly analyzes your subject accuracy, time spent, and marks distribution. Track recurring error patterns and negative marking leakage across your last five mocks.
+            After every mock test, JEE Ranker instantly analyzes your subject accuracy, time spent, and marks distribution. Track recurring error patterns and persistent high-weightage weaknesses across your last five mocks.
           </p>
         </div>
 
@@ -133,207 +134,102 @@ export const SampleReportSection: React.FC = () => {
 
                 <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
                   <div className="flex items-center justify-between text-xs font-bold text-slate-500 mb-1">
-                    <span>Negative Marks Lost</span>
-                    <AlertTriangle className="w-4 h-4 text-rose-600" />
-                  </div>
-                  <div className="flex items-baseline gap-1.5">
-                    <span className="text-3xl sm:text-4xl font-black text-rose-600">-22</span>
-                    <span className="text-xs font-bold text-slate-400">Marks Bleed</span>
-                  </div>
-                  <div className="text-[11px] font-bold text-slate-500 mt-2">
-                    Identified for Elimination
-                  </div>
-                </div>
-
-                <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
-                  <div className="flex items-center justify-between text-xs font-bold text-slate-500 mb-1">
                     <span>Repeated Weaknesses</span>
-                    <Target className="w-4 h-4 text-purple-600" />
+                    <Flame className="w-4 h-4 text-rose-600" />
                   </div>
                   <div className="flex items-baseline gap-1.5">
-                    <span className="text-3xl sm:text-4xl font-black text-purple-700">4</span>
+                    <span className="text-3xl sm:text-4xl font-black text-rose-600">4</span>
                     <span className="text-xs font-bold text-slate-400">High-Yield Chapters</span>
                   </div>
-                  <div className="text-[11px] font-bold text-purple-600 mt-2">
-                    Equilibrium, Atomic, Conics, Electrost.
+                  <div className="text-[11px] font-bold text-rose-700 mt-2">
+                    Flagged for Priority Revision
                   </div>
                 </div>
 
                 <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
                   <div className="flex items-center justify-between text-xs font-bold text-slate-500 mb-1">
-                    <span>Average Pacing</span>
-                    <Clock className="w-4 h-4 text-amber-500" />
+                    <span>Pattern Engine</span>
+                    <BrainCircuit className="w-4 h-4 text-purple-600" />
                   </div>
                   <div className="flex items-baseline gap-1.5">
-                    <span className="text-2xl sm:text-3xl font-black text-slate-900">54s</span>
-                    <span className="text-xs font-bold text-slate-400">Total Avg Time</span>
+                    <span className="text-2xl sm:text-3xl font-black text-purple-700">Multi-Mock</span>
+                  </div>
+                  <div className="text-[11px] font-bold text-purple-600 mt-2">
+                    Aggregates 5 Consecutive Tests
+                  </div>
+                </div>
+
+                <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                  <div className="flex items-center justify-between text-xs font-bold text-slate-500 mb-1">
+                    <span>Score Recovery</span>
+                    <Target className="w-4 h-4 text-blue-600" />
+                  </div>
+                  <div className="flex items-baseline gap-1.5">
+                    <span className="text-3xl sm:text-4xl font-black text-blue-700">125+</span>
+                    <span className="text-xs font-bold text-slate-400">Marks</span>
                   </div>
                   <div className="text-[11px] font-bold text-slate-500 mt-2">
-                    Fast Speed Across 300 Marks
+                    Recoverable from Weak Topics
                   </div>
                 </div>
               </div>
 
-              {/* DUAL OFFICIAL CONSOLIDATED REPORT IMAGES:
-                  LEFT: 1. Average marks — subject-wise & total
-                  RIGHT: 4. Chapters to focus on (by JEE Main weightage) */}
+              {/* SECTION 4: CHAPTERS TO FOCUS ON (BY JEE MAIN WEIGHTAGE) */}
               <div className="p-6 sm:p-8 bg-white border-b border-slate-200">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                   
-                  {/* LEFT PANE: 1. Average marks — subject-wise & total */}
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <div className="flex items-center gap-2 mb-1">
-                          <span className="px-2 py-0.5 rounded bg-blue-100 text-blue-800 text-[10px] font-black uppercase">
-                            Section 1
-                          </span>
-                          <span className="text-xs text-slate-400 font-bold">Consolidated Aggregate</span>
-                        </div>
-                        <h4 className="text-lg font-black text-slate-900">
-                          1. Average marks — subject-wise & total
-                        </h4>
-                      </div>
-
-                      <button
-                        onClick={() => setIsConsolidatedImg1Zoomed(!isConsolidatedImg1Zoomed)}
-                        className="px-3 py-1.5 rounded-lg border border-slate-200 hover:border-blue-600 text-xs font-bold text-blue-700 flex items-center gap-1.5 shadow-sm transition-colors"
-                      >
-                        <ZoomIn className="w-3.5 h-3.5" />
-                        <span>{isConsolidatedImg1Zoomed ? 'Reset Zoom' : 'Enlarge'}</span>
-                      </button>
-                    </div>
-
-                    {/* Image with Click-to-Zoom */}
-                    <div className={`rounded-2xl border-2 border-slate-200 overflow-hidden shadow-md bg-white transition-all duration-300 ${
-                      isConsolidatedImg1Zoomed ? 'ring-4 ring-blue-500/20' : ''
-                    }`}>
-                      <img 
-                        src="/consolidated_report_avg_marks.png" 
-                        alt="Consolidated 5-Test Report: 1. Average marks - subject-wise and total" 
-                        className={`w-full object-contain mx-auto transition-transform duration-300 ${
-                          isConsolidatedImg1Zoomed ? 'scale-110 cursor-zoom-out' : 'cursor-zoom-in'
-                        }`}
-                        onClick={() => setIsConsolidatedImg1Zoomed(!isConsolidatedImg1Zoomed)}
-                      />
-                    </div>
-
-                    {/* Extracted Average Marks Summary Table */}
-                    <div className="rounded-2xl border border-slate-200 overflow-hidden shadow-sm bg-white">
-                      <div className="bg-slate-100 px-4 py-2.5 border-b border-slate-200 flex items-center justify-between">
-                        <span className="text-xs font-black uppercase tracking-wider text-slate-700">
-                          Subject-Wise Average Statistics
-                        </span>
-                        <span className="text-xs font-bold text-rose-700">Marks Lost (-ve): 22</span>
-                      </div>
-                      <div className="overflow-x-auto">
-                        <table className="w-full text-xs text-left">
-                          <thead className="bg-slate-50 text-slate-500 font-bold uppercase text-[10px] border-b border-slate-200">
-                            <tr>
-                              <th className="py-2.5 px-3">Subject</th>
-                              <th className="py-2.5 px-2.5 text-center">Average</th>
-                              <th className="py-2.5 px-2 text-center text-emerald-600">Best</th>
-                              <th className="py-2.5 px-2 text-center text-rose-600">Lowest</th>
-                              <th className="py-2.5 px-2.5 text-center">Accuracy</th>
-                              <th className="py-2.5 px-2.5 text-center text-rose-600">Marks Lost (-ve)</th>
-                              <th className="py-2.5 px-2.5 text-right">Avg Time</th>
-                            </tr>
-                          </thead>
-                          <tbody className="divide-y divide-slate-100 text-slate-700 font-medium">
-                            <tr className="hover:bg-slate-50/60">
-                              <td className="py-2.5 px-3 font-bold text-slate-900">Mathematics</td>
-                              <td className="py-2.5 px-2.5 text-center font-bold">1 / 100</td>
-                              <td className="py-2.5 px-2 text-center font-bold text-emerald-600">4</td>
-                              <td className="py-2.5 px-2 text-center font-bold text-rose-600">-2</td>
-                              <td className="py-2.5 px-2.5 text-center font-semibold text-slate-600">23%</td>
-                              <td className="py-2.5 px-2.5 text-center font-bold text-rose-600">10</td>
-                              <td className="py-2.5 px-2.5 text-right font-mono">34s</td>
-                            </tr>
-                            <tr className="hover:bg-slate-50/60">
-                              <td className="py-2.5 px-3 font-bold text-slate-900">Physics</td>
-                              <td className="py-2.5 px-2.5 text-center font-bold">1.5 / 100</td>
-                              <td className="py-2.5 px-2 text-center font-bold text-emerald-600">3</td>
-                              <td className="py-2.5 px-2 text-center font-bold text-slate-400">0</td>
-                              <td className="py-2.5 px-2.5 text-center font-semibold text-slate-600">29%</td>
-                              <td className="py-2.5 px-2.5 text-center font-bold text-rose-600">5</td>
-                              <td className="py-2.5 px-2.5 text-right font-mono">9s</td>
-                            </tr>
-                            <tr className="hover:bg-slate-50/60">
-                              <td className="py-2.5 px-3 font-bold text-slate-900">Chemistry</td>
-                              <td className="py-2.5 px-2.5 text-center font-bold">0.5 / 100</td>
-                              <td className="py-2.5 px-2 text-center font-bold text-emerald-600">1</td>
-                              <td className="py-2.5 px-2 text-center font-bold text-slate-400">0</td>
-                              <td className="py-2.5 px-2.5 text-center font-semibold text-slate-600">22%</td>
-                              <td className="py-2.5 px-2.5 text-center font-bold text-rose-600">7</td>
-                              <td className="py-2.5 px-2.5 text-right font-mono">12s</td>
-                            </tr>
-                          </tbody>
-                          <tfoot className="bg-slate-50 font-black text-slate-900 border-t border-slate-200">
-                            <tr>
-                              <td className="py-2.5 px-3">Total</td>
-                              <td className="py-2.5 px-2.5 text-center text-blue-700">3 / 300</td>
-                              <td className="py-2.5 px-2 text-center text-emerald-600">4</td>
-                              <td className="py-2.5 px-2 text-center text-slate-600">2</td>
-                              <td className="py-2.5 px-2.5 text-center text-slate-400">-</td>
-                              <td className="py-2.5 px-2.5 text-center text-rose-600">22</td>
-                              <td className="py-2.5 px-2.5 text-right font-mono text-slate-900">54s</td>
-                            </tr>
-                          </tfoot>
-                        </table>
-                      </div>
-                    </div>
-
-                    <div className="p-3.5 rounded-xl bg-blue-50/80 border border-blue-200 flex items-center justify-between text-xs text-blue-900">
-                      <span>⚡ <strong>Longitudinal Insight:</strong> Isolates negative marks leakage (-22 marks) across 5 test sittings.</span>
-                    </div>
-                  </div>
-
-                  {/* RIGHT PANE: 4. Chapters to focus on (by JEE Main weightage) */}
-                  <div className="space-y-4">
+                  {/* LEFT COLUMN: Report Screenshot with Zoom (7 cols) */}
+                  <div className="lg:col-span-7 space-y-4">
                     <div className="flex items-center justify-between">
                       <div>
                         <div className="flex items-center gap-2 mb-1">
                           <span className="px-2 py-0.5 rounded bg-purple-100 text-purple-800 text-[10px] font-black uppercase">
-                            Section 4
+                            Official Report
                           </span>
-                          <span className="text-xs text-slate-400 font-bold">AI Pattern Engine</span>
+                          <span className="text-xs text-slate-400 font-bold">Longitudinal Analysis</span>
                         </div>
-                        <h4 className="text-lg font-black text-slate-900">
+                        <h4 className="text-xl font-black text-slate-900">
                           4. Chapters to focus on (by JEE Main weightage)
                         </h4>
                       </div>
 
                       <button
-                        onClick={() => setIsConsolidatedImg2Zoomed(!isConsolidatedImg2Zoomed)}
+                        onClick={() => setIsFocusChaptersZoomed(!isFocusChaptersZoomed)}
                         className="px-3 py-1.5 rounded-lg border border-slate-200 hover:border-blue-600 text-xs font-bold text-blue-700 flex items-center gap-1.5 shadow-sm transition-colors"
                       >
                         <ZoomIn className="w-3.5 h-3.5" />
-                        <span>{isConsolidatedImg2Zoomed ? 'Reset Zoom' : 'Enlarge'}</span>
+                        <span>{isFocusChaptersZoomed ? 'Reset Zoom' : 'Enlarge'}</span>
                       </button>
                     </div>
 
                     {/* Image with Click-to-Zoom */}
                     <div className={`rounded-2xl border-2 border-slate-200 overflow-hidden shadow-md bg-white transition-all duration-300 ${
-                      isConsolidatedImg2Zoomed ? 'ring-4 ring-blue-500/20' : ''
+                      isFocusChaptersZoomed ? 'ring-4 ring-blue-500/20' : ''
                     }`}>
                       <img 
                         src="/consolidated_report_chapters_focus.png" 
                         alt="Consolidated 5-Test Report: 4. Chapters to focus on (by JEE Main weightage)" 
                         className={`w-full object-contain mx-auto transition-transform duration-300 ${
-                          isConsolidatedImg2Zoomed ? 'scale-110 cursor-zoom-out' : 'cursor-zoom-in'
+                          isFocusChaptersZoomed ? 'scale-110 cursor-zoom-out' : 'cursor-zoom-in'
                         }`}
-                        onClick={() => setIsConsolidatedImg2Zoomed(!isConsolidatedImg2Zoomed)}
+                        onClick={() => setIsFocusChaptersZoomed(!isFocusChaptersZoomed)}
                       />
                     </div>
 
-                    {/* Extracted Priority Chapters Breakdown */}
+                    <div className="p-3.5 rounded-xl bg-purple-50/80 border border-purple-200 flex items-center justify-between text-xs text-purple-900">
+                      <span>🎯 <strong>AI Pattern Engine:</strong> Spots recurring weaknesses across mocks to direct high-yield marks recovery first.</span>
+                    </div>
+                  </div>
+
+                  {/* RIGHT COLUMN: Extracted Priority Chapters Breakdown (5 cols) */}
+                  <div className="lg:col-span-5 space-y-4">
                     <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
                       <div className="text-xs font-black uppercase tracking-wider text-slate-700 flex items-center justify-between">
-                        <span>Top Repeated Weakness Chapters:</span>
-                        <span className="text-rose-700 font-bold">Highest Marks Lost</span>
+                        <span>High-Yield Weakness Chapters:</span>
+                        <span className="text-rose-700 font-bold">Marks Leakage</span>
                       </div>
 
-                      <div className="space-y-2 text-xs">
+                      <div className="space-y-2.5 text-xs">
                         <div className="p-3 bg-white rounded-xl border border-rose-200 flex items-center justify-between shadow-xs">
                           <div className="flex items-center gap-2">
                             <span className="px-2 py-0.5 rounded bg-rose-100 text-rose-800 font-bold text-[10px]">
@@ -341,12 +237,12 @@ export const SampleReportSection: React.FC = () => {
                             </span>
                             <div>
                               <strong className="text-slate-900">Equilibrium</strong>
-                              <span className="text-slate-500 ml-1.5">(Chemistry • 5.8% Weightage)</span>
+                              <span className="text-slate-500 ml-1.5 block sm:inline text-[11px]">(Chemistry • 5.8% Weightage)</span>
                             </div>
                           </div>
-                          <div className="flex items-center gap-3">
-                            <span className="text-rose-600 font-bold">Repeated weakness</span>
-                            <span className="font-mono font-black text-rose-700 bg-rose-50 px-2 py-0.5 rounded">47 Lost</span>
+                          <div className="text-right">
+                            <span className="text-rose-600 font-bold block text-[11px]">Repeated weakness</span>
+                            <span className="font-mono font-black text-rose-700 bg-rose-50 px-2 py-0.5 rounded text-xs">47 Lost</span>
                           </div>
                         </div>
 
@@ -357,12 +253,12 @@ export const SampleReportSection: React.FC = () => {
                             </span>
                             <div>
                               <strong className="text-slate-900">Atomic Structure</strong>
-                              <span className="text-slate-500 ml-1.5">(Chemistry • 6.8% Weightage)</span>
+                              <span className="text-slate-500 ml-1.5 block sm:inline text-[11px]">(Chemistry • 6.8% Weightage)</span>
                             </div>
                           </div>
-                          <div className="flex items-center gap-3">
-                            <span className="text-rose-600 font-bold">Repeated weakness</span>
-                            <span className="font-mono font-black text-rose-700 bg-rose-50 px-2 py-0.5 rounded">36 Lost</span>
+                          <div className="text-right">
+                            <span className="text-rose-600 font-bold block text-[11px]">Repeated weakness</span>
+                            <span className="font-mono font-black text-rose-700 bg-rose-50 px-2 py-0.5 rounded text-xs">36 Lost</span>
                           </div>
                         </div>
 
@@ -373,12 +269,12 @@ export const SampleReportSection: React.FC = () => {
                             </span>
                             <div>
                               <strong className="text-slate-900">Conic Sections</strong>
-                              <span className="text-slate-500 ml-1.5">(Math • 6.4% Weightage)</span>
+                              <span className="text-slate-500 ml-1.5 block sm:inline text-[11px]">(Math • 6.4% Weightage)</span>
                             </div>
                           </div>
-                          <div className="flex items-center gap-3">
-                            <span className="text-rose-600 font-bold">Repeated weakness</span>
-                            <span className="font-mono font-black text-rose-700 bg-rose-50 px-2 py-0.5 rounded">26 Lost</span>
+                          <div className="text-right">
+                            <span className="text-rose-600 font-bold block text-[11px]">Repeated weakness</span>
+                            <span className="font-mono font-black text-rose-700 bg-rose-50 px-2 py-0.5 rounded text-xs">26 Lost</span>
                           </div>
                         </div>
 
@@ -389,65 +285,56 @@ export const SampleReportSection: React.FC = () => {
                             </span>
                             <div>
                               <strong className="text-slate-900">Electrostatics</strong>
-                              <span className="text-slate-500 ml-1.5">(Physics • 9.5% Weightage)</span>
+                              <span className="text-slate-500 ml-1.5 block sm:inline text-[11px]">(Physics • 9.5% Weightage)</span>
                             </div>
                           </div>
-                          <div className="flex items-center gap-3">
-                            <span className="text-rose-600 font-bold">Repeated weakness</span>
-                            <span className="font-mono font-black text-rose-700 bg-rose-50 px-2 py-0.5 rounded">16 Lost</span>
+                          <div className="text-right">
+                            <span className="text-rose-600 font-bold block text-[11px]">Repeated weakness</span>
+                            <span className="font-mono font-black text-rose-700 bg-rose-50 px-2 py-0.5 rounded text-xs">16 Lost</span>
+                          </div>
+                        </div>
+
+                        <div className="p-3 bg-white rounded-xl border border-amber-200 flex items-center justify-between shadow-xs">
+                          <div className="flex items-center gap-2">
+                            <span className="px-2 py-0.5 rounded bg-amber-100 text-amber-800 font-bold text-[10px]">
+                              Medium
+                            </span>
+                            <div>
+                              <strong className="text-slate-900">Complex Numbers</strong>
+                              <span className="text-slate-500 ml-1.5 block sm:inline text-[11px]">(Math • 6.5% Weightage)</span>
+                            </div>
+                          </div>
+                          <div className="text-right">
+                            <span className="text-amber-600 font-bold block text-[11px]">Repeated weakness</span>
+                            <span className="font-mono font-black text-amber-700 bg-amber-50 px-2 py-0.5 rounded text-xs">21 Lost</span>
                           </div>
                         </div>
                       </div>
                     </div>
 
-                    <div className="p-3.5 rounded-xl bg-purple-50/80 border border-purple-200 flex items-center justify-between text-xs text-purple-900">
-                      <span>🎯 <strong>Pattern Recognition:</strong> Highlights chapters with &ldquo;Repeated weakness&rdquo; so you fix high-weightage topics first.</span>
+                    <div className="p-4 rounded-2xl bg-blue-50/70 border border-blue-200 text-xs text-blue-900 space-y-2">
+                      <div className="font-extrabold flex items-center gap-1.5">
+                        <Sparkles className="w-4 h-4 text-blue-600" />
+                        <span>Actionable Diagnostic Prescription</span>
+                      </div>
+                      <p className="leading-relaxed text-slate-700">
+                        Focusing on Equilibrium, Atomic Structure, and Conics can directly recover up to <strong>109 marks</strong> before attempting your next mock test.
+                      </p>
                     </div>
                   </div>
 
                 </div>
               </div>
 
-              {/* Longitudinal Score Progression & AI Insights */}
+              {/* Weakness & Strength Taxonomy Grid */}
               <div className="p-6 sm:p-10 bg-slate-50/50 space-y-8">
-                {/* Test-by-Test Progression Bar Chart */}
-                <div className="space-y-3">
-                  <div className="text-xs font-extrabold uppercase text-slate-400 tracking-wider">
-                    Score & Accuracy Progression Across Last 5 Tests:
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-5 gap-3">
-                    {report.lastFiveTestsSummary?.testNames.map((testName, i) => (
-                      <div key={i} className="p-4 rounded-xl border border-slate-200 bg-white space-y-2 shadow-xs">
-                        <span className="text-[10px] font-extrabold uppercase text-slate-400 block truncate">
-                          {testName}
-                        </span>
-                        <div className="text-2xl font-black text-slate-900">
-                          {report.lastFiveTestsSummary?.scores[i]}
-                        </div>
-                        <div className="flex items-center justify-between text-xs font-bold">
-                          <span className="text-slate-500">Accuracy:</span>
-                          <span className="text-emerald-600">{report.lastFiveTestsSummary?.accuracies[i]}%</span>
-                        </div>
-                        <div className="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
-                          <div 
-                            className="bg-blue-600 h-full rounded-full" 
-                            style={{ width: `${report.lastFiveTestsSummary?.accuracies[i]}%` }}
-                          />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Weakness & Strength Taxonomy Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="p-6 rounded-2xl bg-rose-50/60 border border-rose-200 space-y-3">
                     <div className="flex items-center gap-2 text-rose-900 font-extrabold text-sm">
                       <span>⚠️ Persistent Weak Areas (Flagged Across Multiple Tests)</span>
                     </div>
                     <p className="text-xs text-rose-800 leading-relaxed font-medium">
-                      The AI detected repeated errors in these 2 specific sub-topics over the last 5 tests:
+                      The AI detected repeated errors in these specific sub-topics over the last 5 tests:
                     </p>
                     <div className="space-y-2">
                       {report.lastFiveTestsSummary?.weakAreasIdentified.map((area, idx) => (
