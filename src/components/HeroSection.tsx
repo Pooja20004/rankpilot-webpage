@@ -169,17 +169,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 </div>
               </div>
 
-              {/* Floating Verified Badge */}
-              <div className="hidden sm:flex absolute -bottom-4 -left-4 bg-white p-3.5 rounded-2xl shadow-xl border border-slate-200 items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-emerald-500 text-white flex items-center justify-center">
-                  <ShieldCheck className="w-6 h-6" />
-                </div>
-                <div>
-                  <div className="text-xs font-black text-slate-900">100% NTA CBT Pattern</div>
-                  <div className="text-[11px] text-slate-500 font-semibold">Latest Numerical Scheme</div>
-                </div>
-              </div>
-
             </div>
           </div>
 

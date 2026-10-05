@@ -39,7 +39,6 @@ interface SubjectCurriculum {
 
 export const LearnSection: React.FC = () => {
   const [activeProgram, setActiveProgram] = useState<'11th' | '12th'>('11th');
-  const [selectedSubject, setSelectedSubject] = useState<'All' | 'Physics' | 'Chemistry' | 'Mathematics'>('All');
   const [expandedChapter, setExpandedChapter] = useState<string | null>(null);
 
   // 11th Foundation Curriculum
@@ -511,10 +510,6 @@ export const LearnSection: React.FC = () => {
   ];
 
   const activeCurriculum = activeProgram === '11th' ? foundation11th : booster12th;
-  
-  const filteredCurriculum = selectedSubject === 'All' 
-    ? activeCurriculum 
-    : activeCurriculum.filter(s => s.subject === selectedSubject);
 
   return (
     <section id="learn" className="py-20 bg-slate-900 text-white relative overflow-hidden border-b border-slate-800">
@@ -633,34 +628,9 @@ export const LearnSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Subject Filter Tabs */}
-        <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-4 border-b border-slate-800">
-          <div className="flex items-center gap-2">
-            <span className="text-xs font-extrabold uppercase text-slate-400 tracking-wider">
-              Browse Subject Syllabus:
-            </span>
-          </div>
-
-          <div className="flex flex-wrap gap-2">
-            {(['All', 'Physics', 'Chemistry', 'Mathematics'] as const).map((sub) => (
-              <button
-                key={sub}
-                onClick={() => setSelectedSubject(sub)}
-                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all ${
-                  selectedSubject === sub
-                    ? 'bg-white text-slate-900 shadow-md font-black'
-                    : 'bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white border border-slate-700'
-                }`}
-              >
-                {sub === 'All' ? 'All Subjects' : sub}
-              </button>
-            ))}
-          </div>
-        </div>
-
         {/* Syllabus Grid & Chapter Modules */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {filteredCurriculum.map((subj) => {
+          {activeCurriculum.map((subj) => {
             const SubIcon = subj.icon;
 
             return (

@@ -53,6 +53,7 @@ const TEST_SERIES_SLIDES: TestSeriesSlide[] = [
       { label: 'Mathematics', count: '25 Questions (20 MCQ + 5 Num)', color: 'bg-cyan-50 text-cyan-700 border-cyan-200' }
     ],
     features: [
+      'We provide detailed solutions for every mock test question',
       'Authentic NTA CBT interface with exact question palette and countdown timer',
       'Detailed text solutions for all physics, chemistry and math questions',
       'Section B integer questions with negative marking rules matching latest NTA standards',
@@ -76,6 +77,7 @@ const TEST_SERIES_SLIDES: TestSeriesSlide[] = [
       { label: 'Matrix & Comprehension', count: 'Multi-concept paragraphs', color: 'bg-blue-50 text-blue-700 border-blue-200' }
     ],
     features: [
+      'We provide detailed solutions for every mock test question',
       'Comprehensive 19-year archive (2007 to 2025) of authentic Paper 1 and Paper 2',
       'Strict multi-correct partial marking simulator mimicking the real IIT Joint Admission Board',
       'Detailed text solutions breaking down first-principles physics and calculus',
@@ -100,6 +102,7 @@ const TEST_SERIES_SLIDES: TestSeriesSlide[] = [
       { label: 'Mathematics', count: '40 Questions (Speed Calculus & Algebra)', color: 'bg-violet-50 text-violet-700 border-violet-200' }
     ],
     features: [
+      'We provide detailed solutions for every mock test question',
       'Dedicated Logical Reasoning modules: series completion, analogies, and spatial syllogisms',
       'English Proficiency coverage: grammar rules, high-frequency vocabulary & comprehension',
       'Official 12 Bonus Questions Engine: unlocks when all 130 questions are submitted before 180 min',

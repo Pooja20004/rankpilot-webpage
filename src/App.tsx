@@ -7,7 +7,6 @@ import { LearnSection } from './components/LearnSection';
 import { SampleReportSection } from './components/SampleReportSection';
 import { StudyFeaturesSection } from './components/StudyFeaturesSection';
 import { ReviewsSection } from './components/ReviewsSection';
-import { SignupSection } from './components/SignupSection';
 import { FaqSection } from './components/FaqSection';
 import { Footer } from './components/Footer';
 
@@ -51,10 +50,7 @@ export function App() {
         {/* 5. Verified Toppers & Results */}
         <ReviewsSection />
 
-        {/* 7. Direct Lovable Launch & Free Signup Portal */}
-        <SignupSection />
-
-        {/* 8. Frequently Asked Questions */}
+        {/* 6. Frequently Asked Questions & Academic/Business Enquiry Form */}
         <FaqSection />
       </main>
 
