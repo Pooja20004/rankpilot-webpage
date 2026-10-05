@@ -372,47 +372,6 @@ export const AboutSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Exam Matrix Coverage */}
-        <div>
-          <div className="text-center max-w-2xl mx-auto mb-8">
-            <span className="px-3.5 py-1 rounded-full text-xs font-black uppercase tracking-wider bg-emerald-100 text-emerald-800 border border-emerald-200">
-              Complete Exam Syllabus
-            </span>
-            <h3 className="text-2xl sm:text-3xl font-black text-slate-900 mt-2">
-              Exam Matrix Coverage
-            </h3>
-            <p className="text-xs sm:text-sm text-slate-500 mt-1">
-              Engineered exclusively for India's three most competitive engineering entrance exams.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm space-y-3 hover:border-blue-300 transition-all">
-              <span className="px-3 py-1 rounded bg-blue-100 text-blue-800 text-xs font-black">JEE Main</span>
-              <h4 className="text-lg font-black text-slate-900">120+ PYQs as Mocks</h4>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Complete coverage of January and April session shift papers with Section A MCQs and Section B numericals under authentic NTA CBT screen timings.
-              </p>
-            </div>
-
-            <div className="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm space-y-3 hover:border-indigo-300 transition-all">
-              <span className="px-3 py-1 rounded bg-indigo-100 text-indigo-800 text-xs font-black">JEE Advanced</span>
-              <h4 className="text-lg font-black text-slate-900">40+ PYQs as Mocks (19 Years)</h4>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                19-year archive (2007-2025) of Paper 1 and Paper 2 with partial marking, integer, paragraph, and matrix match schemes.
-              </p>
-            </div>
-
-            <div className="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm space-y-3 hover:border-emerald-300 transition-all">
-              <span className="px-3 py-1 rounded bg-emerald-100 text-emerald-800 text-xs font-black">BITSAT</span>
-              <h4 className="text-lg font-black text-slate-900">10+ PYQs as Mocks + 12 Bonus Engine</h4>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Full 130-question speed and accuracy format including English Proficiency and Logical Reasoning with real-time bonus question unlocking.
-              </p>
-            </div>
-          </div>
-        </div>
-
       </div>
     </section>
   );
