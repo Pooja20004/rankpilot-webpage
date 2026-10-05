@@ -2,15 +2,8 @@ import React, { useState } from 'react';
 import { 
   GraduationCap, 
   Sparkles, 
-  ArrowRight, 
-  CheckCircle2, 
-  BrainCircuit,
-  BookOpen,
-  Target,
-  FileText,
-  Clock
+  BrainCircuit
 } from 'lucide-react';
-import { LOVABLE_PROJECT_URL } from '../data/mockData';
 
 export const LearnSection: React.FC = () => {
   const [activeProgram, setActiveProgram] = useState<'11th' | '12th'>('11th');
@@ -72,7 +65,7 @@ export const LearnSection: React.FC = () => {
         </div>
 
         {/* Program Highlights Banner Card */}
-        <div className="p-6 sm:p-8 rounded-3xl bg-slate-800/60 border border-slate-700/80 backdrop-blur-md mb-10 shadow-xl">
+        <div className="p-6 sm:p-8 rounded-3xl bg-slate-800/60 border border-slate-700/80 backdrop-blur-md shadow-xl">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 items-center">
             
             <div className="md:col-span-2 space-y-2">
@@ -123,72 +116,6 @@ export const LearnSection: React.FC = () => {
               </div>
             </div>
 
-          </div>
-        </div>
-
-        {/* 3 Core Academic Pillars */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-          <div className="p-6 rounded-2xl bg-slate-800/80 border border-slate-700/80 space-y-3 shadow-lg">
-            <div className="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold">
-              <BookOpen className="w-5 h-5" />
-            </div>
-            <h4 className="text-lg font-black text-white">Full Theory & Formula Packs</h4>
-            <p className="text-xs text-slate-300 leading-relaxed">
-              Step-by-step rigorous derivations, handwritten IITian summaries, and boundary condition formulas covering the complete syllabus.
-            </p>
-            <div className="pt-2 text-xs font-bold text-blue-400 flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-              <span>Zero Backlog Retention</span>
-            </div>
-          </div>
-
-          <div className="p-6 rounded-2xl bg-slate-800/80 border border-slate-700/80 space-y-3 shadow-lg">
-            <div className="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center font-bold">
-              <Target className="w-5 h-5" />
-            </div>
-            <h4 className="text-lg font-black text-white">Targeted Chapter Tests</h4>
-            <p className="text-xs text-slate-300 leading-relaxed">
-              Timed chapter assessments with single-choice, multiple-choice, and Section B integer formats mimicking genuine NTA pattern.
-            </p>
-            <div className="pt-2 text-xs font-bold text-purple-400 flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-              <span>Speed & Accuracy Mastery</span>
-            </div>
-          </div>
-
-          <div className="p-6 rounded-2xl bg-slate-800/80 border border-slate-700/80 space-y-3 shadow-lg">
-            <div className="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold">
-              <Clock className="w-5 h-5" />
-            </div>
-            <h4 className="text-lg font-black text-white">24/7 AI Doubt Resolution</h4>
-            <p className="text-xs text-slate-300 leading-relaxed">
-              Instant LaTeX mathematical proofs and step-by-step guidance in Tamil, English, Hindi, Telugu, and Kannada with similar PYQs.
-            </p>
-            <div className="pt-2 text-xs font-bold text-emerald-400 flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-              <span>Multi-Lingual Clarity</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom Feature Callout */}
-        <div className="p-8 rounded-3xl bg-gradient-to-r from-blue-900/60 via-indigo-900/50 to-purple-900/60 border border-blue-500/30 text-center space-y-4">
-          <h4 className="text-xl sm:text-2xl font-black text-white">
-            Included in Both 11th Foundation & 12th Booster Plans
-          </h4>
-          <p className="text-xs sm:text-sm text-slate-300 max-w-2xl mx-auto font-medium">
-            Every enrolled student gets unlimited access to AI Doubt Solving in 5 Indian languages, visual mind maps, high-yield formula sheets, chapter-wise test series with timer, and longitudinal 5-test performance tracking.
-          </p>
-          <div className="pt-2">
-            <a
-              href={LOVABLE_PROJECT_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-extrabold text-sm shadow-xl shadow-blue-600/30 transition-all group"
-            >
-              <span>Enroll in JEE Ranker Learn Today</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </a>
           </div>
         </div>
 

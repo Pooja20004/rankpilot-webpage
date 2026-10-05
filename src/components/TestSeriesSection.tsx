@@ -383,178 +383,129 @@ export const TestSeriesSection: React.FC = () => {
               </span>
             </div>
 
-            <div className="p-6 sm:p-10">
-              {/* Adjacent Sides: 1 Year Plan (Left) vs 2 Year Plan (Right) */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 relative">
+            <div className="p-6 sm:p-10 space-y-8">
+              {/* Adjacent Offer & Price Details Only (Headings Removed Above) */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 
-                {/* Center Divider for Desktop */}
-                <div className="hidden md:block absolute top-0 bottom-0 left-1/2 w-px bg-slate-200 -translate-x-1/2" />
+                {/* 1-Year Offer & Price */}
+                <div className="p-6 rounded-2xl bg-slate-50 border-2 border-slate-200 shadow-sm flex flex-col justify-between">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-xs font-black uppercase tracking-wider text-slate-700 bg-slate-200/80 px-3 py-1 rounded-full">
+                      Special Launch Offer
+                    </span>
+                    <span className="text-xs font-black uppercase text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full">
+                      Save 50%
+                    </span>
+                  </div>
+                  
+                  <div className="flex items-baseline gap-3 my-2">
+                    <span className="text-lg sm:text-xl font-bold text-slate-400 line-through">
+                      ₹6,000
+                    </span>
+                    <span className="text-3xl sm:text-5xl font-black text-slate-900">
+                      ₹3,000
+                    </span>
+                    <span className="text-sm font-bold text-slate-600">
+                      / 1 Year
+                    </span>
+                  </div>
 
-                {/* Left Side: 1 Year Subscription */}
-                <div className="flex flex-col justify-between space-y-6">
-                  <div>
-                    <div className="flex items-center justify-between mb-3">
-                      <span className="px-3 py-1 rounded-full text-xs font-black tracking-wide bg-slate-100 text-slate-800 border border-slate-200">
-                        Class 12 & Droppers
-                      </span>
-                      <span className="text-[11px] font-black uppercase text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full">
-                        Save 50%
-                      </span>
-                    </div>
-
-                    <h4 className="text-2xl sm:text-3xl font-black text-slate-900">
-                      1 Year Subscription
-                    </h4>
-                    <p className="text-xs text-slate-500 font-semibold mt-1 mb-5">
-                      Complete 1-year test series and practice suite for JEE Main, Advanced & BITSAT 2026.
-                    </p>
-
-                    {/* Highlighted Price Box */}
-                    <div className="p-5 rounded-2xl bg-gradient-to-br from-slate-50 to-slate-100/80 border border-slate-200 shadow-xs mb-6">
-                      <div className="text-[11px] font-extrabold uppercase tracking-wider text-slate-500 mb-1">
-                        Special Launch Offer
-                      </div>
-                      <div className="flex items-baseline gap-3">
-                        <span className="text-base sm:text-lg font-bold text-slate-400 line-through">
-                          ₹6,000
-                        </span>
-                        <span className="text-3xl sm:text-4xl font-black text-slate-900">
-                          ₹3,000
-                        </span>
-                        <span className="text-xs font-bold text-slate-600">
-                          / 1 Year
-                        </span>
-                      </div>
-                      <div className="text-[11px] font-bold text-emerald-700 mt-2 flex items-center gap-1.5">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                        <span>Instant access to all tests & AI features</span>
-                      </div>
-                    </div>
-
-                    {/* Features List */}
-                    <div className="space-y-3">
-                      <div className="text-xs font-bold uppercase text-slate-400 tracking-wider">
-                        Everything included in 1-Year Plan:
-                      </div>
-                      <div className="flex items-start gap-2.5 text-xs text-slate-700">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                        <span><strong>120+ JEE Main PYQs as Mocks</strong> (2021 to 2026 Shifts)</span>
-                      </div>
-                      <div className="flex items-start gap-2.5 text-xs text-slate-700">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                        <span><strong>40+ JEE Advanced Mocks</strong> (19 Years of PYQs)</span>
-                      </div>
-                      <div className="flex items-start gap-2.5 text-xs text-slate-700">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                        <span><strong>10+ BITSAT Full Mocks</strong> with Official Speed Engine</span>
-                      </div>
-                      <div className="flex items-start gap-2.5 text-xs text-slate-700">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                        <span><strong>100+ Chapter-wise Tests</strong> with Customizable Timings</span>
-                      </div>
-                      <div className="flex items-start gap-2.5 text-xs text-slate-700">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                        <span>Individual Diagnostic Reports & Detailed Text Solutions</span>
-                      </div>
-                      <div className="flex items-start gap-2.5 text-xs text-slate-700">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                        <span>24/7 Multilingual AI Doubt Solver (Tamil, English, Hindi, Telugu, Kannada)</span>
-                      </div>
-                      <div className="flex items-start gap-2.5 text-xs text-slate-700">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                        <span>Formula Sheets, Mind Maps & Solved Examples</span>
-                      </div>
-                    </div>
+                  <div className="text-xs font-bold text-emerald-700 mt-2 flex items-center gap-1.5 pt-2 border-t border-slate-200/60">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                    <span>⚡ Instant access to all tests & AI features for 12 Months</span>
                   </div>
                 </div>
 
-                {/* Right Side: 2 Year Subscription (Highlighted) */}
-                <div className="flex flex-col justify-between space-y-6">
-                  <div>
-                    <div className="flex items-center justify-between mb-3">
-                      <span className="px-3 py-1 rounded-full text-xs font-black tracking-wide bg-blue-100 text-blue-800 border border-blue-200">
-                        Class 11 Foundation + Class 12
+                {/* 2-Year Offer & Price */}
+                <div className="p-6 rounded-2xl bg-gradient-to-br from-blue-50 via-indigo-50/70 to-blue-50 border-2 border-blue-400 shadow-md ring-2 ring-blue-500/20 flex flex-col justify-between">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-xs font-black uppercase tracking-wider text-blue-800 bg-blue-100 border border-blue-200 px-3 py-1 rounded-full">
+                      Maximum Savings Offer
+                    </span>
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-[11px] font-black uppercase text-white bg-gradient-to-r from-blue-600 to-indigo-600 px-2.5 py-0.5 rounded-full shadow-xs">
+                        🔥 Best Value
                       </span>
-                      <div className="flex items-center gap-1.5">
-                        <span className="text-[11px] font-black uppercase text-white bg-gradient-to-r from-blue-600 to-indigo-600 px-2.5 py-0.5 rounded-full shadow-xs">
-                          🔥 Best Value
-                        </span>
-                        <span className="text-[11px] font-black uppercase text-blue-700 bg-blue-50 border border-blue-200 px-2.5 py-0.5 rounded-full">
-                          Save 58%
-                        </span>
-                      </div>
+                      <span className="text-xs font-black uppercase text-blue-700 bg-blue-100/80 px-2.5 py-0.5 rounded-full">
+                        Save 58%
+                      </span>
                     </div>
+                  </div>
 
-                    <h4 className="text-2xl sm:text-3xl font-black text-blue-700">
-                      2 Year Subscription
-                    </h4>
-                    <p className="text-xs text-slate-500 font-semibold mt-1 mb-5">
-                      Complete 2-year end-to-end preparation for JEE 2027 with full Foundation & Booster materials.
-                    </p>
+                  <div className="flex items-baseline gap-3 my-2">
+                    <span className="text-lg sm:text-xl font-bold text-slate-400 line-through">
+                      ₹12,000
+                    </span>
+                    <span className="text-3xl sm:text-5xl font-black text-blue-700">
+                      ₹5,000
+                    </span>
+                    <span className="text-sm font-bold text-slate-600">
+                      / 2 Years
+                    </span>
+                  </div>
 
-                    {/* Highlighted Price Box */}
-                    <div className="p-5 rounded-2xl bg-gradient-to-br from-blue-50 via-indigo-50/60 to-blue-50 border-2 border-blue-200 shadow-sm mb-6 ring-1 ring-blue-400/20">
-                      <div className="text-[11px] font-extrabold uppercase tracking-wider text-blue-700 mb-1">
-                        Maximum Savings Offer
-                      </div>
-                      <div className="flex items-baseline gap-3">
-                        <span className="text-base sm:text-lg font-bold text-slate-400 line-through">
-                          ₹12,000
-                        </span>
-                        <span className="text-3xl sm:text-4xl font-black text-blue-700">
-                          ₹5,000
-                        </span>
-                        <span className="text-xs font-bold text-slate-600">
-                          / 2 Years
-                        </span>
-                      </div>
-                      <div className="text-[11px] font-bold text-emerald-700 mt-2 flex items-center gap-1.5">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                        <span>Just ₹208/month • Valid for 24 Full Months</span>
-                      </div>
-                    </div>
-
-                    {/* Features List */}
-                    <div className="space-y-3">
-                      <div className="text-xs font-bold uppercase text-slate-400 tracking-wider">
-                        Everything included in 2-Year Plan:
-                      </div>
-                      <div className="flex items-start gap-2.5 text-xs text-slate-700">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                        <span><strong>Full Access for 2 Full Academic Years</strong> (2025–2027)</span>
-                      </div>
-                      <div className="flex items-start gap-2.5 text-xs text-slate-700">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                        <span><strong>11th Foundation + 12th Booster Programs</strong> complete access</span>
-                      </div>
-                      <div className="flex items-start gap-2.5 text-xs text-slate-700">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                        <span><strong>120+ JEE Main PYQs as Mocks</strong> + 40+ JEE Adv (19 yrs) + 10+ BITSAT</span>
-                      </div>
-                      <div className="flex items-start gap-2.5 text-xs text-slate-700">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                        <span><strong>Consolidated 5-Test Progress Reports</strong> & AI Weakness Tracking</span>
-                      </div>
-                      <div className="flex items-start gap-2.5 text-xs text-slate-700">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                        <span><strong>24/7 Unlimited AI Doubt Solver</strong> in Tamil, English, Hindi, Telugu, Kannada</span>
-                      </div>
-                      <div className="flex items-start gap-2.5 text-xs text-slate-700">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                        <span>Complete Concept Notes, Formula Sheets, Mind Maps & Solved Examples</span>
-                      </div>
-                      <div className="flex items-start gap-2.5 text-xs text-slate-700">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                        <span>National Percentile Benchmark, Leaderboard & Priority Helpdesk</span>
-                      </div>
-                    </div>
+                  <div className="text-xs font-bold text-emerald-700 mt-2 flex items-center gap-1.5 pt-2 border-t border-blue-200/60">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                    <span>⚡ Just ₹208/month • Valid for 24 Full Months</span>
                   </div>
                 </div>
 
               </div>
 
+              {/* Combined Content: Everything Included in Both Plans */}
+              <div className="pt-6 border-t border-slate-200">
+                <div className="text-center sm:text-left mb-6">
+                  <h4 className="text-base sm:text-lg font-black uppercase tracking-wider text-slate-900 flex items-center gap-2">
+                    <CheckCircle2 className="w-5 h-5 text-blue-600" />
+                    <span>Everything Included in Both Plans:</span>
+                  </h4>
+                  <p className="text-xs text-slate-500 font-medium mt-1">
+                    Both 1-Year and 2-Year subscriptions provide 100% full, unrestricted access to the entire JEE Ranker learning and testing suite:
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-xs text-slate-700">
+                  <div className="flex items-start gap-2.5 p-3 rounded-xl bg-slate-50 border border-slate-100">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                    <span><strong>120+ JEE Main PYQs as Mocks</strong> (2021 to 2026 Shifts in official NTA CBT UI)</span>
+                  </div>
+                  <div className="flex items-start gap-2.5 p-3 rounded-xl bg-slate-50 border border-slate-100">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                    <span><strong>40+ JEE Advanced Mocks</strong> (19 Years of PYQs Paper 1 & 2 with variable schemes)</span>
+                  </div>
+                  <div className="flex items-start gap-2.5 p-3 rounded-xl bg-slate-50 border border-slate-100">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                    <span><strong>10+ BITSAT Full Mocks</strong> (130 questions + official 12 bonus question engine)</span>
+                  </div>
+                  <div className="flex items-start gap-2.5 p-3 rounded-xl bg-slate-50 border border-slate-100">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                    <span><strong>100+ Chapter-wise Foundation & Booster Tests</strong> with customizable timings</span>
+                  </div>
+                  <div className="flex items-start gap-2.5 p-3 rounded-xl bg-slate-50 border border-slate-100">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                    <span><strong>Detailed Text & Mathematical Solutions</strong> for every single mock test question</span>
+                  </div>
+                  <div className="flex items-start gap-2.5 p-3 rounded-xl bg-slate-50 border border-slate-100">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                    <span><strong>Individual & Consolidated 5-Test Diagnostic Reports</strong> with AI weakness tracking</span>
+                  </div>
+                  <div className="flex items-start gap-2.5 p-3 rounded-xl bg-slate-50 border border-slate-100">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                    <span><strong>24/7 Unlimited AI Doubt Solver</strong> in Tamil, English, Hindi, Telugu, and Kannada</span>
+                  </div>
+                  <div className="flex items-start gap-2.5 p-3 rounded-xl bg-slate-50 border border-slate-100">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                    <span><strong>Complete Concept Notes, Formula Sheets & Mind Maps</strong> authored by IITians</span>
+                  </div>
+                  <div className="flex items-start gap-2.5 p-3 rounded-xl bg-slate-50 border border-slate-100 sm:col-span-2">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                    <span><strong>National Percentile Benchmark, Live Shift Leaderboards & Priority Student Helpdesk</strong></span>
+                  </div>
+                </div>
+              </div>
+
               {/* Single Shared Action Link: Get Subscription */}
-              <div className="mt-10 pt-8 border-t border-slate-200 flex flex-col items-center">
+              <div className="pt-6 border-t border-slate-200 flex flex-col items-center">
                 <a
                   href="https://jee-rankpilot.lovable.app"
                   target="_blank"
@@ -565,7 +516,7 @@ export const TestSeriesSection: React.FC = () => {
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1.5 transition-transform" />
                 </a>
                 <p className="text-xs text-center text-slate-500 font-medium mt-3">
-                  Redirects to web app • Cancel anytime • 100% money-back guarantee within 48 hours
+                  Instant activation on web app • Cancel anytime • 100% money-back guarantee within 48 hours
                 </p>
               </div>
 
