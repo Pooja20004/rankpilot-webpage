@@ -13,7 +13,11 @@ import {
 } from 'lucide-react';
 import { LOVABLE_PROJECT_URL, CONTACT_EMAIL } from '../data/mockData';
 
-export const Footer: React.FC = () => {
+interface FooterProps {
+  onOpenExamResources?: () => void;
+}
+
+export const Footer: React.FC<FooterProps> = ({ onOpenExamResources }) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -76,6 +80,18 @@ export const Footer: React.FC = () => {
           <div className="space-y-3">
             <h4 className="text-xs font-bold text-white uppercase tracking-wider">Study Resources</h4>
             <ul className="space-y-2">
+              <li>
+                <button 
+                  onClick={() => {
+                    if (onOpenExamResources) {
+                      onOpenExamResources();
+                    }
+                  }}
+                  className="text-left text-blue-400 hover:text-white font-bold transition-colors cursor-pointer"
+                >
+                  2027 Syllabuses & Strategies
+                </button>
+              </li>
               <li><a href="#features" className="hover:text-white transition-colors">Concept Notes (92 Chapters)</a></li>
               <li><a href="#features" className="hover:text-white transition-colors">Formula Sheets (PCM)</a></li>
               <li><a href="#features" className="hover:text-white transition-colors">Visual Mind Maps</a></li>

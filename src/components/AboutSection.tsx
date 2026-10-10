@@ -13,7 +13,11 @@ import {
 } from 'lucide-react';
 import { LOVABLE_PROJECT_URL } from '../data/mockData';
 
-export const AboutSection: React.FC = () => {
+interface AboutSectionProps {
+  onOpenExamResources?: () => void;
+}
+
+export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenExamResources }) => {
   return (
     <section id="about" className="py-20 bg-gradient-to-b from-slate-50 via-white to-slate-50/70 border-b border-slate-200 relative overflow-hidden">
       
@@ -36,6 +40,23 @@ export const AboutSection: React.FC = () => {
               AI-Powered JEE & BITSAT Co-Pilot?
             </span>
           </h2>
+
+          {/* User Requested: Syllabus & Exam Cracking Strategies Line & Click Here Button */}
+          <div className="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-blue-50 via-indigo-50/80 to-purple-50 border-2 border-blue-200/90 shadow-sm my-3 space-y-2">
+            <p className="text-base sm:text-lg font-black text-slate-900 tracking-tight">
+              jee main ,jee advanced and bitsat Exam syllabuses and Exam cracking strategies
+            </p>
+            <div className="pt-1">
+              <button
+                type="button"
+                onClick={onOpenExamResources}
+                className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-blue-700 hover:bg-blue-800 text-white font-black text-sm shadow-md shadow-blue-700/25 transition-all hover:scale-105 group cursor-pointer"
+              >
+                <span>Click Here</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </div>
+          </div>
 
           <p className="text-base sm:text-lg text-slate-600 font-normal leading-relaxed">
             We’ve packed India’s most comprehensive testing, revision, and AI mentorship ecosystem into one unified platform. Here is everything included in your student access:

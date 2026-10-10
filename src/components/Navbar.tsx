@@ -12,15 +12,24 @@ import {
   ExternalLink,
   ChevronDown,
   Info,
-  GraduationCap
+  GraduationCap,
+  Target
 } from 'lucide-react';
 import { LOVABLE_PROJECT_URL } from '../data/mockData';
 
 interface NavbarProps {
   onSelectTab?: (tabId: string) => void;
+  onOpenExamResources?: () => void;
+  onGoHome?: () => void;
+  isResourcesPage?: boolean;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onSelectTab }) => {
+export const Navbar: React.FC<NavbarProps> = ({ 
+  onSelectTab,
+  onOpenExamResources,
+  onGoHome,
+  isResourcesPage = false
+}) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -85,7 +94,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectTab }) => {
           <div className="flex items-center gap-3">
             <a 
               href="#hero" 
-              onClick={(e) => { e.preventDefault(); scrollToSection('hero'); }}
+              onClick={(e) => { 
+                e.preventDefault(); 
+                if (isResourcesPage && onGoHome) {
+                  onGoHome();
+                } else {
+                  scrollToSection('hero'); 
+                }
+              }}
               className="flex flex-col items-start text-left focus:outline-none group cursor-pointer"
             >
               <div className="flex items-center gap-2">
@@ -110,17 +126,45 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectTab }) => {
           <div className="hidden lg:flex items-center gap-1.5">
             {/* About App Tab */}
             <button 
-              onClick={() => scrollToSection('about')}
-              className="px-3.5 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5"
+              onClick={() => {
+                if (isResourcesPage && onGoHome) {
+                  onGoHome();
+                  setTimeout(() => scrollToSection('about'), 100);
+                } else {
+                  scrollToSection('about');
+                }
+              }}
+              className="px-3.5 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 cursor-pointer"
             >
               <Info className="w-4 h-4 text-purple-600" />
               <span>About Platform</span>
             </button>
 
+            {/* Syllabus & Strategies Tab */}
+            <button 
+              onClick={() => {
+                if (onOpenExamResources) {
+                  onOpenExamResources();
+                }
+              }}
+              className="px-3.5 py-2 text-sm font-bold text-blue-700 bg-blue-50/80 hover:bg-blue-100 rounded-lg transition-colors flex items-center gap-1.5 cursor-pointer"
+            >
+              <Target className="w-4 h-4 text-blue-600" />
+              <span>Syllabus & Strategies</span>
+              <span className="text-[9px] font-black uppercase px-1.5 py-0.5 rounded-full bg-blue-600 text-white">2027</span>
+            </button>
+
             {/* Test Series Tab */}
             <button 
-              onClick={() => scrollToSection('test-series')}
-              className="px-3.5 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5"
+              onClick={() => {
+                if (isResourcesPage && onGoHome) {
+                  onGoHome();
+                  setTimeout(() => scrollToSection('test-series'), 100);
+                } else {
+                  scrollToSection('test-series');
+                }
+              }}
+              className="px-3.5 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 cursor-pointer"
             >
               <FileCheck2 className="w-4 h-4 text-blue-600" />
               <span>Test Series</span>
@@ -128,8 +172,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectTab }) => {
 
             {/* Sample Report Tab */}
             <button 
-              onClick={() => scrollToSection('sample-report')}
-              className="px-3.5 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5"
+              onClick={() => {
+                if (isResourcesPage && onGoHome) {
+                  onGoHome();
+                  setTimeout(() => scrollToSection('sample-report'), 100);
+                } else {
+                  scrollToSection('sample-report');
+                }
+              }}
+              className="px-3.5 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 cursor-pointer"
             >
               <BarChart3 className="w-4 h-4 text-emerald-600" />
               <span>Sample Report</span>
@@ -137,8 +188,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectTab }) => {
 
             {/* Features Tab */}
             <button 
-              onClick={() => scrollToSection('features')}
-              className="px-3.5 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5"
+              onClick={() => {
+                if (isResourcesPage && onGoHome) {
+                  onGoHome();
+                  setTimeout(() => scrollToSection('features'), 100);
+                } else {
+                  scrollToSection('features');
+                }
+              }}
+              className="px-3.5 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 cursor-pointer"
             >
               <BookOpen className="w-4 h-4 text-indigo-600" />
               <span>Study Resources</span>
@@ -146,8 +204,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectTab }) => {
 
             {/* JEE Ranker Learn Tab */}
             <button 
-              onClick={() => scrollToSection('learn')}
-              className="px-3.5 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5"
+              onClick={() => {
+                if (isResourcesPage && onGoHome) {
+                  onGoHome();
+                  setTimeout(() => scrollToSection('learn'), 100);
+                } else {
+                  scrollToSection('learn');
+                }
+              }}
+              className="px-3.5 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 cursor-pointer"
             >
               <GraduationCap className="w-4 h-4 text-purple-600" />
               <span>Learn</span>
@@ -155,8 +220,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectTab }) => {
 
             {/* Reviews Tab */}
             <button 
-              onClick={() => scrollToSection('reviews')}
-              className="px-3.5 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5"
+              onClick={() => {
+                if (isResourcesPage && onGoHome) {
+                  onGoHome();
+                  setTimeout(() => scrollToSection('reviews'), 100);
+                } else {
+                  scrollToSection('reviews');
+                }
+              }}
+              className="px-3.5 py-2 text-sm font-bold text-slate-700 hover:text-blue-700 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 cursor-pointer"
             >
               <Award className="w-4 h-4 text-amber-500" />
               <span>Reviews</span>
@@ -208,6 +280,22 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectTab }) => {
             >
               <Info className="w-4 h-4 text-purple-600" />
               <span>About Platform & App Features</span>
+            </button>
+
+            <button 
+              onClick={() => {
+                setMobileMenuOpen(false);
+                if (onOpenExamResources) {
+                  onOpenExamResources();
+                }
+              }}
+              className="w-full text-left px-3 py-2.5 rounded-lg text-sm font-bold text-blue-800 bg-blue-50/80 hover:bg-blue-100 flex items-center justify-between"
+            >
+              <div className="flex items-center gap-2">
+                <Target className="w-4 h-4 text-blue-700" />
+                <span>Syllabus & Exam Strategies</span>
+              </div>
+              <span className="text-[9px] font-black uppercase px-2 py-0.5 rounded-full bg-blue-600 text-white">2027</span>
             </button>
 
             <button 
