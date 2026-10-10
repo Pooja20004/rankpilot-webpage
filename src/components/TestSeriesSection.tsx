@@ -507,7 +507,7 @@ export const TestSeriesSection: React.FC = () => {
               {/* Single Shared Action Link: Get Subscription */}
               <div className="pt-6 border-t border-slate-200 flex flex-col items-center">
                 <a
-                  href="https://jee-rankpilot.lovable.app"
+                  href={LOVABLE_PROJECT_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full sm:w-auto min-w-[320px] py-4 px-10 rounded-2xl bg-blue-700 hover:bg-blue-800 text-white font-black text-base text-center shadow-xl shadow-blue-700/30 transition-all flex items-center justify-center gap-2 group hover:scale-[1.02]"

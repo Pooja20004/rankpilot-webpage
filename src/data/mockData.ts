@@ -6,8 +6,8 @@ import {
   AppHighlight
 } from '../types';
 
-export const LOVABLE_PROJECT_URL = 'https://jee-rankpilot.lovable.app';
-export const CONTACT_EMAIL = 'cognisecsolutions@gmail.com';
+export const LOVABLE_PROJECT_URL = 'https://app.jeeranker.com/';
+export const CONTACT_EMAIL = 'info@jeeranker.com';
 
 // ----------------------------------------------------
 // TEST SERIES DATA (User Specified Edits)
@@ -272,7 +272,7 @@ export const APP_FEATURE_HIGHLIGHTS: AppHighlight[] = [
     keyPoints: [
       'Live All-India percentile leaderboards updated after every mock',
       'Subject pods with top 1% peer rankers',
-      'Dedicated helpdesk at cognisecsolutions@gmail.com for student queries'
+      'Dedicated helpdesk at info@jeeranker.com for student queries'
     ]
   }
 ];
