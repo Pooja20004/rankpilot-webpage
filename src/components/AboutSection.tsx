@@ -44,7 +44,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenExamResources 
           {/* User Requested: Syllabus & Exam Cracking Strategies Line & Click Here Button */}
           <div className="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-blue-50 via-indigo-50/80 to-purple-50 border-2 border-blue-200/90 shadow-sm my-3 space-y-2">
             <p className="text-base sm:text-lg font-black text-slate-900 tracking-tight">
-              jee main ,jee advanced and bitsat Exam syllabuses and Exam cracking strategies
+              JEE main ,JEE advanced and BITSAT Exam syllabuses and Exam cracking strategies
             </p>
             <div className="pt-1">
               <button

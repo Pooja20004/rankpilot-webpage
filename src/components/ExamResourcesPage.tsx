@@ -55,7 +55,7 @@ export const ExamResourcesPage: React.FC<ExamResourcesPageProps> = ({
               Official 2027
             </span>
             <span className="font-semibold truncate">
-              JEE Main, JEE Advanced & BITSAT Exam Syllabuses and Exam Cracking Strategies
+              JEE main ,JEE advanced and BITSAT Exam syllabuses and Exam cracking strategies
             </span>
           </div>
           <div className="flex items-center gap-3 shrink-0">
@@ -144,9 +144,9 @@ export const ExamResourcesPage: React.FC<ExamResourcesPageProps> = ({
           </div>
 
           <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight max-w-4xl mx-auto">
-            JEE Main, JEE Advanced and BITSAT <br className="hidden sm:inline" />
+            JEE main ,JEE advanced and BITSAT <br className="hidden sm:inline" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-amber-300">
-              Exam Syllabuses & Exam Cracking Strategies
+              Exam syllabuses and Exam cracking strategies
             </span>
           </h1>
 
